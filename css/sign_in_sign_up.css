@@ -1,0 +1,384 @@
+
+.cover_me{
+
+    background-image: url('../img/pfe2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100vh;
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+     
+ }
+ 
+ .cover_all{
+ 
+     position:absolute;
+     top:0px;
+     left:0px;
+     width:100%;
+     height:100%;
+     background: #000;
+     opacity:0.48;
+     z-index: 1;
+     }
+     .form_type{
+         padding:0px 43px 30px 43px;
+     background:#fff;
+     z-index: 100;
+     width:25.5%;
+ }
+ 
+ .form_type img{
+     width: 180px;
+       height:180px;
+       margin:-24px 0px -40px -9px;
+       
+ }
+ 
+ 
+ form input{
+     
+     height:36px;
+     border:transparent;
+     border-bottom: 1.3px solid #f1cf69;
+     outline: none;
+     width:88%;
+     padding-left:40px;
+     transition:all in .8s ease-out;
+     
+ }
+ form input:focus
+ {
+    height: 39px !important;
+ }
+ 
+ .item{
+ margin:9px 0px 5px 0px;
+ position:relative;
+ }
+ .item > i {
+     transform:scale(1.3);
+     color:#f1cf69;
+     position: absolute;
+     left:12px;
+     top:33%;
+ }
+ .submit{
+          padding:0px;
+          border:none;
+          width:108px;
+          height:32px;
+          background: #f1cf69;
+          color:#fff;
+          font-weight:300;
+          margin: 10px 0px 0px 0px;
+         font-size: .8rem;
+         letter-spacing: 1.1px;
+         font-family: Poppins,sans-serif;
+          cursor: pointer;
+ 
+ }
+ .bottom{
+     margin-top:12px;
+ 
+ }
+ 
+ 
+ .submit{
+             
+     margin-left: auto;
+ }
+ 
+ .bottom{
+     margin-top:10px;
+ 
+ }
+ 
+ .bottom a{
+         
+          text-decoration: none;
+          color:#f1cf69;
+          font-size: .85rem !important;
+          font-family: Poppins,sans-serif;
+          font-weight:600 !important;
+
+ 
+ }
+ .submit{
+             
+     margin-left: auto;
+ }
+ 
+ select{
+     padding:.6rem 0rem .6rem 0rem;
+     border:transparent;
+     border-bottom:1.5px solid #f1cf69;
+     border-radius: 5px;
+     outline:none;
+     margin-top:20px;
+     
+    
+     
+ 
+ }  
+ 
+ .select{
+    padding-left:10px;
+    font-size:1rem;
+    color:#8f8f8f;
+ 
+ 
+ 
+ }
+ select,.next{
+   font-family: Poppins,sans-serif;
+ }
+ .next{
+    
+    margin-left: auto;
+    background-color: #f1cf69;
+    border:none;
+    margin-top: 20px;
+    width: 108px;
+       height: 32px;
+       color:#fff;
+       font-size: .8rem;
+       font-weight: 600;
+       cursor:pointer;
+       
+ 
+ }
+ .select2{
+   padding:0rem;
+   height:36px;
+   width:100%;
+   margin-top: 0px;
+   border-radius:0px;
+   padding-left: 40px;
+ }   
+ .s_top{
+    top:25%;
+ }
+ 
+ .error{
+ border-bottom:1px solid tomato;
+ }
+ .reset_password .error
+ {
+    border-bottom:1.5px solid tomato !important;
+
+ }
+ 
+ .hidden{
+ display:none;
+ }
+ .item .c_error{
+ color:tomato;
+ }
+ .item .s_top{
+ top:25%;
+ }
+ .err{
+ 
+ color:tomato;
+ font-weight:500;
+ font-size:0.8rem;
+ font-family: "Segoe UI","Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+ }
+ .select{
+ width: 100%;
+ }
+ .next{
+ margin-left:auto;
+ }
+ .output .hidden{
+     display:none;
+ }
+ .bold{
+    font-weight:600;
+    font-size:0.9rem;
+}     
+.cover_me{
+    background-image: url('../img/pfe2.jpg');
+}
+.cover_s{
+     opacity:0.58;
+}
+.item input {
+
+transition: all .1s ease-in;
+font-family: Poppins,sans-serif;
+font-size: .9rem;
+box-sizing: content-box;
+
+}
+.err{
+
+font-size: 0.9rem;
+font-family: Poppins,sans-serif;
+}
+#custum_submit{
+
+margin-top:18px;
+font-size: .8rem;
+}
+.select2,.select{
+    background:#fff;
+    margin-top: 5px;
+}
+
+.back{
+    cursor:pointer;
+}
+
+.back span{
+    margin-left:5px;
+    font-weight:600;
+    font-size:1rem;
+    color:#f1cf69;
+    font-family: Poppins,sans-serif !important;
+    cursor:pointer;
+
+}
+.success,.success2{
+     margin-top:5px;
+     color:#008000f0;
+     font-size: .86rem;
+}
+
+.email_reset{
+           
+    border-bottom: 1.5px solid #f1cf69;
+    height:40px;
+   
+}     
+.error_custum_r{
+ border-bottom: 1.5px solid tomato;
+}
+
+
+
+.reset_password #icmail{
+   top:32% !important;
+}
+.r_success{
+    color:#008000f0 !important;
+}
+.r_load{
+  font-size:0.9rem;
+  font-weight:600;
+  margin-top: 5px;
+  color:#f1cf69;
+}
+             
+/*  focus animation   */
+
+:focus{outline: none;}
+
+
+input ~ .border:before,
+input ~ .border:after{content: ""; position: absolute; top: 0; left: 50%; width: 0; height: 2px; background-color:#f1cf69; transition: 0.4s;}
+input ~ .border:after{top: auto; bottom: 0;}
+input ~ .border i:before,
+input ~ .border i:after{content: ""; position: absolute; top: 50%; left: 0; width: 2px; height: 0; background-color:#f1cf69; transition: 0.6s;}
+input ~ .border i:after{left: auto; right: 0;}
+input:focus ~ .border:before,
+input:focus ~ .border:after{left: 0; width: 100%; transition: 0.4s;}
+input:focus ~ .border i:before,
+input:focus ~ .border i:after{top: 0; height: 100%; transition: 0.6s;}
+
+.error ~ .border:before,.error ~ .border:after{background-color:tomato;}
+.error ~ .border i:before,.error ~ .border i:after{background-color:tomato;}
+
+/*   */
+
+input[type='submit']:focus{
+    height: 32px !important;
+}
+
+
+
+/*  loading btn */
+
+@-webkit-keyframes animation-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes animation-rotate {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-o-keyframes animation-rotate {
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+@keyframes animation-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.button span {
+  text-transform: none !important;
+  padding: 0px !important;
+}
+.button span {
+  padding: 20px 25px;
+  font: 700 13px Montserrat, Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  -webkit-transition: all 350ms ease;
+  -moz-transition: all 350ms ease;
+  -o-transition: all 350ms ease;
+  transition: all 350ms ease;
+}
+.button:hover {
+  background-color: #f1cf69;
+ 
+}
+
+
+.button--loading {
+  background-color: #f1cf69 !important;
+  
+  position: relative;
+  cursor: wait;
+}
+.button--loading:before {
+  margin: -13px 0 0 -13px;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  content: '';
+  -webkit-border-radius: 24px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 24px;
+  -moz-background-clip: padding;
+  border-radius: 24px;
+  background-clip: padding-box;
+  border: rgba(255, 255, 255, 0.25) 3px solid;
+  border-top-color: #fff;
+  -webkit-animation: animation-rotate 750ms linear infinite;
+  -moz-animation: animation-rotate 750ms linear infinite;
+  -o-animation: animation-rotate 750ms linear infinite;
+  animation: animation-rotate 750ms linear infinite;
+}
+.button--loading span,
+.button--loading:hover span,
+.button--loading:active span {
+  color: transparent;
+  text-shadow: none;
+}
+.redirect_a,.redirect_b{
+  text-align: center;
+}
+.in_valid{
+  margin-top: 5px;
+  text-align: left !important;
+}

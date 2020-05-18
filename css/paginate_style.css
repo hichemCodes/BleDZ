@@ -1,0 +1,33 @@
+.all_opginate_btn{
+              
+    width:85%;
+    height:35px;
+    margin-top:15px;
+ }
+ .paginate_btn{
+  
+   margin-right:10px;
+   width:35px;
+   border:none;
+   outline:none;
+   cursor:pointer;
+   background:transparent;
+   height:35px;
+   border-radius: 50%;
+   font-size:1rem;
+   font-weight:600;
+   color:#5d5d5d;
+   border: 2px solid;
+   box-shadow: 4px 4px 20px 0 #2425261c;
+   transition:all .5s ease-in-out;
+ }
+ .paginate_btn:hover{
+ background: #5d5d5d;
+ color: #fff;
+ }
+ .active_page{
+ 
+ 
+ background: #5d5d5d;
+ color: #fff;
+ }

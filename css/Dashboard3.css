@@ -1,0 +1,190 @@
+
+ .item1{
+   position:fixed !important;
+   top: 0;
+   left: 0;
+ }
+ .item2{
+    margin-left:17.5% !important;
+ }
+ .logo a img {
+ 
+  margin-left: 9%;
+  width:150px;
+ }
+ .nav_dash span {
+   right: 3.7% !important;
+ }
+ #add_member form,.add_r_v_f,.add_recolte_form,.profile,.add_news_latter_form,#update_product_form{
+   min-height:200px;
+   position:relative;
+   
+ }
+ .custum_profile .p_body .information{
+      width: 36.5%;
+  }
+ .custum_profile { 
+   width:49.5% !important;
+   padding:0px 0px 10px 0px;
+ }
+ .t_small_multi_price{
+         width:23% !important;
+ }
+ .carts {
+     padding-top: 10px !important;
+     padding-bottom: 50px;
+    
+ }
+ .recoltes_chart_container{
+
+          background:#fff;
+          box-shadow: 4px 4px 15px 0 rgba(36,37,38,.08);
+          border-radius: 15px;
+          margin-bottom:50px;
+          padding:25px 25px 35px 25px;
+         box-sizing: border-box;
+         position: relative;
+
+ }
+
+ .recoltes_chart_container span{
+     
+     margin:10px 0px 10px 0px;
+     letter-spacing: 1.2px;
+     
+ }
+ .recoltes_chart_container span select,.s_years_wilayas{
+         background:transparent;
+         border:none;
+         margin-left:3px;
+         cursor:pointer;
+ }
+ .recoltes_chart_container span,.recoltes_chart_container span select,.s_years_wilayas{
+     font-weight: 600;
+     font-size: 1.2rem;
+     color:#5d5d5d;
+ }
+ .cart {
+  border-radius: 10px;
+}
+tr.row_t td {
+  padding: 10px;
+}
+#add_facture_form{
+  width:26.5% !important;
+  padding: 60px 40px 20px 40px;
+}
+#add_facture_form .fa-times{
+  top:21px !important;
+}
+#myChart_wilayas{
+   
+  /*width:90% !important;
+  height:90% !important;*/
+  margin-bottom: 10px;
+}
+.c_span_ch{
+   
+  margin: 10px 0px 35px 0px !important;
+}
+/*  hide all popup */
+
+.add_r_f,#add_member,.add_recolte,.profile_container,#add_facture,#add_news_latter
+          ,#add_office_admin{
+                 display:none;
+
+           }
+
+/*        */
+
+.update_ofice_pass{
+  margin-top: 20px;
+}
+.w_récolte .empty_result{
+  margin-top:0px !important;
+}
+
+.item1,.item2{
+  transition: all .15s ease-in;
+}
+.resize{
+  
+    font-size: 4rem;
+    color:#5d5d5d;
+    cursor: pointer;
+}
+.resized{
+   color: #f1cf69;
+}
+.mini_side_bar{
+  width: 8.5% !important;
+}
+.center_transform{
+
+  width: fit-content !important;
+  font-size: 1.25rem !important;
+  margin-bottom: 3px;
+
+}
+.log_out_link{
+  position: relative;
+}
+.large_item{
+  margin-left: 8.5% !important;
+  width: 91.5%;
+}
+.logo{
+  position: relative;
+}
+.mini_side_bar .logo{
+  height: 11vh;
+}
+.mini_side_bar .logo a img{
+  width: 105px !important;
+  height: 122px !important;
+  margin-left: 0px;
+  margin-top: 5px;
+}
+.mini_side_bar .item{
+  height: 8.72vh;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 9.5px 0px;
+}
+.mini_side_bar .logo a,.mini_side_bar .logo a img{
+  
+  text-decoration: none;
+  position: absolute;
+  top:50% !important;
+  left:50% !important;
+  transform: translate(-50%,-50%)
+}
+.mini_side_bar #valider i,.mini_side_bar #parametre i{
+  margin-left:4px ;
+}
+.mini_side_bar #rendez_vous2 i{
+  margin-left: 2px;
+}
+.mini_side_bar #facture i{
+  font-size :1.4rem !important;
+}
+
+.small_bottom_txt{
+
+  font-size: .82rem;
+  width: fit-content !important;
+}
+.mini_side_bar #products span{
+  margin-left: 0px !important;
+}
+.mini_side_bar #products img{
+  position: relative;
+  left: auto;
+  height: 28px;
+  margin-top: -5px;
+  margin-bottom: 1px;
+}
+.mini_side_bar .item.active{
+  font-weight: bold;
+}

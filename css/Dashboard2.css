@@ -1,0 +1,490 @@
+
+
+
+
+
+.t_year label select{
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-family: Poppins,sans-serif;
+    outline-color: #f1cf69;
+ }
+ .filter_container{
+    width:93.5% !important;
+    margin:auto;
+    margin-bottom: 7px;
+    
+
+ }
+ td .fa-tractor{
+    margin-left: 20px;
+    transform: scale(1.3);
+    transition:all .2s ease-in;
+
+  }
+ 
+    .add_recolte,#update_product{
+         display:none;
+         width: 100%;
+         height: 100%;
+    }
+    #add_member form,.add_recolte form,#update_product form{
+    background:#fff;
+    flex-direction:column;
+    width:23.5%;
+    
+    border-radius: 15px;
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1.1) 0s;
+    padding: 50px 45px 20px 45px;
+    z-index: 1500;
+    position:relative;
+  
+    
+
+    }
+    .add_recolte form{
+        overflow-y: scroll;
+    height: 75%;
+    border-radius:0px;
+    }
+    
+    #add_member form  label,.add_recolte form label,#update_product form label{
+    align-self: baseline;
+    margin-bottom:2px;
+    color: #5d5d5d;
+    cursor:pointer;
+     }
+     #add_member form input,.add_recolte form input,.add_recolte form select,#update_product form input{
+        
+        width:88%;
+        padding:0.5rem 0.5rem 0.5rem 40px;
+            height:100%;
+        font-size:1rem;
+        font-family: Poppins,sans-serif;
+        border:1.2px solid #f1cf69;
+        border-radius:0.25rem;
+        outline:none;
+        
+
+        }
+        .add_recolte form select{
+             
+             padding:0.5rem 0.5rem 0.5rem 40px;
+             background:transparent;
+             box-sizing: content-box;
+             color:#5d5d5d;
+             font-weight:500;
+           
+             
+        }
+        .custum_f_item{
+             width:100%;
+        }
+        #sub_m ,#sub_r,#sub_p{
+        margin-top:12px;
+        padding:0px !important;
+        background:transparent;
+        width:100px !important;
+        border: 2px solid #f1cf69;
+        
+        margin-bottom:0px !important;
+        height:42px !important;
+        color:#5d5d5d;
+        font-weight:600;
+        transition: background-color .3s ease-in-out,border-color .3s ease-in-out,color .3s ease-in-out;
+        cursor:pointer;
+        letter-spacing: .08rem;
+        }
+        #sub_m:hover,#sub_r:hover{
+            background:#f1cf69;
+            color:#fff;
+        }
+        #add_member form .fa-times,.add_recolte form .fa-times,#update_product form .fa-times{
+
+            position:absolute;
+            top:5%;
+            left:92%;
+            transform:scale(1.5);
+            color:#a3a3a3;
+            cursor:pointer;
+            }
+            .add_r_f
+            {
+                display:none;
+            }
+            .o_récolte,.a_récolte,.w_récolte{
+                width:100%;
+                margin-top:5px;
+
+            }
+            
+            .t_small_c{
+                 width:11%;
+            }
+            .t_normal_c{
+                 width:18%;
+            }
+            
+            .filter form {
+margin-right: 20px;
+}
+
+.round_select {
+width: 14px;
+height: 14px;
+border-radius: 50%;
+transition: all .15s ease-in-out;
+border: 1px solid #adb5bd;
+margin: 0px 7px 0px 7px;
+}
+.round_selected {
+width: 6.5px;
+height: 6.5px;
+border: 5.3px solid #f1cf69;
+border-radius:50%;
+}
+.filter form label {
+cursor: pointer;
+}
+
+.cart{
+transition:all .26s ease-out;
+cursor:pointer;
+    
+}
+.cart:hover{
+transform:scale(1.05);
+}
+.old_avatar img{
+width: 100%;
+height: 100%;
+border-radius: inherit;
+}
+.filter{
+margin-left:5px;
+}
+.tree{
+font-weight: 600;
+}
+.succes_valid,.s_updated
+{
+z-index:2000 !important;
+}
+/*    second file      */ 
+
+.profile_custum {
+width:37% !important;
+}
+.profile_custum .p_body .information
+{
+width:48% !important;
+}
+.profile_custum .p_body .information .i_item .second_part
+{
+width:82% !important;
+}
+
+
+@font-face{
+font-family:samplifica;
+/* src:url("../font/SIMPLIFICA .ttf");*/
+src:url("font/SIMPLIFICA .ttf");
+}
+.empty_r_v{
+margin-top:2vh;
+}
+
+
+.empty_result{
+    margin-top:21px;
+    color: #616161;
+    font-size: 1.1rem;
+ }
+ 
+
+ .o_accounts,.o_accounts_offices,.o_accounts_factures {
+    width:100% !important;
+}
+.o_accounts_factures table{
+    border-top: none;
+    border: none;
+    box-shadow: 4px 4px 15px 0 rgba(36,37,38,.08);
+    border-radius: 15px;
+    padding: 10px 20px 10px 20px;
+    width: 90%;
+    background: #fff;
+    border-collapse:collapse;
+}
+.custum_v,td .fa-user-check{
+        
+    transform: scale(1.2);
+    transition: all .2s ease-in;
+}
+.custum_v{
+    margin-right: 8px;
+}
+.custum_v:hover,td .fa-user-check:hover{
+  
+    color: #2acaae !important;
+    
+}
+.td .fa-tv {
+    transition:.2s ease-in !important;
+    
+}
+td .fa-tv:hover {
+    transform:scale(1.2) !important;
+    
+}
+.o_accounts_invalid_office{
+    width:90%;
+}
+body{
+    overflow-x:hidden;
+}
+.item .fa-dollar-sign{
+     font-size:1.3rem;
+
+}
+#add_facture,#add_news_latter,#update_product,#add_office_admin{
+     width:100%;
+     height:100%;
+
+}
+#add_facture_form,#add_news_latter form,#add_office_admin_form{
+    padding: 60px 40px 25px 40px;
+    width:100%;
+    border-radius: 15px;
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1.1) 0s;
+    background:#fff;
+    /*color:#5d5d5d;*/
+    width:25%;
+    position:relative;
+
+}
+#add_news_latter form{
+     width:38.5%;
+}
+
+#add_facture_form label,#add_office_admin_form label{
+        margin-bottom : 10px;
+}
+#add_facture_form select,.select,#add_news_latter form #public_c,#add_news_latter form textarea,#add_news_latter form #subject
+,#add_office_admin_form select{
+  
+        display: block;
+        position: relative;
+        padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+        font-size: 1rem;
+        font-family: Poppins,sans-serif;
+        border: 2px solid  #f1cf69;
+        outline:none;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        width:100%;
+        background:transparent;
+        box-sizing:border-box;
+        
+        
+
+
+}
+#add_news_latter form #subject
+{
+    margin:15px 0px 15px 0px;
+}
+#add_news_latter form textarea{
+   
+     cursor:default;
+    height:27vh;
+}
+
+#add_facture_form .fa-times,#add_news_latter form  .fa-times,#add_office_admin_form .fa-times{
+    transform: scale(1.6);
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    color: #a3a3a3;
+    cursor: pointer;
+}
+#add_facture_form i:hover,#add_news_latter form i:hover,#add_office_admin_form i:hover{
+    color:#f1cf69;
+}
+.fa-folder-plus:hover,#update_product form .fa-times:hover{
+    cursor:pointer;
+    transition:.2s ease-in !important;
+    color:#f1cf69;
+}
+.cheked_items{
+     width:81.5%;
+     position:absolute;
+     box-sizing:border-box;
+     top:57.4%;
+     border: 1px #dadada solid;
+     border-radius: 5px;
+     box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+     background:#fff;
+     z-index:1000;
+    display:none;
+    max-height: 280px;
+    overflow-y: scroll;
+}
+.cheked_items label{
+     
+    padding-left:15px;
+    font-size:.95rem;
+    height:8vh;
+    margin-bottom: 0px !important;
+    cursor:pointer;
+    
+}
+.cheked_items label:hover{
+     background:#f3f0f7;
+}
+.cheked_items label input{
+     height:5vh;
+     width:17px;
+     margin-right:9.5px;
+     
+}
+.select {
+    position:relative;
+}
+.select:hover .fa-sort-down{
+    color:#f1cf69;
+}
+.fa-sort-down{
+
+    position:absolute;
+    top: 27%;
+    right: .75rem;
+    font-size: 1.25rem;
+}
+.show_recolte_list_option{
+    display:block;
+}
+.a_title{
+    margin: 25px 0px 20px 0px !important;
+    }
+
+    .fa-trash-alt{
+         transform:none;
+         font-size:1.4rem;
+    }
+    .custum_trash{
+
+        font-size:1.45rem;
+        position:absolute;
+    }
+    
+    .fa-file-pdf{
+         transform:none;
+         font-size:1.7rem;
+    }
+    .fa-file-pdf:hover{
+         transform:none;
+         color:tomato;
+    }
+    .fa-tv{
+        font-size:1.15rem;
+    }
+    td .fa-tractor{
+        font-size:1.10rem;
+        margin-right: 23px
+    }
+    td .fa-tractor:hover{
+        font-size:1.10rem;
+        color:#f1cf69;
+    }
+    .fa-trash-alt:hover{
+   
+   color:tomato;
+   
+   }
+   #year_s{
+       color:#5d5d5d;
+   }
+@keyframes dance{
+
+0%{
+    transform:rotate(40deg);
+   
+     
+}
+50%{
+    transform:rotate(-40deg);
+   
+}
+100%{
+    transform:rotate(0deg);
+   
+     
+}
+}
+.err_fact{
+    
+    color:tomato;
+}
+.item1 .item{
+    border-bottom: 1px solid #e6e1ffa8 !important;
+}
+.add_recolte form{
+     border-radius:15px;
+}
+.add_recolte form::-webkit-scrollbar
+{
+    display: none !important;
+    
+
+}
+.e_avatar{
+    position:absolute;
+    right:7.5%;
+    top:35%;
+}
+.custum_info_profile{
+     width:28vh;
+}
+
+.return_add_f{
+    margin-right:15px;
+}
+.products,.product_items{
+    width:100%;
+}
+.products_custum{
+   width:90%;
+}
+.s_small table{
+    width:100%;
+    background:#fff;
+    border-top: none;
+   border: none;
+   box-shadow: 4px 4px 15px 0 rgba(36,37,38,.08);
+   border-radius: 15px;
+   border-collapse: collapse;
+    padding: 10px 20px 10px 20px;
+}
+.t_normal_p
+{
+   width:18%;
+}
+.t_small_p{
+   width:13%;
+}
+.custum_pencil{
+   transform: none;
+   font-size: 1.4rem;
+   color:#5d5d5d;
+   width:auto;
+   height:100%;
+   margin-left:15px;
+}
+.custum_pencil:hover{
+       color:#f1cf69;
+}
+.add_product{
+    margin-bottom:40px;
+}

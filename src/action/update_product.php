@@ -1,0 +1,102 @@
+
+<?php
+
+session_start();
+
+require 'connect_db.php';
+require 'query.php';
+
+
+/// modifie le  produit
+
+$code = $_POST['code_u'];
+$description = filter_var($_POST['desc_u'],FILTER_SANITIZE_STRING);
+$price = filter_var($_POST['prix_u'],FILTER_SANITIZE_NUMBER_FLOAT,FILTER_FLAG_ALLOW_FRACTION);
+$price_2= filter_var($_POST['prix_u_2'],FILTER_SANITIZE_NUMBER_FLOAT,FILTER_FLAG_ALLOW_FRACTION);
+$price_3 = filter_var($_POST['prix_u_3'],FILTER_SANITIZE_NUMBER_FLOAT,FILTER_FLAG_ALLOW_FRACTION);
+$product_id = $_POST['p_id'];
+
+
+/// si le code contient seulement des charactére et des chifre 
+if(ctype_alnum($code))
+{
+            
+            if($price_2 == '' )  { $price_2 = NULL;}
+            if($price_3 == '' )  { $price_3 = NULL;}
+
+            if(filter_var($price,FILTER_VALIDATE_FLOAT) && preg_match('/^[0-9]*\.?[0-9]*$/',$_POST['prix_u']))
+            {
+                  if($price_2 != NULL)
+                  {
+                       if(filter_var($price_2,FILTER_VALIDATE_FLOAT) && preg_match('/^[0-9]*\.?[0-9]*$/',$_POST['prix_u_2']))
+                       {
+                              if($price_3 != NULL)  
+                              {
+                                    if(filter_var($price_3,FILTER_VALIDATE_FLOAT) && preg_match('/^[0-9]*\.?[0-9]*$/',$_POST['prix_u_3']))
+                                    {
+                                          $u_product = $db->prepare("UPDATE produit SET code = ? ,description = ? ,prix_unitaire_A = ?          
+                                          ,prix_unitaire_B = ?,prix_unitaire_C = ? WHERE code = ? ");
+                                          $u_product->execute([$code,$description,$price,$price_2,$price_3,$product_id]);
+
+                                          $data['result'] = "produit modifié avec succès"; 
+                                    }
+                                    else
+                                    {
+                                          $data['result'] = 'fail';
+                                          $data['err'] = "prix unitaire C incorrect";
+                                    }
+                              }
+                              else
+                              {
+                                    $u_product = $db->prepare("UPDATE produit SET code = ? ,description = ?
+                                    ,prix_unitaire_A = ?,prix_unitaire_B = ?,prix_unitaire_C = ? WHERE code = ? ");
+                                     $u_product->execute([$code,$description,$price,$price_2,$price_3,$product_id]);
+                                               
+                                     $data['result'] = "produit modifié avec succès";
+                              }
+                       }
+                       else
+                       {
+                             $data['result'] = 'fail';
+                             $data['err'] = "prix unitaire B incorrect";
+                       }
+                  }
+                  else
+                  {
+                        if($price_3 != NULL)
+                        {
+                              $data['result'] = 'fail';
+                              $data['err'] = "il faut mettre le prix unitaire B d'abord";
+                        }
+                        else
+                        {
+                              $u_product = $db->prepare("UPDATE produit SET code = ? ,description = ?
+                               ,prix_unitaire_A = ?,prix_unitaire_B = ?,prix_unitaire_C = ? WHERE code = ? ");
+                              $u_product->execute([$code,$description,$price,$price_2,$price_3,$product_id]);
+                                          
+                              $data['result'] = "produit modifié avec succès";
+                        }
+                  }
+                  
+
+                            
+            }
+            else
+            {
+                  $data['result'] = 'fail'; 
+                  $data['err'] = " prix unitaire A incorrect";
+            }
+}
+else
+{
+      $data['result'] = 'fail';
+      $data['err'] = " le code doit étre contient des charactéres et des chifres";
+}
+
+
+echo json_encode($data);
+
+
+?>
+
+
