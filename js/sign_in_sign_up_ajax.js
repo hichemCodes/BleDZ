@@ -237,7 +237,7 @@ function redirect(element)
     counter--;
     if (counter === 0) {
                 clearInterval(redirectCount);
-                    document.location.href = 'http://localhost/projet_licence/src/sign_in.php';
+                    document.location.href = 'http://localhost/pfe/src/sign_in.php';
                                                                     }
     }, 1000);   
 
