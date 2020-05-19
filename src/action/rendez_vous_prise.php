@@ -2,10 +2,13 @@
 
 <?php
 
+session_start();
+
+require 'query.php';
+
+office_auth();
 
 require 'connect_db.php';
-require 'query.php';
-session_start();
 
 
 
@@ -24,21 +27,21 @@ if(office_has_rendez_vous($_SESSION['office_id']))
        if($r_list->rowCount() > 0)  
        
        {
-        $r_list_count_result = $r_list->fetchAll(PDO::FETCH_ASSOC);
-    
-        $output = '
-        <span class="a_title">Rndez Vous pris</span>    
-        <table>
-        <tr class="b_bottom">
-        <th class="t_custom">Date</th>
-        <th class="t_custom">Nom et prenom d\'agriculteur</th>
+            $r_list_count_result = $r_list->fetchAll(PDO::FETCH_ASSOC);
         
-       
-        <th class="t_custom">Opération</th>
-    
-    
-    </tr> ';
-    
+            $output = '
+            <span class="a_title">Rndez Vous pris</span>    
+            <table>
+            <tr class="b_bottom">
+            <th class="t_custom">Date</th>
+            <th class="t_custom">Nom et prenom d\'agriculteur</th>
+            
+        
+            <th class="t_custom">Opération</th>
+        
+        
+            </tr> ';
+        
            foreach($r_list_count_result as $rendez_vous)
            {
     
@@ -51,11 +54,10 @@ if(office_has_rendez_vous($_SESSION['office_id']))
                 <td>'. $date_part1.' à '. $date_part2 .'</td>
                 <td>'.$rendez_vous['nom'].' '.$rendez_vous['prenom'].'</td>     
                 <td>               
-                <i class="fas fa-tv" onclick="show_account('.$rendez_vous['user_id'].')" title="profile d\'agriculteur"></i>
-                <i class="fas fa-tractor" onclick="show_add_recolte('.$rendez_vous_id.','.$rendez_vous['agriculteur_id'].')"  title="ajouter récolte" ></i>
-                <i class="fas fa-trash-alt custum_trash"   onclick="cancel_rendez_vous('.$rendez_vous_id.','.$rendez_vous['agriculteur_id'].')"  title="annuler ce  récolte" ></i>
-                    
-            
+                    <i class="fas fa-tv" onclick="show_account('.$rendez_vous['user_id'].')" title="profile d\'agriculteur"></i>
+                    <i class="fas fa-tractor" onclick="show_add_recolte('.$rendez_vous_id.','.$rendez_vous['agriculteur_id'].')"  title="ajouter récolte" ></i>
+                    <i class="fas fa-trash-alt custum_trash"   onclick="cancel_rendez_vous('.$rendez_vous_id.','.$rendez_vous['agriculteur_id'].')"  title="annuler ce  récolte" ></i>
+     
                 </td>
             
             </tr>';

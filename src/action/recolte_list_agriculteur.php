@@ -97,7 +97,7 @@
 
 
         if($recolte_count == 0){
-              $output = ' <span class="empty_result empty_result_custum">vous avez pas des récoltes dans cette année</span>';
+              $output = ' <span class="empty_result empty_result_custum">vous n\'avez pas des récoltes dans cette année</span>';
         }
         else 
         {

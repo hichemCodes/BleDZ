@@ -7,7 +7,7 @@
             <ul class="flex j_around linked_target">
               <a href="Appointement.php" >  <li id="acceuil">Rendez-vous </li>  </a> 
               <a href="harvest.php" >  <li id="acceuil"> récoltes </li>  </a> 
-              <a href="profile.php" >  <li id="acceuil"> profile </li>  </a> 
+              <a href="profile.php" >  <li id="acceuil"> profil </li>  </a> 
              
                 
             </ul>

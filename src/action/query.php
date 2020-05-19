@@ -9,7 +9,7 @@
         {
             if($type != 'office')
             {
-                die(header("Location:/projet_licence/src/sign_in.php"));
+                die(header("Location:/pfe/src/sign_in.php"));
             }
         }
         
@@ -20,7 +20,7 @@
         {
             if($type != 'agriculteur')
             {
-                die(header("Location:/projet_licence/src/sign_in.php"));
+                die(header("Location:/pfe/src/sign_in.php"));
             }
         }
     }
@@ -30,11 +30,11 @@
         {
             if($_SESSION['type'] == 'agriculteur')
             {
-                    header("location:/projet_licence/src/Appointement.php");
+                    header("location:/pfe/src/Appointement.php");
             }
             else
             {
-                    header("location:/projet_licence/src/dashboard.php.php");
+                    header("location:/pfe/src/dashboard.php");
             }
         }
     }

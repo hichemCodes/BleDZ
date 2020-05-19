@@ -16,7 +16,7 @@ require 'action/load_all_session.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BléDZ | Profile</title>
+    <title>BléDZ | Profil</title>
     <!--  load all style files    !-->
     <?php require 'action/load_all_home_agr_styles.php';  ?> 
 
@@ -33,7 +33,7 @@ require 'action/load_all_session.php';
        <?php require 'action/load_pop_up.php';  ?>          
  </div> 
                   
-<div class="title"> Mon Profile </div>
+<div class="title"> Mon Profil </div>
         <!--  load profile   !-->
         <?php require 'action/load_profile.php';  ?> 
 

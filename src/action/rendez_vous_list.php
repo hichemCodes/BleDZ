@@ -13,8 +13,9 @@ require 'query.php';
           $output = '
           
           <span class="pas_rendez_vous"> 
-          <i class="fas fa-times" onclick="hide_rendez_vous_form()"> </i>
-          vous avez déja pris un rendez_vous vous ne peuvez pas prendre 2 rendez_vous au meme temps  </span>
+                <i class="fas fa-times" onclick="hide_rendez_vous_form()"> </i>
+                 vous avez déjà pris un rendez, vous ne pouvez pas prendre 2 rendez-vous au même temps
+          </span>
           
           </div>';
      }
@@ -33,7 +34,7 @@ require 'query.php';
 
                <span class="pas_rendez_vous"> 
                     <i class="fas fa-times empty_r_v" onclick="hide_rendez_vous_form()"> </i>
-                    il n\'ya pas des rendez-vous disponible pour ce office 
+                    il n\'y a pas des rendez-vous disponibles pour cet office
                </span>
                
                ';

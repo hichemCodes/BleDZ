@@ -218,7 +218,7 @@ require 'action/query.php';
                         </div>
                         <!--     validate accounts  -->
                         <div class=" valider special flex d_column  j_center a_center hidden ">
-                            <span class="a_title">utilisateurs à valider</span>
+                            <span class="a_title">Agriculteurs à valider</span>
                             <div class="o_accounts_invalid flex a_center j_center"></div>
                             <div class="o_accounts_invalid_office flex a_center j_center d_column"> </div>
 
