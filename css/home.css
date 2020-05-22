@@ -375,7 +375,7 @@ color: #888;
       margin:auto;
   }
   .pub .pub2{
-      width:64%;
+      width:68%;
       margin:auto;
   }
   .pub .pub3{
@@ -532,4 +532,27 @@ width:72% !important;
 
     width:100%;
     transition: all .2s ease-in;
+}
+
+.first_page {
+    position: relative;
+}
+.change_bg{
+    z-index: 100;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: 25px;
+}
+.change_bg div{
+     width: 18px;
+     height: 18px;
+     border-radius: 50%;
+     margin-right: 5px;
+     background: #efc852;
+     transition: .2s ease-in;
+     cursor: pointer;
+}
+.change_bg .active_bg,.change_bg div:hover{
+    background: #4a8b71;
 }

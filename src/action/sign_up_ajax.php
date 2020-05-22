@@ -52,8 +52,8 @@ if($_POST['type']  == 'agriculteur')
                             else{
                                 if(email_already_exist($v_email) && cart_already_exist($v_cart))
                                 {
-                                    $data['result'] ='ce email existe déja ';
-                                    $data['result'] ='cette carte existe déja ';
+                                    $data['result'] ='ce email existe déjà';
+                                    $data['result'] ='cette carte existe déjà';
 
                                     $data['fail'] = 'a_email';
                                    
@@ -61,49 +61,49 @@ if($_POST['type']  == 'agriculteur')
                                 else if( email_already_exist($v_email) && !(cart_already_exist($v_cart)) )
                                 {
                                     $data['fail'] = 'a_email';
-                                    $data['result'] ='ce email existe déja ';
+                                    $data['result'] ='ce email existe déjà ';
                                 }
                                 else
                                 {
                                     $data['fail'] = 'a_cart';
-                                    $data['result'] ='cette carte éxiste déja ';
+                                    $data['result'] ='cette carte existe déjà';
                                 }
                                 }
                                  }
                          else{
                                 $data['fail'] = 'a_cart';
-                                $data['result'] ='num de cart incorrécte';
+                                $data['result'] ='le numéro de carte est incorrect';
                              }
                              }     
                     else{
                             $data['fail'] = 'a_pass2';
-                            $data['result'] = 'la conformation du mot de passe doit étre édentique';
+                            $data['result'] = 'la conformation du mot de passe doit être identique';
                              }                           
                         }
                  else{
 
                          $data['fail'] = 'a_pass1';
-                         $data['result'] = 'le mot de passe doit étre contenir au moins 1 charactére majuscule est un minuscuile et un chifre';
+                         $data['result'] = 'le mot de passe doit comporter au moins 8 caractères dont une lettre majuscule et une lettre minusculle et un chiffre';
                         }
                     }
             else{
                  $data['fail'] = 'a_email';
-                 $data['result'] = 'email inccorécte';
+                 $data['result'] = 'email incorrect';
                  }
             }
           else{
                  $data['fail'] = 'a_prenom';
-                $data['result'] = 'le  prenom doit étre au moins 4 lettres';
+                $data['result'] = 'le prénom doit comporter au moins 3 lettres';
             }
         }
         else{
             $data['fail'] = 'a_nom';
-            $data['result'] = 'le nom doit étre au moins 3 lettres';
+            $data['result'] = 'le prénom doit comporter au moins 3 lettres ';
         }
     }
     else{
         $data['fail'] = 'redirect_a';
-        $data['result'] = " tous les champ doit étre remplit";
+        $data['result'] = "tous les champs doivent être remplis";
     }
 }
 else
@@ -134,9 +134,9 @@ else
                                                  $v_wilaya = filter_var($wilaya,FILTER_SANITIZE_STRING);
                                                  
                                                 //// tester si le compte d'agriculteur est déja existe 
-                                                if(!(office_already_exist($v_email,$v_nom))){
-                                                    
-                                                    
+                                                if(!(office_already_exist($v_email,$v_nom)))
+                                                {
+                                                
                                                     $new_user = $db->prepare("INSERT INTO users
                                                     (email,mot_de_passe,mot_de_passe_confirmation,wilaya_id,profile_id) VALUES (?,?,?,?,1)");
                                                     $new_user->execute([$v_email,$pass1_hash,$pass2_hash,$v_wilaya]);
@@ -148,23 +148,23 @@ else
 
                                                       $data['result'] = 'success';
                     
-                                                     }
+                                                }
                             else{
                                 if(email_already_exist($v_email) && office_name_exist($v_nom))
                                 {
                                     $data['fail'] = 'o_nom';
-                                    $data['result'] = 'ce nom  existe déja ';
-                                    $data['result'] = 'ce  email existe déja ';
+                                    $data['result'] = 'ce nom existe déjà';
+                                    $data['result'] = 'ce email existe déjà';
                                 }  
                                 else if(email_already_exist($v_email))
                                 {   
                                     $data['fail'] = 'o_email';
-                                    $data['result'] = 'ce  email existe déja ';  
+                                    $data['result'] = 'ce email existe déjà';  
                                 }
                                 else
                                 {
                                     $data['fail'] = 'o_nom';
-                                    $data['result'] = 'ce nom  existe déja ';
+                                    $data['result'] = 'ce nom existe déjà';
                                 }
                                 
                                 }
@@ -172,28 +172,28 @@ else
                              }     
                     else{
                             $data['fail'] = 'o_pass2';
-                            $data['result'] = 'la conformation du mot de passe doit étre édentique';
+                            $data['result'] = 'la conformation du mot de passe doit être identique !';
                              }                           
                         }
                  else{
                          $data['fail'] = 'o_pass1';
-                         $data['result'] = 'le mot de passe doit étre contenir au moins 1 charactére majuscule est un minuscuile et un chifre';
+                         $data['result'] = 'le mot de passe doit comporter au moins 8 caractères dont une lettre majuscule et une lettre minusculle et un chiffre !';
                         }
                     }
             else{
                     $data['fail'] = 'o_email';
-                    $data['result'] = 'email inccorécte';
+                    $data['result'] = 'email incorrect';
                  }
             
         }
         else{
             $data['fail'] = 'o_noms';
-            $data['result'] = 'le  nom doit étre au moins 3 lettres';
+            $data['result'] = 'le nom doit comporter au moins 3 lettres ';
         }
     }
     else{
         $data['fail'] = 'redirect_b';
-        $data['result'] = " tous les champ doit étre romplit";
+        $data['result'] = "tous les champs doivent être remplis";
     }
 }
 

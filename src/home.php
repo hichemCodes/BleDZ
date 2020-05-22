@@ -34,14 +34,16 @@
       
          <div class="cover flex ">
                     
-                   
+          
                  
          </div>          
                 <div class="description flex d_center j_center a_center">
-                <div class="pub">
-                       
-                 </div>
                     
+                     <div class="pub">
+
+                    </div>
+                      
+                     
                 </div>
             
            
@@ -63,6 +65,12 @@
 
 
             </div>
+
+            <div class="change_bg flex j_center a_center">
+                 <div class="active_bg" id="0"></div>
+                 <div id="1"></div>
+                 <div id="2"></div>
+            </div>              
         </div>    
         <div class="second_page flex j_center a_center ">
 
@@ -75,12 +83,12 @@
                                             <i class="fas fa-business-time fa-6x "></i> 
                                                 <!--  fa-business-time fa-calendar-check-->
                                                 
-                                            <div class="s_description light_black d_rendez_vous">Rendez-vous de dépôt de récolte</div>
+                                            <div class="s_description light_black d_rendez_vous">Rendez-vous de dépôt de la récolte</div>
                                     
                                         </div>
                                         <div class="service flex d_column class ">
                                             <i class="fas fa-tractor fa-6x"></i>
-                                            <div class="s_description light_black d_class">Classification de la récolte</div>
+                                            <div class="s_description light_black d_class">Classification des récoltes</div>
                                     
                                         </div>
                                         <div class="service flex d_column vente ">
@@ -91,7 +99,7 @@
                                         </div>
                                         <div class="service flex d_column ">
                                                     <i class="fas fa-chart-line fa-7x"></i> 
-                                                    <div class="s_description light_black">Statistiques de la récolte</div>
+                                                    <div class="s_description light_black">Statistiques des récoltes</div>
                                             
                                         </div>    
                             </div>
@@ -113,7 +121,7 @@
                             </div>
                             <div class="fact flex j_start d_column">
                                 <span class="number all_offices"></span>
-                                <span class="f_d">Offices de blé</span>
+                                <span class="f_d">Offices du blé</span>
                             </div>
                             <div class="fact flex j_start d_column">
                                 <span  class="number all_recolte" ></span>

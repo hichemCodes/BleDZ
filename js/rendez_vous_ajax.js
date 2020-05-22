@@ -61,9 +61,9 @@ function rendez_vous(id)
      function prend_r_v(id,office_nom,date)
       {
           $.ajax({
-                'url':'action/prendre_rendez_vous.php',
-                'type':'POST',
-                 'data':{id:id},
+                 url :'action/prendre_rendez_vous.php',
+                 type : 'POST',
+                 data : {id:id},
                  success:function(data){
 
                          $('.cover_all2').hide();
@@ -71,7 +71,11 @@ function rendez_vous(id)
                          // refresh the function
                          all_offices();
                          my_rendez_vous();
+
                          $('body').append(data);
+
+                         generate_pdf_conv(id);
+
                          setTimeout(function () { $('.succes_valid').hide(); }, 3000);
                      
                  }
@@ -155,7 +159,7 @@ function rendez_vous(id)
                      doc.text(`récolte.`, 15,151,null,null);
                      doc.text(`Merci de vous présenter 30 minutes avant l’heure prévue de votre rendez-vous .`, 15,162,null,null);           
                      
-                     doc.save('Rendez-vous dépot du récolte.pdf');
+                     doc.save('Rendez-vous dépôt du la récolte.pdf');
       }
 
 

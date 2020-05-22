@@ -88,7 +88,7 @@
                     else{
 
                         $data['fail'] = 'c_pass';
-                         $data['result'] = 'mot de passe inccorecte';
+                         $data['result'] = 'mot de passe incorrect';
                     }
                    
             }
@@ -102,7 +102,7 @@
         else
         {
                 $data['fail'] = 'c_email';
-                $data['result'] = "email incoccecte";
+                $data['result'] = "email incorrect";
 
         }
         
@@ -112,7 +112,7 @@
     {
         
         $data['fail'] = 'redirect_a';
-        $data['result'] = " tous les champ doit étre romplit";
+        $data['result'] = "tous les champs doivent être remplis";
     }
 
     echo json_encode($data);      
