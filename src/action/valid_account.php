@@ -31,7 +31,7 @@
             
             send_email_validation($user_id); // envoyer un mail a l'utilisateur pour indiquer que son compte a était validé
 
-            $data['result'] = 'ce compte est validé et un email a était envoyé à l\'utilisateur';
+            $data['result'] = 'ce compte est validé et un email a été envoyé à l\'utilisateur';
             
         }
         else

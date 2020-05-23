@@ -21,7 +21,7 @@
             <tr class="b_bottom">
             <th class="t_normal">Nom</th>
             <th class="t_normal">Email</th>
-            <th class="t_normal">N carte</th>
+            <th class="t_normal">Numéro de carte</th>
             <th class="t_small">Status</th>
             <th class="t_large">operation</th>
 

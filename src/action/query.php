@@ -955,4 +955,27 @@
             }
             return $output;
         }
+
+
+        function product_already_used($product_id)
+        {
+             
+            global $db;
+
+            $is_used = $db->prepare("SELECT * FROM récoltes  
+                                     INNER JOIN produit ON récoltes.produit_code = produit.code 
+                                     AND produit.code = ? ");
+
+            $is_used->execute([$product_id]);
+  
+            if($is_used->rowCount() == 0)
+            {
+                 return false;
+            }
+            else
+            {
+                 return true;
+            }
+
+        }
 ?>

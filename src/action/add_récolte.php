@@ -44,7 +44,15 @@ if(in_assoc_array('code',$produit_code,$products))
                 if(in_array($quality,$qualitys) )
                 {
                         $quantié = (float)$poids_entré - (float)$poids_sortie;
-                        /// calculé le montant du récolte 
+
+                        // si quantité inférieur a 0
+                        if($quantié < 0 || $quantié == 0)
+                        {
+                            $data['result'] = "le poids de sortie doit être inférieur au poids d'entré";
+                        }
+                        else
+                        {
+                                     /// calculé le montant du récolte 
                         if($quality == 'A')
                         {
                             $produit_prix = find_product_by_code($produit_code)['prix_unitaire_A'];
@@ -105,6 +113,8 @@ if(in_assoc_array('code',$produit_code,$products))
                               {
                                    $data['result'] = "la matricule de véhicule est incorrect";
                               }
+                        }
+                       
                               
                                          
                 }

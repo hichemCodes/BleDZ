@@ -32,7 +32,7 @@
          
           
          doc.text(`Nom d'agriculteur : `, 15,76,null,null);
-         doc.text(`prénom : `, 15,84,null,null);
+         doc.text(`Prénom : `, 15,84,null,null);
          doc.text(`Numéro de carte : `, 15,92,null,null);
          doc.text(`Email : `, 15,100,null,null);
 
@@ -96,7 +96,7 @@
          doc.line(195,130,195,line_cpt-10);
 
          
-         doc.text(`Total : ${data.montant_total} DA`, 15,cpt+1,null,null)
+         doc.text(`Montant total : ${data.montant_total} DA`, 15,cpt+1,null,null)
          
 
 

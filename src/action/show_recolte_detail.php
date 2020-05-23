@@ -47,7 +47,7 @@
                                <i class="fas fa-calendar-week "></i>
                                     <div class="second_part flex d_column">
                                            <span class="holder">Date </span>
-                                           <span class="i_result"> '.$date.' a '. $time.'</span>
+                                           <span class="i_result"> '.$date.' à '. $time.'</span>
                                     </div>
                                </div>
                                <div class="i_item flex  j_between a_center">

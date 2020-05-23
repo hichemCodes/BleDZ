@@ -24,13 +24,13 @@ $output = '
 <div class="f_item flex d_center a_center d_column">
       <label for="code_p" class="form-label">Code du produit *</label>
       <input type="text"  id="code_p" value="'.  $product_result['code'] .'">
-      <i class="fas fa-user "></i>
+      <img src="../img/wheat2.png" alt="" class="custum_icon_form">
 
 </div>
 <div class="f_item flex d_center a_center d_column">
       <label for="desc_p" class="form-label">Description *</label>
       <input type="text"  id="desc_p" value="'.  $product_result['description'] .'">
-      <i class="fas fa-user "></i>
+      <i class="far fa-clipboard"></i>
 </div>
 <div class="f_item flex d_center a_center d_column">
       <label for="prix_p" class="form-label">Prix unitaire qualité A *</label>
@@ -38,12 +38,12 @@ $output = '
       <i id="icmail" class="fas fa-euro-sign "></i>
 </div>
 <div class="f_item flex d_center a_center d_column">
-      <label for="prix_p" class="form-label"> Prix unitaire qualité B</label>
+      <label for="prix_p_2" class="form-label"> Prix unitaire qualité B</label>
       <input type="text"  id="prix_p_2" value="'.  $product_result['prix_unitaire_B'] .'">
       <i id="icmail" class="fas fa-euro-sign "></i>
 </div>
 <div class="f_item flex d_center a_center d_column">
-      <label for="prix_p" class="form-label"> Prix unitaire qualité C</label>
+      <label for="prix_p_3" class="form-label"> Prix unitaire qualité C</label>
       <input type="text"  id="prix_p_3" value="'.  $product_result['prix_unitaire_C'] .'">
       <i id="icmail" class="fas fa-euro-sign "></i>
 </div>
@@ -64,13 +64,13 @@ else
     <div class="f_item flex d_center a_center d_column">
           <label for="code_p" class="form-label">Code du produit *</label>
           <input type="text"  id="code_p" >
-          <i class="fas fa-user "></i>
+          <img src="../img/wheat2.png" alt="" class="custum_icon_form">
     
     </div>
     <div class="f_item flex d_center a_center d_column">
           <label for="desc_p" class="form-label">Description *</label>
           <input type="text"  id="desc_p" >
-          <i class="fas fa-user "></i>
+          <i class="far fa-clipboard"></i>
     </div>
     <div class="f_item flex d_center a_center d_column">
           <label for="prix_p" class="form-label"> Prix unitaire qualité A *</label>
@@ -78,12 +78,12 @@ else
           <i id="icmail" class="fas fa-euro-sign"></i>
     </div>
      <div class="f_item flex d_center a_center d_column">
-          <label for="prix_p" class="form-label"> Prix unitaire qualité B</label>
+          <label for="prix_p_2" class="form-label"> Prix unitaire qualité B</label>
           <input type="email"  id="prix_p_2">
           <i id="icmail" class="fas fa-euro-sign"></i>
     </div>
     <div class="f_item flex d_center a_center d_column">
-          <label for="prix_p" class="form-label"> Prix unitaire qualité C</label>
+          <label for="prix_p_3" class="form-label"> Prix unitaire qualité C</label>
           <input type="email"  id="prix_p_3">
           <i id="icmail" class="fas fa-euro-sign"></i>
     </div>

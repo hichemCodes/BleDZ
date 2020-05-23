@@ -23,7 +23,7 @@ if($_POST['step'] == 'first')
 
             if($all_offices->rowCount() == 0)
             {
-                 $output = $output.'<option value="" disabled selected> il n\'y a pas des offices encore</option>';
+                 $output = $output.'<option value="" disabled selected>il n\'y a pas des offices encore</option>';
             }
             else
             {

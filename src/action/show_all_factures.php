@@ -37,7 +37,7 @@ $all_factures->execute();
                 <table >
                 <tr class="b_bottom">
                 <th class="t_normal">Date</th>
-                <th class="t_normal">Nom et Prenom d\'agriculteur</th>
+                <th class="t_normal">Nom et Prénom d\'agriculteur</th>
                 <th class="t_normal">Montant</th> 
                 <th class="t_normal">Opération</th>
 

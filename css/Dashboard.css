@@ -530,10 +530,10 @@ margin-bottom:20px;
 color:#a3a3a3;
 }
 .c_o_info{
-    width:45%;
+    width:46%;
 }
 .c_o_body{
-    width: 35% !important;
+    width: 40% !important;
 }
 .i_result{
 font-size:1rem;
@@ -559,6 +559,11 @@ border-top: none;
  border: none;
  box-shadow: 4px 4px 15px 0 rgba(36,37,38,.08);
 border-radius: 15px;
+}
+.add_recolte_form .fa-times:hover
+{
+     transition: all .2s ease-in;
+     color: #f1cd69;
 }
 .parametre .s_small form .edit{
 box-shadow: 1px -1px 20px 0 rgba(36, 37, 38, 0.1);

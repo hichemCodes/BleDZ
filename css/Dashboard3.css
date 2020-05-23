@@ -188,3 +188,11 @@ tr.row_t td {
 .mini_side_bar .item.active{
   font-weight: bold;
 }
+.custum_icon_form{
+
+  transform: scale(0.90);
+    position: absolute;
+    left: -2px;
+    top: 45%;
+    width: 36px;
+}

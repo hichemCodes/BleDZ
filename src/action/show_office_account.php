@@ -43,7 +43,7 @@
                                <div class="i_item flex  j_between a_center">
                                     <i class="fas fa-user"></i>
                                     <div class="second_part flex d_column">
-                                           <span class="holder">Nom et Prénom</span>
+                                           <span class="holder">Nom</span>
                                            <span class="i_result">'.  $user['nom'].'</span>
                                     </div>
                                </div>

@@ -313,6 +313,6 @@ function recolte_detail_year(year)
 
     $('.profile').removeClass('custum_profile');
     $('.profile').html('');
-    $('profile_container').hide();
+    $('.profile_container').hide();
     $('.cover_all').hide();
 }

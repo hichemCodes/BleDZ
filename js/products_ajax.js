@@ -31,22 +31,31 @@ $(document).ready(function()
  // supprimer un produit
  function delete_product(code)
  {
-         if(confirm('Êtes-vous sûr de vouloir supprimer ce rendez-vous ? \nCe produit est récolté déjà !'))
+         if(confirm('Êtes-vous sûr de vouloir supprimer ce produit ?'))
          {
           $.ajax({
 
                     url : 'action/delete_product.php',
                     type : 'POST',
+                    dataType : 'JSON',
                     data : {code:code},
                     success:function(data)
                     {
-                        show_success_msg(data);
+                        if(data.result != 'fail')
+                        {
+                            show_success_msg(data.result);
                        
-                        show_all_product();
-
+                            show_all_product();
+    
+                        }
+                        else
+                        {
+                             alert(data.err);
+                        }
+                 
                     }
                });
-      }   
+        }   
  }
 
  

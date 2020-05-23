@@ -34,7 +34,7 @@ if(office_has_rendez_vous($_SESSION['office_id']))
             <table>
             <tr class="b_bottom">
             <th class="t_custom">Date</th>
-            <th class="t_custom">Nom et prenom d\'agriculteur</th>
+            <th class="t_custom">Nom et prénom d\'agriculteur</th>
             
         
             <th class="t_custom">Opération</th>

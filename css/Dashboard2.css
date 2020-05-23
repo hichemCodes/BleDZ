@@ -37,7 +37,7 @@
     
     border-radius: 15px;
     transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1.1) 0s;
-    padding: 50px 45px 20px 45px;
+    padding: 50px 45px 15px 45px;
     z-index: 1500;
     position:relative;
   
@@ -445,7 +445,7 @@ body{
     top:35%;
 }
 .custum_info_profile{
-     width:28vh;
+     width:30vh;
 }
 
 .return_add_f{

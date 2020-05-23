@@ -178,7 +178,7 @@ require 'action/query.php';
                                                 echo '
 
                                                 <div class="recoltes_chart_container s_width flex j_center a_center d_column my_chart_doughnut_container">                               
-                                                        <span class="flex c_span_ch">Graph de récoltes par wilaya Année :  
+                                                        <span class="flex c_span_ch">Graph des récoltes par wilaya Année :  
                                                         <select class="chart_year_wilayas">';
                                                             echo all_available_years();//all availabel years
                                                       echo '</select>
@@ -289,7 +289,7 @@ require 'action/query.php';
 
                                         <div class="theme flex j_center a_center d_column">
                                                 <i class="fas fa-palette resize "></i>
-                                                <span class="togle ">Activer le large sidebar</span>
+                                                <span class="togle ">changer le thème</span>
                                         </div>
 
                                 </div>

@@ -161,5 +161,6 @@ $(document).ready(function(){
         $('.profile').html('');
         $('.profile_container').hide();
         $('.cover_all').hide();
+
     }
 

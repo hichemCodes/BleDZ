@@ -30,7 +30,7 @@
       <div class="output  flex d_column">
           <div class="f_header flex d_column a_center j_end">
         <select class="select" >
-            <option value="0" disabled selected class="select special">Selectioner le type du compte</option>
+            <option value="0" disabled selected class="select special">sélectionnez le type du compte</option>
             <option value="1" class="select" >Agriculteur</option>
             <option value="2"   class="select">Office du blé</option>
         </select>
@@ -53,7 +53,7 @@
                 <div class="item a_prenom">
 
                         <i class="fas fa-user"></i>
-                        <input type="text" name="prenom"  placeholder="Prenom" required>
+                        <input type="text" name="prénom"  placeholder="Prenom" required>
                         <span class="border"> <i></i></span>
                    </div>
                    
@@ -82,7 +82,7 @@
                 <div class="item a_cart">
 
                         <i class="fas fa-id-card"></i>
-                        <input type="text" name="n_cart"   placeholder="Num de carte" class="" required>
+                        <input type="text" name="n_cart"   placeholder="Numéro de carte" class="" required>
                         <span class="border"> <i></i></span>
                    </div>
                    
@@ -90,7 +90,7 @@
                    <i class="fas fa-city s_top"></i>
                    <select name="wilaya"  class="select2" id="wilaya_a" required>
 
-                   <option value="0" disabled selected class="select special">Selectioner votre wilaya</option>
+                   <option value="0" disabled selected class="select special">sélectionnez votre wilaya</option>
                    
                    
                    
@@ -148,7 +148,7 @@
                             <i class="fas fa-city s_top"></i>
                             <select name="wilaya"  class="select2" id="wilaya_b">
 
-                                 <option value="0" disabled selected class="select special">Selectioner votre wilaya</option>
+                                 <option value="0" disabled selected class="select special">sélectionnez votre wilaya</option>
                             
                             </select>
 
