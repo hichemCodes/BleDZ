@@ -31,7 +31,7 @@
                                 $output = $output.'
                                 <div class="office flex j_center a_center">
                                 <i class="fas fa-map-marker-alt fa-2x"></i>
-                                <span>Office '.$office['nom'].' '.$wilaya .'</span>
+                                <span class="office_name">Office '.$office['nom'].' '.$wilaya .'</span>
                                     <div class="update flex j_center a_center">
                                     <i class="fas fa-business-time fa-4x" onclick="rendez_vous('.$office['id'].')"></i>
                                     </div>

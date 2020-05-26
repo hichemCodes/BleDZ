@@ -24,23 +24,33 @@
                                {
                                       if(data == 'fail_type')
                                       {       
-                                            $('body').append("<div class='succes_valid error_u'> l'image doit étre au type jpg au jpeg au png </div>");
+                                            show_fail_msg("l'image doit être au type Jpg / jpeg / Png !");
                                       }
                                       else if(data == 'fail_size')
                                       {
-                                                   $('body').append("<div class='succes_valid error_u'> la taille de l'image est trop grand il faut que ne dépasse pas 1 Mo </div>")
+                                            show_fail_msg('la taille de l\'image est trop grande, il faut que ne dépasse pas 1 Mo !');
                                       }
                                       else
                                       {
-                                            $('body').append("<div class='succes_valid '> la photo de profile est changé avec succée </div>");
+                                            show_success_msg('photo de profil changé avec succès');
+                                          
+                                            if($('.user_img2').length == 0)
+                                            {
+                                                 $('.old_avatar .fa-5x').replaceWith('<img src="../users_avatar/'+data+'" class="user_img">');
+                                                 $('.avatar_d').replaceWith('<img src="../users_avatar/'+data+'" class="user_img2">');
+                                                 $('.p_logo .fa-2x').replaceWith('<img src="../users_avatar/'+data+'" class="user_img3">');
 
-                                            $('.user_img').attr('src','../users_avatar/'+data);
-                                            $('.user_img2').attr('src','../users_avatar/'+data);
-                                            $('.user_img3').attr('src','../users_avatar/'+data);
+                                            }
+                                            else
+                                            {
+                                                 $('.user_img').attr('src','../users_avatar/'+data);
+                                                 $('.user_img2').attr('src','../users_avatar/'+data);
+                                                 $('.user_img3').attr('src','../users_avatar/'+data);
+                                            }
+                                           
 
                                       }
                                       
-                                      setTimeout(function () { $('.succes_valid').hide(); }, 4000);
                                       
                                       
                                }

@@ -13,15 +13,22 @@
             </ul>
             <div class="avatar_container flex j_center a_center" onclick="show_pop_up()">
              
-            <?php  if(!has_avatar($_SESSION['agr_id'])){  ?>
-           
-            <div class="avatar_d flex j_center a_center "> 
-            <i class="fas fa-user "></i>
-            </div>
-            <?php  } else {   ?>
-                <img src="../users_avatar/<?php echo find_avatar($_SESSION['agr_id']);   ?>" class="user_img2">  <?php }    ?>
+                  <?php  if(!has_avatar($_SESSION['agr_id'])){  ?> 
+                        <div class="avatar_d flex j_center a_center "> 
+                            <i class="fas fa-user "></i>
+                        </div>
+                  <?php  }
+                  else {
+                        ?>
+                      <img src="../users_avatar/<?php echo find_avatar($_SESSION['agr_id']);   ?>" class="user_img2">  <?php
+                        }    ?>
               
             
-           
+                        <div class="show_account_info flex d_column">
+
+                                <span> <?php echo find_agr_information($_SESSION['id'])['nom'];   ?></span>
+
+                                <span> <?php echo find_user_information($_SESSION['id'])['email'];   ?></span>
+                        </div>
             </div>
 </div>

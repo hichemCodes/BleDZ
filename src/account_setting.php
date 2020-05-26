@@ -41,7 +41,12 @@ require 'action/load_all_session.php';
         <!--  load footer   !-->
         <?php require 'action/load_footer.php';  ?> 
 </div>
+
+<div class='succes_valid s_updated  hidden'>  </div>
+
+
     <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/error_handling.js?v=<?php echo time(); ?>"></script>
     <script src="../js/load_page_fragments.js?v=<?php echo time(); ?>"></script>
     <script src="../js/newslatter_add_member_ajax.js"></script>
     <script src="../js/update_agr_profile.js?v=<?php echo time(); ?>"></script>

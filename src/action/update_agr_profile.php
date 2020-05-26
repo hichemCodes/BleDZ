@@ -35,23 +35,23 @@ session_start();
 
            $_SESSION['email'] = $v_email;
       
-           
-           echo "<div class='succes_valid s_updated'> vos informations sont  mofifié  </div>";
+         
+           $data['result'] = 'vos informations sont modifié';
        
         }
         else
         {
-           echo "<div class='succes_valid s_updated error_u'> le mot de passe est inccorécte   </div>";     
+           $data['result'] = 'fail';
+           $data['err'] = 'le mot de passe est incorrect';
         }
      }
      else
      {
-        echo "<div class='succes_valid s_updated error_u'> l'email est inccorécte   </div>";   
+        $data['result'] = 'fail';
+        $data['err'] = 'l\'email est incorrect';
      }
      
-
-
-     
+     echo json_encode($data);
 
 
      

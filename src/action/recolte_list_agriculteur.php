@@ -46,6 +46,7 @@
     
             }
             else if($_POST['order_by'] == "montant"){
+                
                    $recolte = $db->prepare("SELECT * FROM récoltes WHERE agriculteur_id = :agr_id order by montant desc limit 5 OFFSET :start_p ");
             }
 

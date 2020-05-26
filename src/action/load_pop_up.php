@@ -14,7 +14,7 @@
                     <a href="account_setting.php" class="flex j_center a_center">
                         <div class="a_inside s_width flex  a_center ">
                         <i class="fas fa-user-cog"></i>
-                        <span>Paramétre</span>
+                        <span>Paramètres</span>
                         </div>
                     
                         

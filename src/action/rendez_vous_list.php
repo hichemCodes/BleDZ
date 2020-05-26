@@ -34,7 +34,7 @@ require 'query.php';
 
                <span class="pas_rendez_vous"> 
                     <i class="fas fa-times empty_r_v" onclick="hide_rendez_vous_form()"> </i>
-                    il n\'y a pas des rendez-vous disponibles pour cet office
+                          il n\'y a pas des rendez-vous disponibles proposés par l\'office '. find_office_name($_POST['id']) .'
                </span>
                
                ';
@@ -53,7 +53,7 @@ require 'query.php';
                     <tr class="b_bottom">
                          <th class="t_large">Date</th>
                          
-                         <th class="t_large">operation</th>
+                         <th class="t_large">Opération</th>
                     </tr>';
 
           foreach($r_list_count_result as $rendez_vous)

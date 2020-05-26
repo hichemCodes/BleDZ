@@ -72,15 +72,16 @@ $(document).ready(function(){
              e.preventDefault();
        })
     
-});
+});3
+
 
 
 ///////////  show all recoltes
-function all_recolte(order_by,year = "tous")
+function all_recolte(order_by = "date",year = "tous")
 {
   
   var start_p = (localStorage.getItem('start_page') === null) ? 0 : (localStorage.getItem('start_page'));
-  var end_p = (localStorage.getItem('end_page') === null) ? 0 : (localStorage.getItem('end_page'));
+  var end_p = (localStorage.getItem('end_page') === null) ? 5 : (localStorage.getItem('end_page'));
   
   $.ajax({
         'url':'action/recolte_list_agriculteur.php',

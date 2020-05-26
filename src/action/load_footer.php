@@ -9,7 +9,7 @@
 </div>
 <div class="item1 flex d_column">
 
-   <span class="t_fotter" > OBTENEZ UN NEWSLATTER </span>
+   <span class="t_fotter" > OBTENEZ UNE NEWSLATTER </span>
    
    <div class="newslaters flex j_between a_center">
 

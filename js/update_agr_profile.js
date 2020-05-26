@@ -19,18 +19,25 @@ $(document).ready(function(){
             
                               url : 'action/update_agr_profile.php',
                               type : 'POST',
+                              dataType : 'JSON',
                               data : {email:email,pass:pass},
                               success:function(data)
                               {
-                                    $('body').append(data);
-                                    $('#pass_u').val('');
-            
-                                    setTimeout(function () { $('.s_updated').hide(); }, 2500);
+                                  if(data.result != 'fail')
+                                  {
+                                        $('#pass_u').val('');
+                                        show_success_msg(data.result);
+                                  }
+                                  else
+                                  {
+                                        show_fail_msg(data.err);
+                                  }
+                                    
                               }       
             
                         });
          
-                  });
+                      });
                   // update password
                   $('.update_ofice_pass').on('submit',function(e){
  
@@ -54,13 +61,12 @@ $(document).ready(function(){
 
                                 if(data.result == 'fail')
                                 {
-                                    $('body').append(data.err);  
-                                    setTimeout(function () { $('.s_updated').hide(); }, 3700);
+                                    show_fail_msg(data.err);
                                 }
                                 else
                                 {
-                                    $('body').append(data.result);
-                                    setTimeout(function () { $('.s_updated').hide(); }, 2500);
+                                    show_success_msg(data.result);
+                                    
                                     // clen the input 
                                     $('#old_pass').val('');
                                     $('#new_pass').val('');

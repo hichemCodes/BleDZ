@@ -42,10 +42,10 @@
                                 
                                
                                    <div class="old_avatar <?php  if(!has_avatar($_SESSION['agr_id'])){echo ' first_avatar ';}   ?>flex j_center a_center ">
-                                   <?php     if(!has_avatar($_SESSION['agr_id'])){ 
+                                   <?php  if(!has_avatar($_SESSION['agr_id'])){ 
                                            
-                                          ?>
-                                   <i class="fas fa-user fa-5x"></i> 
+                                                               ?>
+                                                        <i class="fas fa-user fa-5x"></i> 
                                    <?php } else {   ?>
                                      <img src="../users_avatar/<?php echo find_avatar($_SESSION['agr_id']);   ?>" class="user_img">  <?php }    ?>
                                    </div>

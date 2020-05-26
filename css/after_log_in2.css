@@ -71,11 +71,11 @@ border-radius: 15px;
  color:#f1cf69;
 }
 .small form .line label{
- margin-bottom:6px;
  text-align: left;
  font-weight: 600;
  font-size:1rem;
  color:#616161;
+ margin: 0px auto 6px 19%;
  
 }
 .small form .line .normal_input{
@@ -105,4 +105,22 @@ border-radius: 15px;
 
 .update_ofice_pass{
   margin-top: 50px;
+}
+.office_name{
+  text-transform: capitalize;
+}
+.show_account_info{
+  position: absolute;
+  top: 9.8vh;
+  right: 15.3vh;
+  background: #0000009c;
+  border-radius: 5px;
+  padding:8px 8px;
+  font-size: .76rem;
+  color: #f4f4f4;
+  z-index: 1000;
+  display: none;
+}
+.avatar_container:hover .show_account_info{
+  display: flex;
 }
