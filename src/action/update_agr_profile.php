@@ -36,7 +36,7 @@ session_start();
            $_SESSION['email'] = $v_email;
       
          
-           $data['result'] = 'vos informations sont modifié';
+           $data['result'] = 'vos informations sont modifiées';
        
         }
         else

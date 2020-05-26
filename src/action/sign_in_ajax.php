@@ -82,7 +82,7 @@
                           else{
                                 
                                 $data['fail'] = 'in_valid';
-                                $data['result'] = "votre compte n'est pas encore validé, dès qu'il sera validé vous recevez un email dans votre boîte email";
+                                $data['result'] = "votre compte n'est pas encore validé, dès qu'il sera validé vous recevrez un email dans votre boîte email";
                           }
                     }
                     else{

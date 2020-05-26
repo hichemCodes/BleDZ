@@ -26,7 +26,7 @@
             
                         <div class="show_account_info flex d_column">
 
-                                <span> <?php echo find_agr_information($_SESSION['id'])['nom'];   ?></span>
+                                <span> <?php echo find_agr_information($_SESSION['id'])['nom'].' '.find_agr_information($_SESSION['id'])['prenom'];   ?></span>
 
                                 <span> <?php echo find_user_information($_SESSION['id'])['email'];   ?></span>
                         </div>

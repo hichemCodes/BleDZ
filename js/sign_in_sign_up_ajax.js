@@ -42,13 +42,14 @@ $('.f-agr').on('click',function(e)
                         
                         $('.redirect_a').addClass('success');
                         redirect('success');
-                        console.log('yes');
+
+                        localStorage.clear();
                     }
                     else
                     {
                         if(data.fail == 'redirect_a')
                         {
-                             $('.redirect_a').html(data.result)
+                             $('.redirect_a').html(data.result);
                         }
                         else
                         {
@@ -116,7 +117,7 @@ $('.f-agr').on('click',function(e)
                          
                          $('.redirect_b').addClass('success2');
                          redirect('success2');
-                         console.log('yes');
+                         localStorage.clear();
                      }
                      else
                      {
@@ -181,6 +182,9 @@ $('.f-agr').on('click',function(e)
                        {
                            
                                document.location.href = data.home;
+
+                               localStorage.clear();
+
                         
                        }
                        else

@@ -122,7 +122,7 @@ function rendez_vous(id)
      
                     doc.setFontStyle("bold");
                     doc.setFontSize('20');
-                    doc.text('Facture de vente',103.5,50,null,null,"center");
+                    doc.text('Convocation de dépôt de la récolte',103.5,50,null,null,"center");
                     doc.setFontSize('13');
                     doc.setFontStyle("normal");
                     

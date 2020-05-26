@@ -399,8 +399,8 @@ tr{
 
     }
     .resize_pop_up{
-        width: 385.27px;
-        left:43.9%;
+        width: 33.6%;
+        left: 37.39%;
     }
     .search_r .profile_s{
          padding:20px 10px 20px 10px;
@@ -876,11 +876,9 @@ transition:all .2s ease-in;
  color:#f1cf69;
 }
 
-
-
 .f_item{
 
-
+width: 100% !important;
 margin-bottom:10px;
 position:relative;
 

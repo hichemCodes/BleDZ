@@ -21,8 +21,7 @@ $top_agr = $db->prepare("SELECT sum(Quantité) as quan,agriculteur_id as agr_id 
  foreach($top_agr_result as $agr)
  {
       
-        for($i = 0;$i <6;$i++)
-        {
+ 
         if(!has_avatar($agr['agr_id']))
         {
               $avatar = '<div class="img_default flex j_center a_center d_column">
@@ -56,7 +55,7 @@ $top_agr = $db->prepare("SELECT sum(Quantité) as quan,agriculteur_id as agr_id 
 
           ';
      }
- }
+ 
 
  echo $output;
        

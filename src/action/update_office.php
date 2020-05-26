@@ -1,8 +1,13 @@
 
 <?php
 
-require 'connect_db.php';
 session_start();
+
+require 'query.php';
+office_auth();
+
+require 'connect_db.php';
+require 'validate_fields.php';
  
      $email = $_POST['email'];
      $mob = $_POST['mob'];
@@ -15,21 +20,34 @@ session_start();
 
      $check_pass_result = $check_pass->fetch(PDO::FETCH_ASSOC);
 
-     if(password_verify($pass,$check_pass_result['mot_de_passe']))
+     if(validate_phone($mob))
      {
-        $update = $db->prepare("UPDATE users SET email = ?  WHERE id = ? ");
-        $update->execute([$email,$_SESSION['id']]);
+         if(password_verify($pass,$check_pass_result['mot_de_passe']))
+         {
+            $update = $db->prepare("UPDATE users SET email = ?  WHERE id = ? ");
+            $update->execute([$email,$_SESSION['id']]);
+      
+            $update_2 =  $db->prepare("UPDATE offices  SET num_telephone = ?  WHERE user_id = ? ");
+            $update_2->execute([$mob,$_SESSION['id']]);
    
-        $update_2 =  $db->prepare("UPDATE offices  SET num_telephone = ?  WHERE user_id = ? ");
-        $update_2->execute([$mob,$_SESSION['id']]);
-
-        echo "vos informations sont modifiées";
-    
+            $_SESSION['phone'] = $mob;
+            
+            $data['result'] = 'vos informations sont modifiées';
+      
+         }
+         else
+         {
+            $data['result'] = 'fail';
+            $data['err'] =  "le mot de passe est incorrect";     
+         }
      }
      else
      {
-        echo "le mot de passe est incorrect";     
+            $data['result'] = 'fail';
+            $data['err'] =  "le numéro de téléphone est incorrect";   
      }
+
+     echo json_encode($data);
 
 
      

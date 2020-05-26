@@ -11,7 +11,9 @@ function clean($data){
    
     $errors = array('nom'=>'','prenom'=>'','email'=>'','password'=>'',
     'password2'=>'','cart'=>'','exist'=>'');
-  function validate_nom($nom){
+
+  function validate_nom($nom)
+  {
 
         $s_nom = filter_var(clean($nom),FILTER_SANITIZE_STRING);
         $reg_nom = '/^[A-Za-z]{3,12}$/';
@@ -20,11 +22,9 @@ function clean($data){
         else  {return true;}
 
   }
-  
-
   function validate_prenom($prenom){
           $s_prenom = filter_var($prenom,FILTER_SANITIZE_STRING);
-          $reg_prenom = '/^[A-Za-z]{4,12}$/';
+          $reg_prenom = '/^[A-Za-z]{3,12}$/';
         
         if( !(preg_match($reg_prenom , $s_prenom) ) ){ return false;}
         else  {return true;}
@@ -60,6 +60,11 @@ function clean($data){
 
         if(! (preg_match('/^[0-9]{6,6}$/',$n_cart))){ return false;}
         else { return true;}
+   }
+   function validate_phone($phone)
+   {
+        if(! (preg_match('/^[0-9]{10,10}$/',$phone))){ return false;}
+        else { return true;} 
    }
    
       //// user already exist test 

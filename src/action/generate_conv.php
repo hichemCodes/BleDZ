@@ -19,7 +19,7 @@ $rendez_vous->execute([$_POST['rendez_vous_id']]);
 
 $rendez_vous_result = $rendez_vous->fetch(PDO::FETCH_ASSOC);
 
-    $data['date'] = date('d/m/Y',strtotime($rendez_vous_result['date']));
+    $data['date'] = generate_date($rendez_vous_result['date']);
     $data['nom_agr'] = $rendez_vous_result['nom'];
     $data['prenom_agr'] = $rendez_vous_result['prenom'];
     $data['email_agr'] =  $_SESSION['email'];

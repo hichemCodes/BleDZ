@@ -72,7 +72,7 @@ if($_POST['type']  == 'agriculteur')
                                  }
                          else{
                                 $data['fail'] = 'a_cart';
-                                $data['result'] ='le numéro de carte est incorrect';
+                                $data['result'] ='le numéro de carte doit compoter 6 chiffres';
                              }
                              }     
                     else{
@@ -93,12 +93,12 @@ if($_POST['type']  == 'agriculteur')
             }
           else{
                  $data['fail'] = 'a_prenom';
-                $data['result'] = 'le prénom doit comporter au moins 3 lettres';
+                $data['result'] = 'le prénom doit comporter au moins 3 lettres sans espaces';
             }
         }
         else{
             $data['fail'] = 'a_nom';
-            $data['result'] = 'le prénom doit comporter au moins 3 lettres ';
+            $data['result'] = 'le nom doit comporter au moins 3 lettres sans espaces';
         }
     }
     else{
@@ -138,7 +138,7 @@ else
                                                 {
                                                 
                                                     $new_user = $db->prepare("INSERT INTO users
-                                                    (email,mot_de_passe,mot_de_passe_confirmation,wilaya_id,profile_id) VALUES (?,?,?,?,1)");
+                                                    (email,mot_de_passe,mot_de_passe_confirmation,is_verified,wilaya_id,profile_id) VALUES (?,?,?,1,?,1)");///*
                                                     $new_user->execute([$v_email,$pass1_hash,$pass2_hash,$v_wilaya]);
                                                             
                                                      // insérer dans la table offices
@@ -187,8 +187,8 @@ else
             
         }
         else{
-            $data['fail'] = 'o_noms';
-            $data['result'] = 'le nom doit comporter au moins 3 lettres ';
+            $data['fail'] = 'o_nom';
+            $data['result'] = 'le nom doit comporter au moins 3 lettres sans espaces';
         }
     }
     else{

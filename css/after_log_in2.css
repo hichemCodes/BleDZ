@@ -124,3 +124,6 @@ border-radius: 15px;
 .avatar_container:hover .show_account_info{
   display: flex;
 }
+.no_recoltes{
+  margin-bottom: 20px !important;
+}

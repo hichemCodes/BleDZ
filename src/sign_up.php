@@ -53,7 +53,7 @@
                 <div class="item a_prenom">
 
                         <i class="fas fa-user"></i>
-                        <input type="text" name="prénom"  placeholder="Prenom" required>
+                        <input type="text" name="prenom"  placeholder="Prénom" required>
                         <span class="border"> <i></i></span>
                    </div>
                    

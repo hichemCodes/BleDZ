@@ -234,7 +234,7 @@ require 'action/query.php';
                                                         }
                                                     else
                                                         {
-                                                            echo ' <span class="empty_result">vous avez pas des récoltes encore</span>';
+                                                            echo ' <span class="empty_result">vous n\'avez pas des récoltes encore</span>';
                                                         }
                                              ?>
                                              <!--   récoltes list ordred by date  -->
@@ -285,7 +285,7 @@ require 'action/query.php';
                                         
                                 </div>
 
-                                <div class="s_small flex j_center a_center s_s_small">
+                           <!--     <div class="s_small flex j_center a_center s_s_small">
 
                                         <div class="theme flex j_center a_center d_column">
                                                 <i class="fas fa-palette resize "></i>
@@ -293,6 +293,7 @@ require 'action/query.php';
                                         </div>
 
                                 </div>
+                             -->
                           </div>
 
                               

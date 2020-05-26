@@ -43,7 +43,7 @@ require 'action/load_all_session.php';
                       }
                       else
                       {
-                          echo ' <span class="empty_result">vous avez pas des récoltes encore</span>';
+                          echo ' <span class="empty_result no_recoltes">vous n\'avez pas des récoltes encore</span>';
                       }
                       
                       

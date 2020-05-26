@@ -70,7 +70,6 @@ $output =  '
                                         </form>   
                                         </div>
 
-                                        <span class="a_title">modifier le théme</span>
 
                                    
 

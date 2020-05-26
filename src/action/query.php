@@ -5,9 +5,9 @@
 
     function office_auth()
     {
-        if (!isset($_SESSION['id']))
+        if (!isset($_SESSION['id']) || (isset($_SESSION['type']) && $_SESSION['type'] == 'agriculteur' ) )
         {
-            if($type != 'office')
+            if($_SESSION['type'] != 'office')
             {
                 die(header("Location:/pfe/src/sign_in.php"));
             }
@@ -16,9 +16,9 @@
     }
     function agr_auth()
     {
-        if (!isset($_SESSION['id']))
+        if (!isset($_SESSION['id']) || (isset($_SESSION['type']) && $_SESSION['type'] == 'office' ) )
         {
-            if($type != 'agriculteur')
+            if($_SESSION['type'] != 'agriculteur')
             {
                 die(header("Location:/pfe/src/sign_in.php"));
             }

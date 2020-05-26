@@ -23,11 +23,18 @@ function show_update_profile_form()
 
                                  url :'action/update_office.php',
                                  type : 'POST',
+                                 dataType : 'JSON',
                                  data : { email : email, mob :u_mob,  pass : pass},
                                 success:function data(data){
 
-                                    $('.output').append(data);
-                                    setTimeout(function () { $('.s_updated').hide(); }, 1500);
+                                    if(data.result != 'fail')
+                                    {
+                                        show_success_msg(data.result);
+                                    }
+                                    else
+                                    {
+                                        show_fail_msg(data.err);
+                                    }
                                 }
  
                          });
