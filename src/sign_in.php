@@ -27,7 +27,7 @@
 <body class="cover_me flex j_center a_center">
      <div class="cover_all cover_s"></div>
     <div class="form_type flex d_column">
-        <img src="../img/logo.png" alt="">
+         <a href="home.php"><img src="../img/logo.png" alt=""></a>
       <!--  <span>Se Connecter</span>   -->  
         <form class="flex d_column j_end conx-form" autocomplete="on">
 
@@ -50,7 +50,7 @@
                <div class="bottom flex j_between d_column ">
 
                     <div class="flex j_between a_center ">
-                        <a href="sign_up.php" class="bold">Créer un Compte </a>
+                        <a href="sign_up.php" class="bold creat_account_link">Créer un Compte </a>
                         <a href="password_reset.php" class="bold">Mot de passe oublié ?</a>
                     </div> 
 

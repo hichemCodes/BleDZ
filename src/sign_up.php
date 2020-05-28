@@ -26,14 +26,21 @@
      <div class="cover_all cover_s"></div>
    <div class="form_type flex d_column">
 
-        <img src="../img/logo.png" alt="">
+         <a href="home.php"><img src="../img/logo.png" alt=""></a>
+        
       <div class="output  flex d_column">
           <div class="f_header flex d_column a_center j_end">
-        <select class="select" >
-            <option value="0" disabled selected class="select special">sélectionnez le type du compte</option>
-            <option value="1" class="select" >Agriculteur</option>
-            <option value="2"   class="select">Office du blé</option>
+
+        <select class="select">
+
+                <option value="0" disabled selected class="select special">sélectionnez le type de compte</option>
+                <option value="1" class="select" >Agriculteur</option>
+                <option value="2"   class="select">Office du blé</option>
+
         </select>
+
+        <div class="err l_err"></div>
+
         <button class="next">
             Suivant
         </button>
@@ -179,7 +186,7 @@
      <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
 
     <script  type="module" src="../js/wilayas.js"></script>
-    <script type="module" src="../js/sign_up.js"></script>
+    <script type="module" src="../js/sign_up.js?v=<?php echo time();?>"></script>
     <script src="../js/storage_cleaner.js" type="text/javascript"></script>
     <script src="../js/sign_in_sign_up_ajax.js?v=<?php echo time();?>" type="text/javascript"></script>
 

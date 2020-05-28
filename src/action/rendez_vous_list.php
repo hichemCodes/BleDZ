@@ -68,7 +68,10 @@ require 'query.php';
                <td> 
                
                     
-                         <i class="fas fa-business-time" onclick="prend_r_v('. $rendez_vous['id'].',\''. $o_name.'\',\''. $rendez_vous['date'].'\')"></i>                        
+                         <i class="fas fa-business-time" 
+                                   onclick="prend_r_v('. $rendez_vous['id'].',\''. $o_name.'\',\''. $rendez_vous['date'].'\')"
+                                   title = "prendre ce rendez-vous"
+                                   "></i>                        
                     
                     
                </td>

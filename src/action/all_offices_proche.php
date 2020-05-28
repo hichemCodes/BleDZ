@@ -28,6 +28,7 @@
                              
                             foreach($offices_result as $office)
                             {
+                                
                                 $output = $output.'
                                 <div class="office flex j_center a_center">
                                 <i class="fas fa-map-marker-alt fa-2x"></i>
@@ -36,9 +37,9 @@
                                     <i class="fas fa-business-time fa-4x" onclick="rendez_vous('.$office['id'].')"></i>
                                     </div>
                                 </div>
-                                
-                                
+                                                          
                                 ';
+                                
                             }
                         }
                             echo $output;

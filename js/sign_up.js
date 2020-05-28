@@ -8,10 +8,12 @@ let form_office = document.querySelector('.form_office');
 
 let f_header = document.querySelector('.f_header');
 
+import  wilayas  from "./wilayas.js";
+
 
 //////
 
-///function  to get the selected text
+///function to get the selected text
 
 function getSelectedText(elt) {
     
@@ -21,60 +23,81 @@ function getSelectedText(elt) {
 
   return elt.options[elt.selectedIndex].text;
 }
-////import 
-
-import  wilayas  from "./wilayas.js";
-
-
 
 
 
 if(  (localStorage.getItem('type')) === null) {
 
 
-btn_nxt.addEventListener('click',()=>{
+  btn_nxt.addEventListener('click',()=>{
 
-   
-    if((getSelectedText(select) == 'Agriculteur')){
+      // remove previous error
+      if(select.classList.contains('error'))
+      {
+           $('.select').removeClass('error b_error');
+           $('.err').html(''); 
+      }
 
-      localStorage.setItem('type','Agriculteur')
-          form_argr.classList.remove('hidden');
+       
+      if((getSelectedText(select) == 'Agriculteur')){
 
-    }
-    else if ((getSelectedText(select) == 'Office du blé')){
+            localStorage.setItem('type','Agriculteur')
+            form_argr.classList.remove('hidden');
 
-              localStorage.setItem('type','Office du blé')
-              form_office.classList.remove('hidden');
+            show_form();
 
       }
-      f_header.classList.add('hidden');
+      else if ((getSelectedText(select) == 'Office du blé'))
+      {
 
-    let select_w = document.querySelectorAll('.select2')[0];
-    let select_w_2 = document.querySelectorAll('.select2')[1];
+                localStorage.setItem('type','Office du blé')
+                form_office.classList.remove('hidden');
 
-      wilayas.forEach((Element)=>{
+                show_form();
 
-          select_w.innerHTML+=`<option value="${Element.id}">${Element.nom}</option>`;
-          select_w_2.innerHTML+=`<option value="${Element.id}">${Element.nom}</option>`;
-})
+      }
+      else
+      {
+                $('.select').addClass('error b_error');
+                $('.err').html('il faut choisir un type de compte !');
+      }
+        
 
-});
+  });
 }
 else{
-  if(localStorage.getItem('type') == 'Agriculteur'){
+  if(localStorage.getItem('type') == 'Agriculteur')
+      {
 
-      form_argr.classList.remove('hidden');
+            form_argr.classList.remove('hidden');
+      }
+      else
+      {
+            form_office.classList.remove('hidden');
+      }
+          f_header.classList.add('hidden');
+          let select_w = document.querySelectorAll('.select2')[0];
+          let select_w_2 = document.querySelectorAll('.select2')[1];
+
+            wilayas.forEach((Element)=>{
+
+                select_w.innerHTML+=`<option value="${Element.id}">${Element.nom}</option>`;
+                select_w_2.innerHTML+=`<option value="${Element.id}">${Element.nom}</option>`;
+            });
 }
-else{
-  form_office.classList.remove('hidden');
-}
-f_header.classList.add('hidden');
-let select_w = document.querySelectorAll('.select2')[0];
-    let select_w_2 = document.querySelectorAll('.select2')[1];
 
-      wilayas.forEach((Element)=>{
 
-          select_w.innerHTML+=`<option value="${Element.id}">${Element.nom}</option>`;
-          select_w_2.innerHTML+=`<option value="${Element.id}">${Element.nom}</option>`;
-})
+function show_form()
+{
+        f_header.classList.add('hidden');
+
+        let select_w = document.querySelectorAll('.select2')[0];
+        let select_w_2 = document.querySelectorAll('.select2')[1];
+
+        wilayas.forEach((Element)=>{
+
+            select_w.innerHTML+=`<option value="${Element.id}">${Element.nom}</option>`;
+            select_w_2.innerHTML+=`<option value="${Element.id}">${Element.nom}</option>`;
+
+        });
 }

@@ -228,15 +228,18 @@ require 'action/query.php';
                         <!--     récolte list  -->
                         <div class="récolte_s special flex d_column j_center a_center hidden ">
                                             <span class="a_title"> Récoltes des membres</span>
-                                            <?php  if(office_have_recolte($_SESSION['office_id'])) 
+                                         <!--    <?php /* if(office_have_recolte($_SESSION['office_id'])) 
                                                         {
                                                                 require 'action/sort_option.php';
                                                         }
                                                     else
                                                         {
-                                                            echo ' <span class="empty_result">vous n\'avez pas des récoltes encore</span>';
-                                                        }
+                                                                 echo ' <span class="empty_result">vous n\'avez pas des récoltes encore</span>';
+                                                        }*/
                                              ?>
+                                             
+                                             -->
+                                             <div class="sort_l"></div>
                                              <!--   récoltes list ordred by date  -->
                                              <div class="o_récolte flex a_center d_column j_center"></div>
                                              <!--   récoltes liste group by year  -->

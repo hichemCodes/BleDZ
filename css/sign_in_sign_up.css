@@ -164,6 +164,9 @@
  .error{
  border-bottom:1px solid tomato;
  }
+ .error.b_error{
+  border-bottom:1.5px solid tomato; 
+ }
  .reset_password .error
  {
     border-bottom:1.5px solid tomato !important;
@@ -188,6 +191,7 @@
  }
  .select{
  width: 100%;
+ margin-bottom: 5px;
  }
  .next{
  margin-left:auto;
@@ -217,6 +221,10 @@ box-sizing: content-box;
 
 font-size: 0.9rem;
 font-family: Poppins,sans-serif;
+}
+.err.l_err{
+  margin-right: auto;
+  margin-left: 5px;
 }
 #custum_submit{
 

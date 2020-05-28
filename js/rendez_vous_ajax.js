@@ -83,7 +83,7 @@ function rendez_vous(id)
       }
       function annuler_rendez_vous(id)
       {
-          if(confirm('es-ce que vous êtes sûr de annuler votre rendez-vous'))
+          if(confirm('Est-ce que vous êtes sûr d\'annuler votre rendez-vous'))
           {
                $.ajax({
                      url : 'action/annuler_rendez_vous.php',
@@ -122,7 +122,7 @@ function rendez_vous(id)
      
                     doc.setFontStyle("bold");
                     doc.setFontSize('20');
-                    doc.text('Convocation de dépôt de la récolte',103.5,50,null,null,"center");
+                    doc.text('Convocation du dépôt de la récolte',103.5,50,null,null,"center");
                     doc.setFontSize('13');
                     doc.setFontStyle("normal");
                     

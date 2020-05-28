@@ -189,7 +189,26 @@ function show_add_recolte(rendez_vous_id,agr_id)
     var start_p = localStorage.getItem('start_page');
     var end_p = localStorage.getItem('end_page');
    
-    
+    $.ajax({
+
+            url : 'action/show_sort_option.php',
+            type : 'POST',
+            dataType : 'JSON',
+            success:function(data)
+                {
+                    if(data.result == 'success')
+                    {
+                            $('.sort_l').load('action/sort_option.php');
+                    }
+                    else
+                    {
+                        $('.sort_l').html('<span class="empty_result">vous n\'avez pas des récoltes encore</span>');
+                    }
+                }
+
+            });
+   
+
      $.ajax({
           'url' : 'action/show_all_recolte_office.php',
           'type' : 'POST',

@@ -227,6 +227,13 @@ $('.f-agr').on('click',function(e)
       
  })
 
+    //clear local storage when click to the creat account link
+
+    $('.creat_account_link').on('click',function()
+    {
+        localStorage.clear();
+    })
+
 
 
 });
