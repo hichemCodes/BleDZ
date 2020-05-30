@@ -26,7 +26,7 @@ $(document).ready(function(){
     
     // récoltes
     localStorage.setItem('oreder_by_search','date');
-    show_all_recolte_office('date');  // classer la récolte par date le premiere fois 
+    show_all_recolte_office('date');  // classer la récolte par date la premiere fois 
     show_all_recolte_office_année(); 
    
     // factures

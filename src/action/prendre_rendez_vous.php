@@ -14,13 +14,19 @@ if(rendez_vous_exist($_POST['id']))
     $u_rendez_v = $db->prepare("UPDATE rendez_vous SET is_taken = 1 , agriculteur_id = ? WHERE id = ? ");
     $u_rendez_v->execute([$_SESSION['agr_id'],$_POST['id'] ]);
     
-    echo "<div class='succes_valid'>rendez-vous pris avec succès</div>";
+    $data['result'] =  "rendez-vous pris avec succès";
 
 }
 else
 {
-    echo "<div class='succes_valid error_u'>ce rendez-vous n'éxiste pas </div>";
+    $data['result'] =  "fail";
+
+    $data['err'] =  "ce rendez-vous n'éxiste pas";
 }
+
+echo json_encode($data);
+
+
 
 
 ?>

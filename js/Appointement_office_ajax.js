@@ -42,10 +42,17 @@ $(document).ready(function()
 
                                if(data.result == 'success')
                                 {
-                                    show_success_msg("Rendez-vous ajouté avec succès");
-
+                                    
                                     hide_add_rendez_form_form();
                                     rendez_vous_non_prise();
+
+                                    Swal.fire(
+                                        'Ajouté !',
+                                        'Rendez-vous ajouté avec succès.',
+                                        'success'
+                                      )
+
+
                                 }
                                 else
                                 {
@@ -91,57 +98,86 @@ function rendez_vous_non_prise(){
 function destroy_r_v(id)
 {
    
+    Swal.fire({
+        title: 'Êtes-vous sûr ?',
+        text: "Vous ne pourrez pas revenir sur cela !",
+        icon: 'warning',
+        showCancelButton: true,
+        cancelButtonColor: 'tomato',
+        cancelButtonText : 'Annuler',
+        confirmButtonText: 'Oui, supprimez-le !'
+        }).then((result) => {
+        if (result.value) {
+        
+            $.ajax({
+                'url' : 'action/delete_rendez_vous.php',
+                type : 'POST',
+                data : {id:id},
+                success:function (data)
+                {
+                       rendez_vous_non_prise();
 
-    if(confirm('Êtes-vous sûr de vouloir supprimer ce rendez-vous ?'))
-    {
-        $.ajax({
-            'url' : 'action/delete_rendez_vous.php',
-            type : 'POST',
-            data : {id:id},
-            success:function (data)
-            {
-                  
-                    show_success_msg(data);
+                     
+                      Swal.fire(
+                        'Supprimé !',
+                        'Rendez-vous supprimé avec succès.',
+                        'success'
+                      )
+                    
 
-                   rendez_vous_non_prise();
-            }
-       })
+                }
+        })
     }
-   
-   
+    }); 
 }
 // annuler rendez_vous
 function cancel_rendez_vous(r_v_id,agr_id)
 {
-    if(confirm('es-ce que vous êtes sûr de annuler ce rendez-vous'))
-    {
 
-        $.ajax({
+    Swal.fire({
+        title: 'Êtes-vous sûr ?',
+        text: "Vous ne pourrez pas revenir sur cela !",
+        icon: 'warning',
+        showCancelButton: true,
+        cancelButtonColor: 'tomato',
+        cancelButtonText : 'Annuler',
+        confirmButtonText: 'Oui, annulez-le !'
+        }).then((result) => {
+        if (result.value) {
         
-         url : 'action/cancel_a_taken_rendez_vous.php',
-         type : 'POST',
-         datatype : 'json',
-         data : {
-                    r_v_id : r_v_id,
-                    agr_id : agr_id
-                },
-        beforeSend : function()
-        {
-            $('.output').append("<div class='succes_valid s_updated' > annulation en cours ...</div>");
-
-        },
-        success : function(data)
-        {
-            $('.s_updated').html(data);
-            setTimeout(function () { $('.s_updated').hide(); }, 8000);
+                    $.ajax({
+                    
+                        url : 'action/cancel_a_taken_rendez_vous.php',
+                        type : 'POST',
+                        datatype : 'json',
+                        data : {
+                                r_v_id : r_v_id,
+                                agr_id : agr_id
+                                // cancel_msg : cancel_rdv
+                            },
+                    beforeSend : function()
+                    {
+                        $('.output').append("<div class='succes_valid s_updated' >annulation en cours ...</div>");
             
-            rendez_vous_non_prise();
-            rendez_vous_prise()
+                    },
+                    success : function(data)
+                    {
+            
+                        
+                        rendez_vous_non_prise();
+                        rendez_vous_prise();
 
-        }        
-
-    });
-    }
+                            Swal.fire(
+                                'Anulé!',
+                                'Ce rendez-vous est annulé et un mail a été envoyé à l\'agriculteur',
+                                'success'
+                            )
+            
+                    }        
+            
+                });
+        }
+      });
 }
 // the number of taken rendez-vous
 function rendez_vous_pris_count()

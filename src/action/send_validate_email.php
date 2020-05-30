@@ -23,7 +23,7 @@
     $office_nom = $_SESSION['nom'];
     $office_email = $_SESSION['email'];
     $office_wilaya = getWilaya($_SESSION['wilaya_id']);
-    $office_nom_wilaya = $office_nom.' '.$office_wilaya;
+    $office_nom_wilaya = 'office du Blé : '.$office_nom.' '.$office_wilaya;
 
     if($all_user_information['profile_id'] == 1)
     {
@@ -35,8 +35,8 @@
     }
     
 
-   $body = '<p> Bonjour <strong> '. $user_name . '</strong> Votre compte dans le site BléDZ est validé par nos services vous
-   pouvez désormais l\'utiliser</p>';
+   $body = '<p> Bonjour <strong> '. $user_name . '</strong> Votre compte dans le site BléDZ a été validé par
+            nos services, vous pouvez désormais l\'utiliser</p>';
  
     
 

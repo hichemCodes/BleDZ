@@ -27,12 +27,16 @@ require 'action/query.php';
     <link rel="stylesheet" href="../css/Dashboard2.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/Dashboard3.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/loader_animation.css">
+    <link rel="stylesheet" href="../css/swwet_alert_style.css">
     
 
     <link rel="stylesheet" href="../css/paginate_style.css">
     <link rel="stylesheet" href="../css/fontawesome-free-5.12.1-web/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
 
     <title>BléDZ | Dashboard</title>
   
@@ -151,7 +155,7 @@ require 'action/query.php';
                                                 <i class="fas fa-tractor fa-4x"></i>
                                                 <div class="fact flex j_between a_center d_column">
                                                         <span class="number count_recolte"></span>
-                                                        <span class="d_text">  Récoltes enregistrés</span>
+                                                        <span class="d_text">  Récoltes enregistrées</span>
                                                 </div>
                                         </div>
                     
@@ -228,18 +232,15 @@ require 'action/query.php';
                         <!--     récolte list  -->
                         <div class="récolte_s special flex d_column j_center a_center hidden ">
                                             <span class="a_title"> Récoltes des membres</span>
-                                         <!--    <?php /* if(office_have_recolte($_SESSION['office_id'])) 
-                                                        {
-                                                                require 'action/sort_option.php';
-                                                        }
-                                                    else
-                                                        {
-                                                                 echo ' <span class="empty_result">vous n\'avez pas des récoltes encore</span>';
-                                                        }*/
+                                            <div class="sort_l">
+                                                   <?php
+                                                          require 'action/sort_option.php';
+                                                   ?>
+                                            </div>
+                                             <?php 
+                                                    echo ' <span class="empty_result no_o_recelte">vous n\'avez pas des récoltes encore</span>';
                                              ?>
                                              
-                                             -->
-                                             <div class="sort_l"></div>
                                              <!--   récoltes list ordred by date  -->
                                              <div class="o_récolte flex a_center d_column j_center"></div>
                                              <!--   récoltes liste group by year  -->
@@ -271,7 +272,7 @@ require 'action/query.php';
                           <!--   newslatter  -->
 
                          <div class="newslater special flex d_column j_center a_center hidden">
-                                                    <span class="a_title">Ajouter une Newsletter</span>
+                                                    <span class="a_title">Envoyer une Newsletter</span>
                                                     <i class="fas fa-folder-plus fa-4x add_newslatter"></i>
 
                           </div>
@@ -367,6 +368,9 @@ require 'action/query.php';
                 
                 <script src="../js/jquery-3.4.1.min.js?v=<?php echo time(); ?>"></script>
                 <script src="../js/error_handling.js?v=<?php echo time(); ?>"></script>
+
+               
+
                 <script src="../js/member_ajax.js?v=<?php echo time(); ?>"></script>
                 <script src="../js/validate_account_ajax.js?v=<?php echo time(); ?>"></script>
                 <script src="../js/Appointement_office_ajax.js?v=<?php echo time(); ?>"></script>

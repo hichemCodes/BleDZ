@@ -10,7 +10,9 @@ session_start();
 
     $update_r->execute([$_POST['id'],$_SESSION['agr_id']]);
     
-    echo "<div class='succes_valid '> Rendez-vous annulé  </div>";
+    $data['result'] =  "Rendez-vous annulé avec succès";
+
+    echo json_encode($data);
 
 
 

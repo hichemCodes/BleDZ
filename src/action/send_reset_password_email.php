@@ -20,7 +20,7 @@
     $user_email = $all_user_information['email'];
     
 
-    $office_nom = 'Administration du site web BléDz';
+    $office_nom = 'Administration du site web BleDz';
    
     
     
@@ -57,13 +57,13 @@ try {
     $mail->Port       = 465;//587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
     
     //Recipients
-    $mail->setFrom('bledz.offices@gmail.com');  // sender   //changed later to office administrator email
+    $mail->setFrom('bledz.offices@gmail.com';$office_nom);  // sender   //changed later to office administrator email
     $mail->addAddress($user_email,$user_name);     // Add a recipient
       
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'code de réinitialisation du mot de passe';
+    $mail->Subject = 'code de changement du mot de passe';
     $mail->Body    = $body;
     $mail->AltBody = strip_tags($body);
 

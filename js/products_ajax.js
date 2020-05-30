@@ -31,9 +31,19 @@ $(document).ready(function()
  // supprimer un produit
  function delete_product(code)
  {
-         if(confirm('Êtes-vous sûr de vouloir supprimer ce produit ?'))
-         {
-          $.ajax({
+         
+        Swal.fire({
+            title: 'Êtes-vous sûr ?',
+            text: "Vous ne pourrez pas revenir sur cela !",
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonColor: 'tomato',
+            cancelButtonText : 'Annuler',
+            confirmButtonText: 'Oui, supprimez-le !'
+            }).then((result) => {
+            if (result.value) {
+            
+                $.ajax({
 
                     url : 'action/delete_product.php',
                     type : 'POST',
@@ -43,10 +53,15 @@ $(document).ready(function()
                     {
                         if(data.result != 'fail')
                         {
-                            show_success_msg(data.result);
                        
                             show_all_product();
-    
+
+                            Swal.fire(
+                                'Supprimé !',
+                                'Produit supprimé avec succès.',
+                                'success'
+                              )
+
                         }
                         else
                         {
@@ -54,8 +69,9 @@ $(document).ready(function()
                         }
                  
                     }
-               });
-        }   
+                });
+         }
+        }); 
  }
 
  
@@ -116,9 +132,13 @@ $(document).ready(function()
                                               $('.sub_u_p').unbind('click') ///remove the event
                                               exit_product_form();
 
-                                              show_success_msg(data.result);
-
                                               show_all_product();
+
+                                              Swal.fire(
+                                                'Modifié !',
+                                                 data.result,
+                                                'success'
+                                              )
                                               
                                           }
                                           else
@@ -179,20 +199,26 @@ $(document).ready(function()
                                                     },
                                             success:function(data)
                                             {
-                                            if(data.result == 'fail')
-                                            {
-                                                show_fail_msg(data.err);
-                                            }  
-                                            else
-                                            {
-                                                show_success_msg(data.result);
+                                                    if(data.result == 'fail')
+                                                    {
+                                                        show_fail_msg(data.err);
+                                                    }  
+                                                    else
+                                                    {
+                                                    
 
-                                                $('.sub_u_p').unbind('click') ///remove the event
-                                                exit_product_form();
-                                                show_all_product();
+                                                        $('.sub_u_p').unbind('click') ///remove the event
+                                                        exit_product_form();
+                                                        show_all_product();
 
-                                                console.log(data);
-                                            }
+                                                        Swal.fire(
+                                                            'Ajouté !',
+                                                            data.result,
+                                                            'success'
+                                                        )
+
+                                                        
+                                                    }
                                             
                                     
                                             }        

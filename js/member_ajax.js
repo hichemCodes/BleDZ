@@ -43,9 +43,13 @@ $(document).ready(function(){
                                         $('.add_member_form').unbind('submit');// remove the event
                                         hide_add_member_form();
                                         
-                                        show_success_msg("Membre ajouté avec succès");
-
                                         all_account();
+
+                                        Swal.fire(
+                                            'Ajouté !',
+                                             'Membre ajouté avec succès',
+                                            'success'
+                                          )
 
 
                                  }
@@ -154,7 +158,11 @@ function show_add_admin_form()
                                 {
                                     hide_add_admin_form();
 
-                                    show_success_msg(data.result);
+                                    Swal.fire(
+                                        'Ajouté !',
+                                         data.result,
+                                        'success'
+                                      )
                                 } 
         
                             }

@@ -29,7 +29,19 @@ function show_update_profile_form()
 
                                     if(data.result != 'fail')
                                     {
-                                        show_success_msg(data.result);
+
+                                        $('#u_pass').val('');
+
+                                        if(document.querySelector('.s_updated').classList.contains('error_u'))
+                                        {
+                                             $('.s_updated').addClass('hidden');
+                                        }
+
+                                        Swal.fire(
+                                            'Modifié !',
+                                             data.result,
+                                            'success'
+                                        )
                                     }
                                     else
                                     {
@@ -67,12 +79,22 @@ function show_update_profile_form()
                                         }
                                         else
                                         {
-                                            show_success_msg(data.result);
                                            
                                             // clean the inputs
                                             $('#old_pass').val('');
                                             $('#new_pass').val('');
                                             $('#new_pass_conf').val('');
+
+                                            if(document.querySelector('.s_updated').classList.contains('error_u'))
+                                            {
+                                                 $('.s_updated').addClass('hidden');
+                                            }
+
+                                            Swal.fire(
+                                                'Modifié !',
+                                                 data.result,
+                                                'success'
+                                            )
                                         }
                                         
                                     

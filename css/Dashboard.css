@@ -235,7 +235,7 @@ tr{
     }
     .parametre .s_small form,.theme{
              background:#fff;
-             padding:40px 0px 40px 0px;
+             padding:50px 0px 40px 0px;
              flex-wrap: wrap;
              position:relative;
              box-shadow: 4px 4px 15px 0 rgba(36,37,38,.08);
@@ -257,8 +257,8 @@ tr{
           border-radius: 50%;
           
           position :absolute;
-          top:10px;
-          right:10px;
+          top:14px;
+          right:12px;
           
           box-shadow: -1px -2px 5px 0px #0000000d, inset 0px -2px 0px 0px hsla(0, 0%, 0%, 0.08);
 }
@@ -275,6 +275,7 @@ tr{
         text-align: left;
         font-weight: 600;
         font-size:1rem;
+        margin-left: ;
         
     }
     .parametre .s_small form .line .normal_input{
@@ -305,7 +306,8 @@ tr{
         height:100%;
     }
     .parametre .s_small form  .edit:hover{
-        box-shadow: -1px -2px 5px 0px hsla(0, 0%, 0%, 0.15), inset 0px -2px 0px 0px hsla(0, 0%, 0%, 0.15);
+        /*box-shadow: -1px -2px 5px 0px hsla(0, 0%, 0%, 0.05), inset 0px -2px 0px 0px hsla(0, 0%, 0%, 0.05);*/
+        box-shadow: 1px 1px 15px 0 rgba(36,37,38,.08);
     }
     .m_bottom{
          margin-bottom: 20px;
@@ -315,7 +317,7 @@ tr{
     }
     .line label{
         align-self: flex-start;
-        margin-left:71px;
+        margin-left:19% !important;
     }
     .active{
         background:#f3f0f7;
@@ -433,7 +435,7 @@ tr{
         left:0px;
         width:100%;
         height:100%;
-        background:#00000080;
+        background: rgba(0,0,0,.4) !important;
         
         z-index:1000;
         display:none;
@@ -566,12 +568,12 @@ border-radius: 15px;
      color: #f1cd69;
 }
 .parametre .s_small form .edit{
-box-shadow: 1px -1px 20px 0 rgba(36, 37, 38, 0.1);
-
+box-shadow: 1px -1px 20px 0 rgba(36,37,38,.08);
 }
 .parametre .s_small form .edit:hover{
-transition:all .11s ease-in;
-box-shadow: 1px -1px 20px 0 #24252633;
+transition:all .1s ease-in;
+box-shadow: 1px -1px 20px 0 rgba(36, 37, 38, 0.1);
+
 }
 
 .edit{
@@ -924,4 +926,3 @@ padding: 14px 20px 14px 20px;
     
       color: #5d5d5d !important;
 }
-

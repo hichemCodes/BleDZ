@@ -8,8 +8,9 @@
 
         $all_acounts_count = $all_accounts_invalid->rowCount();
         
-        if($all_acounts_count == 0){
-              $output = " <span> Tous les comptes de votre région sont validé </span>";
+        if($all_acounts_count == 0)
+        {
+              $output = " <span> Tous les comptes de votre région sont validés </span>";
         }
         else 
         {

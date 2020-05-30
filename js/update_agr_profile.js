@@ -26,7 +26,17 @@ $(document).ready(function(){
                                   if(data.result != 'fail')
                                   {
                                         $('#pass_u').val('');
-                                        show_success_msg(data.result);
+
+                                        if(document.querySelector('.s_updated').classList.contains('error_u'))
+                                        {
+                                             $('.s_updated').addClass('hidden');
+                                        }
+                                        
+                                        Swal.fire(
+                                            'Modifié !',
+                                             data.result,
+                                            'success'
+                                        )
                                   }
                                   else
                                   {
@@ -65,12 +75,22 @@ $(document).ready(function(){
                                 }
                                 else
                                 {
-                                    show_success_msg(data.result);
                                     
                                     // clen the input 
                                     $('#old_pass').val('');
                                     $('#new_pass').val('');
                                     $('#new_pass_conf').val('');
+
+                                    if(document.querySelector('.s_updated').classList.contains('error_u'))
+                                    {
+                                         $('.s_updated').addClass('hidden');
+                                    }
+
+                                    Swal.fire(
+                                        'Modifié !',
+                                         data.result,
+                                        'success'
+                                    )
                                 }
                                 
                             

@@ -66,11 +66,16 @@ $(document).ready(function()
                                                 data : { all_recolte : items,agriculteur_id : agr_id},
                                                 success:function(data)
                                                 {
-                                                      $('.add_facture_final').unbind('click')  //remove event
+                                                      $('.add_facture_final').unbind('click'); //remove event
                                                       $('.exit_add_f_i').click();
+                                                      
                                                       show_all_factures();
 
-                                                      show_success_msg(data);
+                                                      Swal.fire(
+                                                        'Ajouté !',
+                                                         data,
+                                                        'success'
+                                                    )
 
                                                 }
                                         });

@@ -22,7 +22,7 @@ $r_list_count_result = $r_list_n->fetchAll(PDO::FETCH_ASSOC);
     $output = '
         
     
-    <span class="a_title">Rndez Vous non pris</span>                     
+    <span class="a_title">Rendez-vous non pris</span>                     
     <table>
         <tr class="b_bottom">
             <th class="t_large">Date</th>
@@ -59,7 +59,7 @@ $r_list_count_result = $r_list_n->fetchAll(PDO::FETCH_ASSOC);
 else
 {
       $output = '   
-      <span class="empty_r_v">pas des rendez-vous pour le mement si vous voulez ajouter </span> ';
+      <span class="empty_r_v">pas de rendez-vous pour le moment </span> ';
 
 }
 echo $output;

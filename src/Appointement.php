@@ -49,6 +49,9 @@ require 'action/load_all_session.php';
    <div class="tab_wraper  flex d_column  j_center a_center"> </div>
 </div>
     
+<div class='succes_valid s_updated  hidden'>  </div>
+
+
         <!--  scripts   !-->
        
         <script src="../js/jquery-3.4.1.min.js"></script> 

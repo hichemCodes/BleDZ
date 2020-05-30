@@ -24,7 +24,7 @@ if($_POST['step'] == 'first')
 
             if($all_users->rowCount() == 0)
             {
-            $output = $output.'<option value="" disabled selected> il n\'ya pas des membres encore</option>';
+            $output = $output.'<option value="" disabled selected> il n\'y a pas des membres encore</option>';
             }
             else
             {
@@ -38,7 +38,7 @@ if($_POST['step'] == 'first')
             
             $output = $output.'</select>
             
-            <button id="add_r" class="move_next">  Suivant    </button>
+            <button id="add_r" class="move_next">Suivant</button>
 
              
             ';
@@ -66,7 +66,7 @@ else
                     $output = $output .' <select user_selected id="user_selected" required>
                    
                     
-                    <option value="" disabled selected> ce membre a acun récoltes</option></select>
+                    <option value="" disabled selected>Cet agriculteur n\'a aucun récolte</option></select>
 
                     <button id="add_r" class="return_add_f" onclick="return_to_add_facture()">  Retour  </button>
 

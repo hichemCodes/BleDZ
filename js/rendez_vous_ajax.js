@@ -63,41 +63,68 @@ function rendez_vous(id)
           $.ajax({
                  url :'action/prendre_rendez_vous.php',
                  type : 'POST',
+                 dataType : 'JSON',
                  data : {id:id},
                  success:function(data){
 
+                    if(data.result != 'fail')
+                    {
                          $('.cover_all2').hide();
                     
                          // refresh the function
                          all_offices();
                          my_rendez_vous();
 
-                         $('body').append(data);
-
-                         generate_pdf_conv(id);
-
-                         setTimeout(function () { $('.succes_valid').hide(); }, 3000);
+                         Swal.fire(
+                              'Pris !',
+                               data.result,
+                              'success'
+                          )
+                    }
+                    else
+                    {
+                            show_fail_msg(data.err);
+                    }
+                   
                      
                  }
           });
       }
       function annuler_rendez_vous(id)
       {
-          if(confirm('Est-ce que vous êtes sûr d\'annuler votre rendez-vous'))
-          {
-               $.ajax({
-                     url : 'action/annuler_rendez_vous.php',
-                     type : 'POST',
-                     data : {id:id},
-                    success:function(data)
-                    {
-                         all_offices();
-                         my_rendez_vous();
-                         $('body').append(data);
-                         setTimeout(function () { $('.succes_valid').hide(); }, 3000);
-                    }
-              });
-          }
+     
+          Swal.fire({
+               title: 'Êtes-vous sûr ?',
+               text: "Vous ne pourrez pas revenir sur cela !",
+               icon: 'warning',
+               showCancelButton: true,
+               cancelButtonColor: 'tomato',
+               cancelButtonText : 'Annuler',
+               confirmButtonText: 'Oui, annulez-le !'
+               }).then((result) => {
+               if (result.value) {
+               
+                              $.ajax({
+                                   url : 'action/annuler_rendez_vous.php',
+                                   type : 'POST',
+                                   dataType : 'JSON',
+                                   data : {id:id},
+                                   success:function(data)
+                                   {
+                                        all_offices();
+                                        my_rendez_vous();
+
+
+                                        Swal.fire(
+                                             'Annulé!',
+                                              data.result,
+                                             'success'
+                                         )
+
+                                   }
+                            });
+               }
+             });
            
       }  
       function generate_pdf_conv(rendez_vous_id)
@@ -128,7 +155,7 @@ function rendez_vous(id)
                     
                          
                     doc.text(`Nom d'agriculteur : `, 15,76,null,null);
-                    doc.text(`prenom : `, 15,84,null,null);
+                    doc.text(`prénom : `, 15,84,null,null);
                     doc.text(`Numéro de carte : `, 15,92,null,null);
                     doc.text(`Email : `, 15,100,null,null);
 
@@ -154,10 +181,10 @@ function rendez_vous(id)
 
                      
                      doc.setFontStyle("normal");
-                     doc.text(`Votre rendez-vous pour le dépôt de la récolte aura lieu le  ${data.date} .`, 15,135,null,null);
+                     doc.text(`Votre rendez-vous pour le dépôt de la récolte aura lieu le  ${data.date}.`, 15,135,null,null);
                      doc.text(`Veuillez apporter au rendez-vous la présente convocation, votre pièce d’identité et votre  `, 15,145,null,null);
                      doc.text(`récolte.`, 15,151,null,null);
-                     doc.text(`Merci de vous présenter 30 minutes avant l’heure prévue de votre rendez-vous .`, 15,162,null,null);           
+                     doc.text(`Merci de vous présenter 30 minutes avant l’heure prévue de votre rendez-vous.`, 15,162,null,null);           
                      
                      doc.save('Rendez-vous dépôt du la récolte.pdf');
       }

@@ -143,13 +143,18 @@ function show_add_recolte(rendez_vous_id,agr_id)
                                                    if(data.result == "success")
                                                    {
                                                        
-                                                        show_success_msg('récolte ajoutée avec succès')
 
                                                         //hide form
                                                         hide_add_recolte_form();
                                                        
                                                         // refresh 
                                                         rendez_vous_prise();
+
+                                                        Swal.fire(
+                                                            'Ajoutée !',
+                                                             'récolte ajoutée avec succès',
+                                                            'success'
+                                                          )
                                                       
                                                        
                                                    }
@@ -198,33 +203,39 @@ function show_add_recolte(rendez_vous_id,agr_id)
                 {
                     if(data.result == 'success')
                     {
-                            $('.sort_l').load('action/sort_option.php');
+                            $('.no_o_recelte').hide();
+                            $('.sort_l').show();
+
+                            $.ajax({
+                                url : 'action/show_all_recolte_office.php',
+                                type : 'POST',
+                                data : {
+                                          order_by:order_by,
+                                          year:year,
+                                          start_p : start_p,
+                                          end_p : end_p
+                                      },
+                                success:function(data)
+                                {
+                                  $('.o_récolte').html(data);
+                                  
+                                  
+                                }
+                           });
+                            
                     }
                     else
                     {
-                        $('.sort_l').html('<span class="empty_result">vous n\'avez pas des récoltes encore</span>');
+                         $('.sort_l').hide();
+                         $('.no_o_recelte').show();
+
                     }
                 }
 
             });
    
 
-     $.ajax({
-          'url' : 'action/show_all_recolte_office.php',
-          'type' : 'POST',
-          data : {
-                    order_by:order_by,
-                    year:year,
-                    start_p : start_p,
-                    end_p : end_p
-                },
-          success:function(data)
-          {
-            $('.o_récolte').html(data);
-            
-            
-          }
-     });
+    
 }
 /////////////  change search page 
 

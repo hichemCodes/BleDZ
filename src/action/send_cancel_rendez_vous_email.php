@@ -23,7 +23,7 @@
     $office_nom = $_SESSION['nom'];
     $office_email = $_SESSION['email'];
     $office_wilaya = getWilaya($_SESSION['wilaya_id']);
-    $office_nom_wilaya = $office_nom.' '.$office_wilaya;
+    $office_nom_wilaya = 'office du blé : '.$office_nom.' '.$office_wilaya;
 
     if($all_user_information['profile_id'] == 1)
     {
@@ -35,10 +35,9 @@
     }
     
 
-   $body = '<p> Bonjour <strong> '. $user_name . '</strong> Votre Rendez-vous de dépot de récolte de '. $date_r_v .' a était annulé  </p>';
- 
-    
-
+   $body = '<p> Bonjour <strong> '. $user_name . '</strong> Votre Rendez-vous du dépot de la récolte : '. $date_r_v .'
+           a été annulé  </p>';
+   
 
 ////// envoyer un email a l'utilisateur pour le notifier que leurs comtpte est valider
 
@@ -63,7 +62,7 @@ try {
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Anulation du rendez-vous';
+    $mail->Subject = 'Annulation du rendez-vous';
     $mail->Body    = $body;
     $mail->AltBody = strip_tags($body);
 

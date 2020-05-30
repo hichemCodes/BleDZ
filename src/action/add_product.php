@@ -103,7 +103,7 @@ function add_product($code,$description,$price,$price_2,$price_3)
       VALUES (?,?,?,?,?) ");
       $u_product->execute([$code,$description,$price,$price_2,$price_3]);
 
-      $GLOBALS['data']['result'] = "<div class='succes_valid s_updated '> produit ajouté avec succès ! ";
+      $GLOBALS['data']['result'] = 'produit ajouté avec succès !';
 
 }
 

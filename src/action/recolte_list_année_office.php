@@ -14,7 +14,7 @@
         $recolte_count = $recolte->rowCount();
 
         if($recolte_count == 0){
-            $output ='';// ' <span class="empty_result">vous avez pas des récolte encore</span>';
+            $output ='';
         }
         else 
         {

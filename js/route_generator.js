@@ -39,7 +39,9 @@ all_link[3].addEventListener('click',()=>{
 // recoltes click event handler
 all_link[4].addEventListener('click',()=>
 {
-    location.reload();
+
+    show_all_recolte_office('date');  // classer la récolte par date la premiere fois 
+    show_all_recolte_office_année(); 
 
 });
 // account setting

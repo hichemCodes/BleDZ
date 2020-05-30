@@ -95,7 +95,7 @@ $all_factures->execute();
         }
         else
         {
-            $output = " <span> il n'ya pas encore des factures  </span>";
+            $output = " <span> il n'y a pas encore des factures  </span>";
         }
 
         echo $output;

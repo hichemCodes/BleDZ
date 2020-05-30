@@ -3,8 +3,11 @@
 
 session_start();
 
-require 'connect_db.php';
 require 'query.php';
+
+office_auth();
+
+require 'connect_db.php';
 require 'send_cancel_rendez_vous_email.php';
 
 /// modifie le rendez_vous 
@@ -23,8 +26,7 @@ send_cancel_rendez_vous_email($user_id,$date_r_v);
 
 ///
 
-echo "<div class='succes_valid s_updated' > ce rendez-vous est annulé un email a était envoyé a l'utilisateur</div>";
-
+echo "ce rendez-vous est annulé et un mail a été envoyé à l'agriculteur";
   
 ?>
  

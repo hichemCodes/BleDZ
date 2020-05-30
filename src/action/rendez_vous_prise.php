@@ -30,7 +30,7 @@ if(office_has_rendez_vous($_SESSION['office_id']))
             $r_list_count_result = $r_list->fetchAll(PDO::FETCH_ASSOC);
         
             $output = '
-            <span class="a_title">Rndez Vous pris</span>    
+            <span class="a_title">Rendez-vous pris</span>    
             <table>
             <tr class="b_bottom">
             <th class="t_custom">Date</th>

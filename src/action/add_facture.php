@@ -31,12 +31,12 @@ foreach ($all_recolte_tab as $recolte)
                 $add_facture = $db->prepare("INSERT INTO factures (montant,recoltes_id,office_id,agriculteur_id) VALUES (?,?,?,?) ");
                 $add_facture->execute([$montant,$serialized_array,$_SESSION['office_id'],$_POST['agriculteur_id']]);
 
-                echo "<div class='succes_valid s_updated'>facture ajoutée avec succès !</div>";
+                echo "facture ajoutée avec succès !";
 
         }
         catch (Exception $e)
         {
-                echo '<div class="succes_valid s_updated error_u"> il ya une erreur  </div> ';
+                echo 'il ya une erreur';
         }
 
 
