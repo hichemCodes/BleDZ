@@ -1,10 +1,14 @@
+
+@font-face{
+    font-family:Poppins;
+    src: url('../font/Poppins-Regular.ttf');
+}
 body{
 
     padding:0px;
     margin:0px;
     box-sizing: border-box;
-    font-family: Poppins,sans-serif;
-
+    font-family:Poppins;
    
 }
 
@@ -261,7 +265,7 @@ ul  a{
 }
 :-moz-placeholder{
     
-    font-family: Poppins,sans-serif;
+    font-family:Poppins;
 
 }
 .m{

@@ -8,7 +8,7 @@
     border: none;
     font-size: 1.1rem;
     cursor: pointer;
-    font-family: Poppins,sans-serif;
+   font-family:Poppins;
     outline-color: #f1cf69;
  }
  .filter_container{
@@ -62,7 +62,7 @@
         padding:0.5rem 0.5rem 0.5rem 40px;
             height:100%;
         font-size:1rem;
-        font-family: Poppins,sans-serif;
+       font-family:Poppins;
         border:1.2px solid #f1cf69;
         border-radius:0.25rem;
         outline:none;
@@ -278,7 +278,7 @@ body{
         position: relative;
         padding: 0.75rem 0.75rem 0.75rem 0.75rem;
         font-size: 1rem;
-        font-family: Poppins,sans-serif;
+       font-family:Poppins;
         border: 2px solid  #f1cf69;
         outline:none;
         border-radius: 0.25rem;

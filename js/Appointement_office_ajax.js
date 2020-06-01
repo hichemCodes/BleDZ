@@ -157,7 +157,15 @@ function cancel_rendez_vous(r_v_id,agr_id)
                             },
                     beforeSend : function()
                     {
-                        $('.output').append("<div class='succes_valid s_updated' >annulation en cours ...</div>");
+
+                       Swal.fire(
+                           {
+                                title : 'Annulation en cours',
+                                showCancelButton : false,
+                                showConfirmButton : false,
+                           }                
+                        );
+                        swal.showLoading();
             
                     },
                     success : function(data)
@@ -168,7 +176,7 @@ function cancel_rendez_vous(r_v_id,agr_id)
                         rendez_vous_prise();
 
                             Swal.fire(
-                                'Anulé!',
+                                'Annulé !',
                                 'Ce rendez-vous est annulé et un mail a été envoyé à l\'agriculteur',
                                 'success'
                             )

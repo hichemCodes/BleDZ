@@ -1,9 +1,14 @@
+@font-face{
+    font-family:Poppins;
+    src: url('../font/Poppins-Regular.ttf');
+}
+
 body{
     padding:0px;
     margin:0px;
     box-sizing: border-box;
     height:100vh;
-    font-family: Poppins,sans-serif;
+    font-family:Poppins;
 
 }
 
@@ -673,7 +678,7 @@ cursor: pointer;
 }
 .add_r_f form label{
 
-font-family: Poppins,sans-serif;
+font-family:Poppins;
  margin: 0px auto 5px 5px;
 }
 .add_r_f form{
@@ -725,7 +730,7 @@ position:relative;
 padding:1rem 3.5rem 1rem 0.75rem;
 
 font-size:1rem;
-font-family: Poppins,sans-serif;
+font-family:Poppins;
 
 border:2px solid ;
 border-radius:0.25rem;

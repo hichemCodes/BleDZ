@@ -19,19 +19,21 @@ require 'query.php';
                               $add_news_latter = $db->prepare("INSERT INTO newslatter (email) VALUE (?) ");
                               $add_news_latter->execute([$v_email]);
                               
-                              $output =  "<div class='succes_valid '>vous êtes désormais abonner a la newsletter  </div>";
+                              $data['result'] =  "vous êtes désormais abonné à la newsletter";
                        }
                        else
                        {
-                        $output =  "<div class='succes_valid '>vous êtes déja abonné la newsletter  </div>"; 
+                                $data['result'] = 'fail';
+
+                                $data['err'] =  "vous êtes déja abonné à la newsletter "; 
                        }
                       
 
                  }
                  else
                  {
-
-                    $output =  "<div class='succes_valid error_u'> email incorrécte  </div>";
+                              $data['result'] = 'fail';
+                              $output =  " email incorrect ";
 
                     
                  }
@@ -39,10 +41,11 @@ require 'query.php';
       }
       else
       {
-          
-          $output =  "<div class='succes_valid error_u'> le champ email doit étre rempli  </div>";
+          $data['result'] = 'fail';
+          $data['err'] =  "le champ email doit être rempli";
       }
-      echo $output;
+
+      echo json_encode($data);
 
 ?>
 

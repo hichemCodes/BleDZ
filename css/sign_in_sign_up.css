@@ -1,4 +1,10 @@
 
+
+@font-face{
+  font-family:Poppins;
+  src: url('../font/Poppins-Regular.ttf');
+}
+
 .cover_me{
 
     background-image: url('../img/pfe2.jpg');
@@ -75,7 +81,8 @@
           margin: 10px 0px 0px 0px;
          font-size: .8rem;
          letter-spacing: 1.1px;
-         font-family: Poppins,sans-serif;
+           font-family:Poppins;
+
           cursor: pointer;
  
  }
@@ -100,7 +107,8 @@
           text-decoration: none;
           color:#f1cf69;
           font-size: .85rem !important;
-          font-family: Poppins,sans-serif;
+            font-family:Poppins;
+
           font-weight:600 !important;
 
  
@@ -132,7 +140,8 @@
  
  }
  select,.next{
-   font-family: Poppins,sans-serif;
+     font-family:Poppins;
+
  }
  .next{
     
@@ -212,7 +221,8 @@
 .item input {
 
 transition: all .1s ease-in;
-font-family: Poppins,sans-serif;
+  font-family:Poppins;
+
 font-size: .9rem;
 box-sizing: content-box;
 
@@ -220,7 +230,8 @@ box-sizing: content-box;
 .err{
 
 font-size: 0.9rem;
-font-family: Poppins,sans-serif;
+  font-family:Poppins;
+
 }
 .err.l_err{
   margin-right: auto;

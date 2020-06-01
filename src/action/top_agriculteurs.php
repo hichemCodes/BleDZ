@@ -12,7 +12,7 @@ $output = '';
 $top_agr = $db->prepare("SELECT sum(Quantité) as quan,agriculteur_id as agr_id ,nom,prenom,wilaya_id FROM récoltes
                             INNER JOIN agriculteurs ON récoltes.agriculteur_id = agriculteurs.id 
                             INNER JOIN users ON agriculteurs.user_id = users.id 
-                            AND YEAR(récoltes.date) = ? GROUP BY récoltes.agriculteur_id ORDER BY sum(Quantité) DESC LIMIT 1") ;
+                            AND YEAR(récoltes.date) = ? GROUP BY récoltes.agriculteur_id ORDER BY sum(Quantité) DESC LIMIT 10") ;
 
  $top_agr->execute([$current_year]);
 

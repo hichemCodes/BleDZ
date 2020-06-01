@@ -8,13 +8,31 @@ $(document).ready(function(){
                   var email = $('#email').val();
 
                   $.ajax({
-                        'url' : 'action/newslatter_add.php',
-                        'type' : 'POST',
-                        data : {email:email},
+                         url  : 'action/newslatter_add.php',
+                         type  : 'POST',
+                         dataType : 'JSON',
+                         data : {email:email},
                         success:function(data)
                         {
-                          $('body').append(data);
-                          setTimeout(function () { $('.succes_valid').hide(); }, 1650);
+                          if(data.result != 'fail')
+                          {
+                                Swal.fire(
+                                  'Abonné !',
+                                   data.result,
+                                  'success'
+                                );
+
+                                $('#email').val('');
+                          }
+                          else
+                          {
+                                Swal.fire(
+                                  'Erreur !',
+                                   data.err,
+                                  'error'
+                                );
+                          }
+                         
                         }
                         
                   });

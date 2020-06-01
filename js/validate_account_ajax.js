@@ -52,7 +52,14 @@ function valid_account(id,element){
         data: { id:id },
         beforeSend : function()
         {
-            show_success_msg('validation en cours ...',true)
+            Swal.fire(
+                {
+                     title : 'Validation en cours',
+                     showCancelButton : false,
+                     showConfirmButton : false,
+                }                
+             );
+             swal.showLoading();
         },
         success: function(data) {
             
@@ -63,14 +70,17 @@ function valid_account(id,element){
             }
             else
             {                             
-                show_success_msg(data.result);
-
                 all_invalid_accounts();
                 show_invalid_offices();
+
+                Swal.fire(
+                    'Validé !',
+                     data.result,
+                    'success'
+                );
             }
             
-            console.log(data);
-            console.log(data.err);
+        
 
             
          },

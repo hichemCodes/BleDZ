@@ -9,11 +9,11 @@
     background: #f1cf69 !important;
     outline: none !important;
 }
-.swal2-icon.swal2-success {
+.swal2-icon.swal2-success,.swal2-icon.swal2-error {
     border-color: #f1cf69 !important;
     color: #f1cf69 !important;
 }
-.swal2-icon.swal2-success [class^=swal2-success-line] {
+.swal2-icon.swal2-success [class^=swal2-success-line],.swal2-icon.swal2-error [class^=swal2-x-mark-line] {
     
     background-color: #f1cf69 !important;
 }

@@ -24,15 +24,27 @@
                                {
                                       if(data == 'fail_type')
                                       {       
-                                            show_fail_msg("l'image doit être au type Jpg / jpeg / Png !");
+                                            Swal.fire(
+                                                 'Erreur !',
+                                                 'l\'image doit être au type Jpg / jpeg / Png ',
+                                                 'error'
+                                             );
                                       }
                                       else if(data == 'fail_size')
                                       {
-                                            show_fail_msg('la taille de l\'image est trop grande, il faut que ne dépasse pas 1 Mo !');
+                                            Swal.fire(
+                                                 'Erreur !',
+                                                 'la taille de l\'image est trop grande, il faut que ne dépasse pas 1 Mo ',
+                                                 'error'
+                                             );
                                       }
                                       else
                                       {
-                                            show_success_msg('photo de profil changé avec succès');
+                                            Swal.fire(
+                                                 'Modifié !',
+                                                 'photo de profil changé avec succès',
+                                                 'success'
+                                             );
                                           
                                             if($('.user_img2').length == 0)
                                             {

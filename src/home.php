@@ -15,14 +15,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="../css/flex.css">
     <link rel="stylesheet" href="../css/home.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/sign_in_sign_up.css">
-     
+    <link rel="stylesheet" href="../css/swwet_alert_style.css?v=<?php echo time(); ?>">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
 
    
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/fontawesome-free-5.12.1-web/css/all.min.css">
        
     <title>BléDZ | Accueil</title>
@@ -164,7 +165,7 @@
         
       
             <script src="../js/home_out_ajax.js?v=<?php echo time(); ?>"></script>
-            <script src="../js/newslatter_add_member_ajax.js"></script>
+            <script src="../js/newslatter_add_member_ajax.js?v=<?php echo time(); ?>"></script>
             <script src="../js/home_out.js?v=<?php echo time(); ?>"></script>
            
               
