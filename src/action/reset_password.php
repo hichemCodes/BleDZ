@@ -60,21 +60,21 @@
                                                                 WHERE email = ?");
                                   $u_password->execute([$pass1_hash,$pass2_hash,$email]); 
                                             
-                                   $data['success'] = 'Mot de passe chnagé avec succsé orientation vers la page de connexion dans ';               
+                                   $data['success'] = 'mot de passe chnagé avec succsé orientation vers la page de connexion dans ';               
                             }
                             else
                             {
-                                $data['pass_n_m'] = 'les mots de passes ne sont pas identique';
+                                $data['pass_n_m'] = 'les mots de passe ne sont pas identiques';
                             }
                 }
                 else
                 {
-                        $data['pass_inv'] = 'format de mots de passe inccorécte';
+                        $data['pass_inv'] = 'le mot de passe doit comporter au moins 8 caractères dont une lettre majuscule et une lettre minusculle et un chiffre !';
                 }
         }
         else
         {
-                $data['code_inv'] = 'le code de confirmation est incorrécte';
+                $data['code_inv'] = 'le code de confirmation est incorrect';
         }
 
         echo json_encode($data);

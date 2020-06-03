@@ -35,7 +35,7 @@
 
                 <div class="item c_email">
                         <i id="icmail"class="fas fa-at"></i>
-                        <input type="email" name="email_c"  class= "email" placeholder="Email" au required>
+                        <input type="email" name="email_c"  class= "email" placeholder="Email"  required>
                         <span class="border"> <i></i></span>
                 </div>
                 <div class="item flex c_pass">

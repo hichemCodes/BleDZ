@@ -4,7 +4,7 @@ $(document).ready(function()
 
 
  // insert agriculteur   
-$('.f-agr').on('click',function(e)
+$('.form_agr').on('submit',function(e)
 {
     e.preventDefault();
     
@@ -40,7 +40,6 @@ $('.f-agr').on('click',function(e)
                 if(data.result == 'success')
                     {
                         
-                        $('.redirect_a').addClass('success');
                         redirect('success');
 
                         localStorage.clear();
@@ -83,9 +82,9 @@ $('.f-agr').on('click',function(e)
 
 
  // insert office   
- $('.f-office').on('click',function(e)
+ $('.form_office').on('submit',function(e)
  {
-     e.preventDefault();
+         e.preventDefault();
      
    
          // remove all the error msg and reset the default style style 
@@ -181,9 +180,9 @@ $('.f-agr').on('click',function(e)
                        if(data.result == 'success')
                        {
                            
-                               document.location.href = data.home;
+                            document.location.href = data.home;
 
-                               localStorage.clear();
+                            localStorage.clear();
 
                         
                        }
@@ -240,17 +239,37 @@ $('.f-agr').on('click',function(e)
 
 function redirect(element)
 {
-    
-    var counter = 5;
-    var redirectCount = setInterval(function(){
-                                                                                                                                                
-    document.querySelector('.'+element).innerText= "votre compte est créé avec succés réorientation vers la page de connexion dans  "+counter+"s"; 
-    counter--;
-    if (counter === 0) {
-                clearInterval(redirectCount);
-                    document.location.href = 'http://localhost/pfe/src/sign_in.php';
-                                                                    }
-    }, 1000);   
+    let timerInterval
+
+    Swal.fire({
+          title : 'inscription réussie !',
+          html : 'réorientation vers la page de connexion dans <b>5</b> s.',
+          timer: 5000,
+          timerProgressBar: true,
+          showConfirmButton: false,
+          onBeforeOpen: () => {
+
+                Swal.showLoading();
+
+                timerInterval = setInterval(() => {
+                    const content = Swal.getContent();
+                    if (content) {
+                      const b = content.querySelector('b');
+                      if (b) {
+                        b.textContent = Math.floor(parseInt(Swal.getTimerLeft())/1000);
+                      }
+                    }
+                  }, 1000)
+
+          }
+    }).then( result =>{
+
+        if (result.dismiss === Swal.DismissReason.timer) 
+        {
+             document.location.href = 'sign_in.php';
+        }
+
+    });
 
 
 }

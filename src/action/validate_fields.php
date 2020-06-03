@@ -40,9 +40,19 @@ function clean($data){
 }
    function validate_password($pass1){
 
-         $reg_pass = '^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$^';
-         if(!(preg_match($reg_pass,$pass1))){return false;}
-         else{return true;}
+/*        $uppercase = preg_match('@[A-Z]@', $pass1);
+        $lowercase = preg_match('@[a-z]@', $pass1);
+        $number    = preg_match('@[0-9]@', $pass1);*/
+
+         $reg_pass = '/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/';
+         if(!preg_match($reg_pass,$pass1))
+         {
+           return false;
+         }
+         else
+         {
+           return true;
+         }
    }
    function password_equals($pass1,$pass2){
               
@@ -69,27 +79,52 @@ function clean($data){
    
       //// user already exist test 
 
-      function user_already_exist($email,$carte){
+      function user_already_exist($email,$carte,$nom_prenom){
             
-           global $db;
+            global $db;
 
-            $email_exist = $db->prepare("SELECT *  FROM users WHERE email = ?");
+            $email_exist = $db->prepare("SELECT * FROM users WHERE email = ?"); 
             $email_exist->execute([$email]);
             $count_email_exist = $email_exist->rowCount();
-            if($count_email_exist == 0){
-              $cart_exist = $db->prepare("
-              SELECT *  FROM users INNER JOIN agriculteurs ON users.id = agriculteurs.user_id AND agriculteurs.num_de_carte = ?");
 
-              $cart_exist->execute([$carte]);
-              $count_cart_exist = $cart_exist->rowCount();
-              if($count_cart_exist == 0){return false;}
-              else{ 
-                
-                return true;}
+            if($count_email_exist == 0){ // email not exist
+
+                $cart_exist = $db->prepare("
+                SELECT *  FROM users INNER JOIN agriculteurs ON users.id = agriculteurs.user_id AND agriculteurs.num_de_carte = ?");
+
+                $cart_exist->execute([$carte]);
+                $count_cart_exist = $cart_exist->rowCount();
+                if($count_cart_exist == 0) // 
+                {
+
+                    $nom_and_prenom_exist = $db->prepare("
+                          SELECT *  FROM users INNER JOIN agriculteurs ON users.id = agriculteurs.user_id
+                          AND CONCAT(agriculteurs.nom,' ',agriculteurs.prenom) = ? ");
+    
+                    $nom_and_prenom_exist->execute([$nom_prenom]);
+                    
+                    if($nom_and_prenom_exist->rowCount() == 0 ) //user not exist
+                    {
+                          return false; 
+                    }
+                    else
+                    {
+                          return true; //nom and prenom already exist 
+                    }
+
+
+
+
+                }
+                else // carte already exist
+                { 
+                  return true;
+                }
             }
-            else{
+            else
+            {
               
-              return true;
+              return true;  // email already exist
             }
             
 
@@ -99,19 +134,23 @@ function clean($data){
         global $db;
 
 
-        $email_exist = $db->prepare("SELECT *  FROM users WHERE email = ?");
+        $email_exist = $db->prepare("SELECT * FROM users WHERE email = ?");
         $email_exist->execute([$email]);
         $count_email_exist = $email_exist->rowCount();
+
         if($count_email_exist == 0){
+         
           $name_exist = $db->prepare("
-          SELECT *  FROM users INNER JOIN offices ON users.id = offices.user_id AND offices.nom = ?");
+                                    SELECT *  FROM users INNER JOIN offices ON users.id = offices.user_id AND offices.nom = ?");
 
           $name_exist->execute([$name]);
           $count_name_exist = $name_exist->rowCount();
           if($count_name_exist == 0){return false;}
-          else{ 
+          else
+          { 
             
-            return true;}
+            return true;
+          }
         }
         else{
           
@@ -161,6 +200,7 @@ function clean($data){
         }
       }
 
+
       function cart_already_exist($cart)
       {
 
@@ -178,6 +218,7 @@ function clean($data){
            return true;
         }
       }
+
 
 
 

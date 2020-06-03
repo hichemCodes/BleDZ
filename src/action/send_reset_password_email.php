@@ -16,11 +16,12 @@
   function send_rest_password_code($user_receiver_id,$code)
   {
     
+
     $all_user_information = find_user_information($user_receiver_id);
     $user_email = $all_user_information['email'];
     
 
-    $office_nom = 'Administration du site web BleDz';
+    $office_nom = 'Administration du site web BléDz';
    
     
     
@@ -48,6 +49,8 @@ $mail = new PHPMailer(true);
 try {
     //Server settings
    
+    iconv_set_encoding("internal_encoding", "UTF-8");
+
     $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
@@ -57,7 +60,7 @@ try {
     $mail->Port       = 465;//587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
     
     //Recipients
-    $mail->setFrom('bledz.offices@gmail.com';$office_nom);  // sender   //changed later to office administrator email
+    $mail->setFrom('bledz.offices@gmail.com',utf8_decode($office_nom));  // sender   //changed later to office administrator email
     $mail->addAddress($user_email,$user_name);     // Add a recipient
       
 

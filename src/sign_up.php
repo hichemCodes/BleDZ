@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="../css/flex.css">
     <link rel="stylesheet" href="../css/sign_in_sign_up.css?v=<?php echo time(); ?>">
     
+    <link rel="stylesheet" href="../css/swwet_alert_style.css?v=<?php echo time(); ?>">
+
+    <script src="../js/swwet_alert.js"></script>
 
    
     <link rel="stylesheet" href="../css/fontawesome-free-5.12.1-web/css/all.min.css">
@@ -20,7 +23,7 @@
     </style>
     <title>BléDZ | Inscription</title>
 </head>
-<body class="cover_me flex j_center a_center">
+<body class="cover_me flex j_center a_center" style= "height: 100vh !important;">
      <div class="cover_all cover_s"></div>
    <div class="form_type flex d_column">
 
@@ -181,7 +184,8 @@
     </div>
    </div>
 
-     <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+
 
     <script  type="module" src="../js/wilayas.js"></script>
     <script type="module" src="../js/sign_up.js?v=<?php echo time();?>"></script>

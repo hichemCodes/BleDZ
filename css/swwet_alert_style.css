@@ -1,5 +1,7 @@
 
-
+.swal2-popup{
+    font-family:Poppins !important;
+}
 .swal2-icon.swal2-warning {
     border-color: #f1cf69 !important;
     color: #f1cf69 !important;
@@ -13,7 +15,9 @@
     border-color: #f1cf69 !important;
     color: #f1cf69 !important;
 }
-.swal2-icon.swal2-success [class^=swal2-success-line],.swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+.swal2-icon.swal2-success [class^=swal2-success-line],
+.swal2-icon.swal2-error [class^=swal2-x-mark-line],
+.swal2-timer-progress-bar {
     
     background-color: #f1cf69 !important;
 }

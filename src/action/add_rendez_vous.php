@@ -9,7 +9,7 @@ office_auth();
 
 date_default_timezone_set('Africa/Algiers');  //set date to GMT+1
 
-$current_date = strtotime(date('Y-m-d G:i')); //date actuelle 
+$current_date = strtotime(date('Y-m-d G:i')); //current date 
 
 // valider la date 
 $v_date = filter_var($_POST['date'],FILTER_SANITIZE_STRING);

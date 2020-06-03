@@ -49,7 +49,7 @@
   }
   else
   {
-       $data['err'] = 'email incorrécte';
+       $data['err'] = 'email incorrect';
   }
 
   echo json_encode($data);

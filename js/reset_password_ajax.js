@@ -18,7 +18,7 @@
                                       beforeSend : function()
                                       {
                                          $('.err').addClass('r_load');
-                                        $('.err').html("vérification et envoie du code a votre email ...");
+                                        $('.err').html("vérification et envoie du code à votre email ...");
                                       },
                                       success:function(data)
                                       {
@@ -79,19 +79,39 @@
                                                                                     if( !('pass_n_m' in data) )
                                                                                     {
                                                                                         
-                                                                                        $('.er_pass2').addClass('r_load');
+                                                                                       // $('.er_pass2').addClass('r_load');
                                                                                        
-                                                                                        var counter = 8;
-                                                                                        var redirectCount = setInterval(function(){
-                                                                                        
-                                                                                        $('.er_pass2').html(data.success+counter+'s'); 
-                                                                                        counter--
-                                                                                        if (counter === 0) {
+                                                                                        let timerInterval
 
-                                                                                            clearInterval(redirectCount);
-                                                                                            document.location.href = 'http://localhost/projet_licence/src/sign_in.php';
-                                                                                        }
-                                                                                        }, 1000);
+                                                                                        Swal.fire({
+                                                                                                title : 'mot de passe changé avec succès !',
+                                                                                                html : 'réorientation vers la page de connexion dans <b>5</b> s.',
+                                                                                                timer: 5000,
+                                                                                                timerProgressBar: true,
+                                                                                                showConfirmButton: false,
+                                                                                                onBeforeOpen: () => {
+                                                                                    
+                                                                                                    Swal.showLoading();
+                                                                                    
+                                                                                                    timerInterval = setInterval(() => {
+                                                                                                        const content = Swal.getContent();
+                                                                                                        if (content) {
+                                                                                                            const b = content.querySelector('b');
+                                                                                                            if (b) {
+                                                                                                            b.textContent = Math.floor(parseInt(Swal.getTimerLeft())/1000);
+                                                                                                            }
+                                                                                                        }
+                                                                                                        }, 1000)
+                                                                                    
+                                                                                                }
+                                                                                        }).then( result =>{
+                                                                                    
+                                                                                            if (result.dismiss === Swal.DismissReason.timer) 
+                                                                                            {
+                                                                                                    document.location.href = 'sign_in.php';
+                                                                                            }
+                                                                                    
+                                                                                        });
                                                                                     }
                                                                                     else
                                                                                     {

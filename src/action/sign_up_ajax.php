@@ -33,8 +33,10 @@ if($_POST['type']  == 'agriculteur')
                                                  $v_cart = $n_cart;
                                                  $v_wilaya = filter_var($wilaya,FILTER_SANITIZE_STRING);
                                                 
+                                                 $nom_prenom = $v_nom.' '.$v_prenom;
+
                                                  //// tester si le compte d'agriculteur est déja existe 
-                                                if(!(user_already_exist($v_email,$v_cart))){
+                                                if(!(user_already_exist($v_email,$v_cart,$nom_prenom))){
                                                         
                                                         $new_user = $db->prepare("INSERT INTO users
                                                         (email,mot_de_passe,mot_de_passe_confirmation,wilaya_id,profile_id) VALUES (?,?,?,?,2)");
@@ -50,24 +52,29 @@ if($_POST['type']  == 'agriculteur')
                                                         $data['result'] = 'success';
                                                      }
                             else{
-                                if(email_already_exist($v_email) && cart_already_exist($v_cart))
-                                {
-                                    $data['result'] ='ce email existe déjà';
-                                    $data['result'] ='cette carte existe déjà';
+                                        if(email_already_exist($v_email) && cart_already_exist($v_cart))
+                                        {
+                                            $data['result'] ='ce email existe déjà';
+                                            $data['result'] ='cette carte existe déjà';
 
-                                    $data['fail'] = 'a_email';
-                                   
-                                }
-                                else if( email_already_exist($v_email) && !(cart_already_exist($v_cart)) )
-                                {
-                                    $data['fail'] = 'a_email';
-                                    $data['result'] ='ce email existe déjà ';
-                                }
-                                else
-                                {
-                                    $data['fail'] = 'a_cart';
-                                    $data['result'] ='cette carte existe déjà';
-                                }
+                                            $data['fail'] = 'a_email';
+                                        
+                                        }
+                                        else if( email_already_exist($v_email) && !(cart_already_exist($v_cart)) )
+                                        {
+                                            $data['fail'] = 'a_email';
+                                            $data['result'] ='ce email existe déjà ';
+                                        }
+                                        else if( !email_already_exist($v_email) && (cart_already_exist($v_cart)) )
+                                        {
+                                            $data['fail'] = 'a_cart';
+                                            $data['result'] ='cette carte existe déjà';
+                                        }
+                                        else
+                                        {
+                                            $data['fail'] = 'redirect_a';
+                                            $data['result'] = "le nom et le prénom existent déjà";
+                                        }
                                 }
                                  }
                          else{
@@ -146,7 +153,7 @@ else
                                                      $new_agr = $db->prepare("INSERT INTO offices(nom,user_id) VALUES (?,?)");
                                                      $new_agr->execute([$v_nom,$user_id]);
 
-                                                      $data['result'] = 'success';
+                                                     $data['result'] = 'success';
                     
                                                 }
                             else{

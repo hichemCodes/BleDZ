@@ -555,8 +555,9 @@ width:72% !important;
      margin-right: 5px;
      background: #efc852;
      transition: .2s ease-in;
-     cursor: pointer;
+     
 }
-.change_bg .active_bg,.change_bg div:hover{
+.change_bg .active_bg/*,.change_bg div:hover*/{
     background: #4a8b71;
+    
 }

@@ -23,7 +23,8 @@
     $office_nom = $_SESSION['nom'];
     $office_email = $_SESSION['email'];
     $office_wilaya = getWilaya($_SESSION['wilaya_id']);
-    $office_nom_wilaya = 'office du blé : '.$office_nom.' '.$office_wilaya;
+
+    $office_nom_wilaya = 'office du Blé : '.$office_nom.' '.$office_wilaya;
 
     if($all_user_information['profile_id'] == 1)
     {
@@ -47,6 +48,8 @@ $mail = new PHPMailer(true);
 try {
     //Server settings
    
+    iconv_set_encoding("internal_encoding", "UTF-8");
+
     $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
@@ -56,7 +59,7 @@ try {
     $mail->Port       = 465;//587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
     
     //Recipients
-    $mail->setFrom($office_email,$office_nom_wilaya);  // sender 
+    $mail->setFrom($office_email,utf8_decode($office_nom_wilaya));  // sender 
     $mail->addAddress($user_email,$user_name);     // Add a recipient
       
 

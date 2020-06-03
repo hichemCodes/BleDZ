@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="../css/sign_in_sign_up.css">
     <link rel="stylesheet" href="../css/swwet_alert_style.css?v=<?php echo time(); ?>">
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 
    
@@ -163,7 +162,8 @@
            <script src="../js/jquery-3.4.1.min.js"></script>
            <script src="../js/animation_jquery.js?v=<?php echo time(); ?>"></script>
         
-      
+           <script src="../js/swwet_alert.js"></script>
+
             <script src="../js/home_out_ajax.js?v=<?php echo time(); ?>"></script>
             <script src="../js/newslatter_add_member_ajax.js?v=<?php echo time(); ?>"></script>
             <script src="../js/home_out.js?v=<?php echo time(); ?>"></script>

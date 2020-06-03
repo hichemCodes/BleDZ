@@ -16,7 +16,7 @@ if(have_full_acces($_SESSION['office_id']))
                     <tr class="b_bottom">
                     <th class="t_normal">Code</th>
                     <th class="t_normal">Description</th>
-                    <th class="t_small_multi_price">Prix unitaire en DA</th>
+                    <th class="t_small_multi_price">Prix unitaire en DA / Tonne</th>
                     <th class="t_large">Opération</th>
                     </tr>
      ';
