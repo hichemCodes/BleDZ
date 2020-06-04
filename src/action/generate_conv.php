@@ -6,13 +6,12 @@ session_start();
 require 'connect_db.php';
 require 'query.php';
 
-//agr_auth();
+agr_auth();
 
 
 $rendez_vous = $db->prepare("SELECT * FROM rendez_vous
-                         INNER JOIN agriculteurs ON rendez_vous.agriculteur_id = agriculteurs.id
-                         INNER JOIN offices ON rendez_vous.office_id = offices.id 
-                         AND rendez_vous.id = ? ");
+                            INNER JOIN offices ON rendez_vous.office_id = offices.id 
+                            AND rendez_vous.id = ? ");
 
 
 $rendez_vous->execute([$_POST['rendez_vous_id']]);
@@ -20,8 +19,8 @@ $rendez_vous->execute([$_POST['rendez_vous_id']]);
 $rendez_vous_result = $rendez_vous->fetch(PDO::FETCH_ASSOC);
 
     $data['date'] = generate_date($rendez_vous_result['date']);
-    $data['nom_agr'] = $rendez_vous_result['nom'];
-    $data['prenom_agr'] = $rendez_vous_result['prenom'];
+    $data['nom_agr'] = $_SESSION['nom'];
+    $data['prenom_agr'] = $_SESSION['prenom'];
     $data['email_agr'] =  $_SESSION['email'];
     $data['wilaya'] =  getWilaya($_SESSION['wilaya_id']);
     $data['office_nom'] = find_office_name($rendez_vous_result['office_id']);

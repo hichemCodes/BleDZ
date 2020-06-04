@@ -3,17 +3,22 @@
 
         require 'connect_db.php';
         require 'query.php';
+
+        office_auth();
+
         $office_id = $_SESSION['office_id'];
        
             
             
             $recolte = $db->prepare("SELECT count(*) as cpt, sum(Quantité) as quan,max(Qualité) as qual,
-             YEAR(date) as year, SUM(montant) AS t_montant FROM récoltes where  office_id = ? GROUP BY YEAR(date) ORDER BY YEAR(date) DESC ");
+            YEAR(date) as year, SUM(montant) AS t_montant FROM récoltes where  office_id = ? GROUP BY YEAR(date) ORDER BY YEAR(date) DESC ");
             $recolte->execute([$office_id]);
 
         $recolte_count = $recolte->rowCount();
 
-        if($recolte_count == 0){
+        if($recolte_count == 0)
+        {
+
             $output ='';
         }
         else 
@@ -22,17 +27,17 @@
 
             $output =  '
             <div class="a_title">Récoltes d\'office par Année</div>
-             <table>
-            <tr class="b_bottom">
-                <th class="t_normal">Année</th>
-                <th class="t_normal">Nombre de récoltes</th>
-                <th class="t_small ">Quantité</th>
-                <th class="t_small">Qualité</th>
-                <th class="t_normal">Montant</th>
-                <th class="t_large">Opération</th>
+            <table>
+                <tr class="b_bottom">
+                    <th class="t_normal">Année</th>
+                    <th class="t_normal">Nombre de récoltes</th>
+                    <th class="t_small ">Quantité</th>
+                    <th class="t_small">Qualité</th>
+                    <th class="t_normal">Montant</th>
+                    <th class="t_large">Opération</th>
 
 
-            </tr>';
+                </tr>';
             foreach($all_recolte as $recolte)
             {
                 
@@ -48,7 +53,11 @@
                 <td> '. $recolte['t_montant'] .' </td>
                 <td>
                    
-                <i class="fas fa-tv" onclick="recolte_detail_year('.$recolte['year'] .')"></i>
+                    <i class="fas fa-tv" 
+                    onclick="recolte_detail_year('.$recolte['year'] .')"
+                    title ="afficher les informations"></i>
+
+
                 </td>
                 
             </tr>';

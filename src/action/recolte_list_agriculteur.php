@@ -132,7 +132,9 @@
                 <td> '. $recolte['montant'] .' </td>
                 <td>
                    
-                             <i class="fas fa-tv" onclick="show_recolte_detail('.$recolte['id'].')"></i>
+                             <i class="fas fa-tv"
+                              onclick="show_recolte_detail('.$recolte['id'].')"
+                              title ="afficher les informations"></i>
                 </td>
                 
             </tr>';

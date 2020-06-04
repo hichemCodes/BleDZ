@@ -50,7 +50,10 @@ if(have_full_acces($_SESSION['office_id']))
                     <td>'.  $frquent_quality .'</td>
                     <td> '. $harvest['s_montant'] .' </td>
                     <td>  
-                        <i class="fas fa-tv" onclick="recolte_wilaya_detail_year('.$harvest['wilaya_id'] .')"></i>
+                        <i class="fas fa-tv"
+                         onclick="recolte_wilaya_detail_year('.$harvest['wilaya_id'] .')"
+                         title ="afficher les informations"
+                        ></i>
                     </td>
             
             </tr>

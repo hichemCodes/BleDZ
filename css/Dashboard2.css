@@ -12,7 +12,7 @@
     outline-color: #f1cf69;
  }
  .filter_container{
-    width:93.5% !important;
+    width:89.5% !important;
     margin:auto;
     margin-bottom: 7px;
     
@@ -171,6 +171,7 @@ font-weight: 600;
 .succes_valid,.s_updated
 {
 z-index:2000 !important;
+border-radius: 6px;
 }
 /*    second file      */ 
 

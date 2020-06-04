@@ -28,18 +28,18 @@ if(preg_match('(\d{4}-\d{2}-\d{2} \d{2}:\d{2})',$v_date))
         }
         else
         {
-                $data['result'] = "<div class='succes_valid s_updated error_u'>heure inférieur à l'heure actuelle </div>";      
+                $data['result'] = "la date inférieur à la date actuelle ";      
         }
          
     }
     else
     {
-        $data['result'] = "<div class='succes_valid s_updated error_u'> ce rendez-vous existe déjà  </div>";
+        $data['result'] = " ce rendez-vous existe déjà  ";
     }
 }
 else
 {
-    $data['result'] = "<div class='succes_valid s_updated error_u'>format incorrecte  </div>";
+    $data['result'] = "format incorrect  ";
 }
 
 

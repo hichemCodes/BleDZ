@@ -144,7 +144,7 @@ function rendez_vous(id)
       }
       function downloads_pdf_conv(data)
       {
-                       var doc = new jsPDF();
+                    var doc = new jsPDF();
 
      
                     doc.setFontStyle("bold");

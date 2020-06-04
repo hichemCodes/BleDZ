@@ -2,10 +2,14 @@
         session_start();
 
         require 'connect_db.php';
+
         require 'query.php';
+        
+        agr_auth();
+
         $agr_id = $_SESSION['agr_id'];
-       
-            $output = '';
+        $output = '';
+        
         if(agr_have_recolte($agr_id))   
         {
             $recolte = $db->prepare("SELECT count(*) as cpt, sum(Quantité) as quan,max(Qualité) as qual,
@@ -20,16 +24,15 @@
            $output =  '
            <div class="title c_h_title">Récoltes par Année</div>
             <table>
-           <tr class="b_bottom">
-               <th class="t_normal">Année</th>
-               <th class="t_normal">Nb de récoltes</th>
-               <th class="t_small ">Quantité</th>
-               <th class="t_small">Qualité</th>
-               <th class="t_normal">Montant</th>
-               <th class="t_large">opération</th>
+                <tr class="b_bottom">
+                    <th class="t_normal">Année</th>
+                    <th class="t_normal">Nb de récoltes</th>
+                    <th class="t_small ">Quantité</th>
+                    <th class="t_small">Qualité</th>
+                    <th class="t_normal">Montant</th>
+                    <th class="t_large">opération</th>
+                </tr>';
 
-
-           </tr>';
            foreach($all_recolte as $recolte)
            {
                $frquent_quality = top_quality_in_year($recolte['year'],$_SESSION['agr_id'],'agriculteur');
@@ -44,7 +47,9 @@
                <td> '. $recolte['t_montant'] .' </td>
                <td>
                   
-                            <i class="fas fa-tv" onclick="recolte_detail_year('.$recolte['year'] .')"></i>
+                            <i class="fas fa-tv"
+                             onclick="recolte_detail_year('.$recolte['year'] .')"
+                             title ="afficher les informations"></i>
                </td>
                
            </tr>';
