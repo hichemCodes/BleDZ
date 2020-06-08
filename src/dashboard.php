@@ -367,7 +367,7 @@ require 'action/query.php';
                 <script src="../js/jquery-3.4.1.min.js?v=<?php echo time(); ?>"></script>
                 <script src="../js/error_handling.js?v=<?php echo time(); ?>"></script>
                  
-                 <script src="../js/swwet_alert.js"></script>
+                <script src="../js/swwet_alert.js"></script>
                
 
                 <script src="../js/member_ajax.js?v=<?php echo time(); ?>"></script>
@@ -394,7 +394,6 @@ require 'action/query.php';
                                       
                 ?>
                 <script src="../js/Chart.bundle.js"></script>
-                <script src="../js/side_bar_animation.js?v=<?php echo time(); ?>"></script>
 
          
 </body>

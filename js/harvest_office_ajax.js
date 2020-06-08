@@ -189,7 +189,10 @@ function show_add_recolte(rendez_vous_id,agr_id)
              });
  }
 
- function show_all_recolte_office(order_by,year = "tous")
+ function show_all_recolte_office(
+                                  order_by = (localStorage.getItem('oreder_by_search') != null ) ? localStorage.getItem('oreder_by_search') : 'date',
+                                  year = $( "#year_s" ).val()
+                                  )
 {
     var start_p = localStorage.getItem('start_page');
     var end_p = localStorage.getItem('end_page');

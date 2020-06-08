@@ -43,7 +43,16 @@ all_link[4].addEventListener('click',()=>
     show_all_recolte_office('date');  // classer la récolte par date la premiere fois 
     show_all_recolte_office_année(); 
 
+    all_harvest_wilayas(2020);
+
 });
+
+// product 
+all_link[5].addEventListener('click',()=>
+{
+    show_all_product();
+});
+
 // account setting
 all_link[7].addEventListener('click',()=>
 {

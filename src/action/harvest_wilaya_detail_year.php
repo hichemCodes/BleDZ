@@ -130,17 +130,17 @@ if(have_full_acces($_SESSION['office_id']))
         else
         {
             $data['result'] = 'empty';
-            $data['err'] = '<span class="empty_result">pas de récoltes pendant l\'année '.$_POST['year'].' </span>';   
+            $data['err'] = 'pas de récoltes pendant l\'année '.$_POST['year'];   
         }
         
     }
     else
     {
         $data['result'] = 'empty';
-        $data['err'] = '<span class="empty_result">pas de récoltes pendant l\'année '.$_POST['year'].' </span>';
+        $data['err'] = 'pas de récoltes pendant l\'année '.$_POST['year'];
     }
     
-   echo $data['result'];
+    echo json_encode($data);
    
 
 

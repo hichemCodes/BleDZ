@@ -15,14 +15,19 @@ $current_date = strtotime(date('Y-m-d H:i:s')); //current date
 
      if(already_have_rendez_vous($_SESSION['agr_id']))
      {
-          $output = '
+          $data['result'] = '
           
           <span class="pas_rendez_vous"> 
-                <i class="fas fa-times" onclick="hide_rendez_vous_form()"> </i>
+                 <i class="fas fa-times" onclick="hide_rendez_vous_form()"> </i>
                  vous avez déjà pris un rendez, vous ne pouvez pas prendre 2 rendez-vous au même temps
           </span>
           
           </div>';
+     }
+     else if(!office_exist($_POST['id']))
+     {
+             $data['result'] = 'fail';
+             $data['err'] = 'office n\'éxist pas';
      }
      else
      {
@@ -35,7 +40,7 @@ $current_date = strtotime(date('Y-m-d H:i:s')); //current date
           if($r_list_count == 0 )
           {
           
-               $output = '
+               $data['result'] = '
 
                <span class="pas_rendez_vous"> 
                     <i class="fas fa-times empty_r_v" onclick="hide_rendez_vous_form()"> </i>
@@ -50,7 +55,7 @@ $current_date = strtotime(date('Y-m-d H:i:s')); //current date
                
           $r_list_count_result = $r_list->fetchAll(PDO::FETCH_ASSOC);
 
-          $output = '
+          $data['result'] = '
                        
                <i class="fas fa-times" onclick="hide_rendez_vous_form()"> </i>
                <table>
@@ -68,7 +73,7 @@ $current_date = strtotime(date('Y-m-d H:i:s')); //current date
 
                               if($r_list_count == 1)
                               {
-                                   $output = '
+                                   $data['result'] = '
 
                                    <span class="pas_rendez_vous"> 
                                         <i class="fas fa-times empty_r_v" onclick="hide_rendez_vous_form()"> </i>
@@ -89,7 +94,7 @@ $current_date = strtotime(date('Y-m-d H:i:s')); //current date
                               $r_date = strtotime($rendez_vous['date']);
                               $date_part1 = date('d/m/Y',$r_date);
                               $date_part2 = date('H:i',$r_date);
-                              $output = $output.'<tr class="b_bottom">
+                              $data['result'] = $data['result'].'<tr class="b_bottom">
                               <td>'. $date_part1.' à '. $date_part2 .'</td>
                               <td> 
                               
@@ -105,14 +110,14 @@ $current_date = strtotime(date('Y-m-d H:i:s')); //current date
                     }
                
           }
-          $output = $output.' </table> ';
+          $data['result'] = $data['result'].' </table> ';
 }
 
 
 
 
 }
-echo $output;
+echo json_encode($data);
 ?>
 
 

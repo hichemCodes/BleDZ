@@ -58,7 +58,7 @@ require 'action/load_all_session.php';
         <script src="../js/load_page_fragments.js?v=<?php echo time(); ?>"></script>
         <script src="../js/jspdf.min.js"></script>
         <script src="../js/rendez_vous_ajax.js?v=<?php echo time(); ?>"></script>
-        <script src="../js/newslatter_add_member_ajax.js"></script>
+        <script src="../js/newslatter_add_member_ajax.js?v=<?php echo time(); ?>"></script>
      
         
 </body>

@@ -48,56 +48,7 @@ function fetch_data(year)
    });
  
   
-   let Colorss = [ 
-    "#4e99cf",
-    "#8e5ea2",
-    "#3cba9f",
-    "#e8c3b9",
-    "#c45850",
-    "#F0B67F",
-    "#C7EFCF",
-    "#7E8D85",
-    "AntiqueWhite",
-    "tomato",
-    "Azure",
-    "Salamon",
-    "Wheat",
-    "#8bc34a",
-    "#B3BFB8",
-    "#fd966d",//alger
-    "#777",
-    "#e6e1ff",
-    "",
-    "#ff5722",
-    "turquoise",
-    "#e91e63",
-    "#f1cf69",//annaba
-    "#673ab7",
-    "#cddc39",
-    "#ffeb99",
-    "#2196f3",
-    "chocolate",
-    "hotpink",
-    "#cddc99",
-    "lemonchiffon",
-    "#ffeb3b",
-    "#d6af7b",
-    "",
-    "",
-    "#242526",
-    "#2C5364",
-    "#F37335",
-    "#DAD299",
-    "#D1913C",
-    "#ec38bc",
-    "#b6fbff",
-    "#83a4d4",
-    "#FFAFBD",
-    "#C04899",
-    "cyan",
-    "#ED213A",
-    "#727a17"
- ];
+   
 
 /// generate a Doughnut chart using chart js 
 
@@ -111,7 +62,7 @@ function Doughnut_chart(result)
                datasets : [
                    {
                         label : 'Quantité en tonne',
-                        backgroundColor: Colorss,
+                        backgroundColor: Colors,
                         data : result,
 
                    }

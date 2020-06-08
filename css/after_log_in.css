@@ -698,10 +698,14 @@ border-radius:50%;
       outline-color: #f1cf69;
    }
    .filter_container{
-      width:82%;
+      width:78%;
       margin:auto;
        margin-bottom:15px;
   
+   }
+   .un_subscribe{
+       background: #f1cf69;
+       color: #fff;
    }
    .empty_result{
       margin: auto;

@@ -3,6 +3,12 @@ $(document).ready(function()
           all_offices();
           my_rendez_vous();
 
+          setInterval ( ()=>{
+                
+               my_rendez_vous();
+
+          },2000);
+
 });
 function all_offices()
 {
@@ -26,10 +32,10 @@ function my_rendez_vous()
      $.ajax({
               'url':'action/mon_rendez_vous.php',
               'type':'POST',
-              beforeSend : function()
+             /* beforeSend : function()
               {
                    $('.my_r_v_container').html('<div class="lds-ripple"><div></div><div></div></div>');  
-              },
+              },*/
               success:function(data)
               {
                    $('.my_r_v_container').html(data);
@@ -42,9 +48,10 @@ function rendez_vous(id)
           $('.cover_all2').css("display","flex");
           
           $.ajax({
-                'url':'action/rendez_vous_list.php',
-                'type':'POST',
-                 'data':{id:id},
+                 url :'action/rendez_vous_list.php',
+                 type : 'POST',
+                 dataType : 'JSON',
+                 data :{id:id},
                  beforeSend : function()
               {
                  
@@ -52,8 +59,21 @@ function rendez_vous(id)
               },
                  success:function(data){
                   
+                     if(data.result != 'fail')
+                     {
+                         $('.tab_wraper').html(data.result);                           
+                     }
+                     else
+                     {
+                         $('.cover_all2').hide();
+                         
+                         Swal.fire(
+                              'Erreur !',
+                               data.err,
+                              'error'
+                            );
+                     }
                       
-                      $('.tab_wraper').html(data);
 
                  }
           });

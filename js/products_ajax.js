@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    show_all_product();
+   
 
     // afficher formulaire d'ajout de produit
     $('.add_product').on('click',function()

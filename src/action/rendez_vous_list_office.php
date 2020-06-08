@@ -54,6 +54,8 @@ if(office_has_rendez_vous($_SESSION['office_id']))
 
                               $delete_rdv->execute([$rendez_vous['id']]);
 
+                              
+
                         }
                         else
                         {
@@ -63,11 +65,9 @@ if(office_has_rendez_vous($_SESSION['office_id']))
                               $output = $output.'<tr class="b_bottom">
                               <td>'. $date_part1.' à '. $date_part2 .'</td>
                               <td> 
-                              
-                                    
-                                          <i class="fas fa-trash-alt" onclick="destroy_r_v('. $rendez_vous['id'].')" title="supprimer ce rendez-vous"></i>                        
-                                          
-                              
+                                          <i class="fas fa-trash-alt" 
+                                          onclick="destroy_r_v('. $rendez_vous['id'].')" 
+                                          title="supprimer ce rendez-vous"></i>                                       
                               </td>
                               </tr>';
                         }
@@ -91,7 +91,6 @@ echo $output;
 
 
 
-?>
 
 
                                        

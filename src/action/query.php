@@ -9,7 +9,7 @@
         {
             if($_SESSION['type'] != 'office')
             {
-                die(header("Location:/pfe/src/sign_in.php"));
+                die(header("Location:../sign_in.php"));
             }
         }
         
@@ -20,7 +20,7 @@
         {
             if($_SESSION['type'] != 'agriculteur')
             {
-                die(header("Location:/pfe/src/sign_in.php"));
+                die(header("Location:../sign_in.php"));
             }
         }
     }
@@ -30,11 +30,11 @@
         {
             if($_SESSION['type'] == 'agriculteur')
             {
-                    header("location:/pfe/src/Appointement.php");
+                    header("location:Appointement.php");
             }
             else
             {
-                    header("location:/pfe/src/dashboard.php");
+                    header("location:dashboard.php");
             }
         }
     }
@@ -153,23 +153,36 @@
 
        
     }
+    function office_exist($id)
+    {
+        global $db;
+        $office = $db->prepare("SELECT * FROM offices  WHERE id=?");
+        $office->execute([$id]);
+
+        if($office->rowCount() == 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }  
+    }
 
     function has_avatar($id)
     {
         global $db;
-    $avatar = $db->prepare("SELECT avatar FROM agriculteurs  WHERE id=?");
-    $avatar->execute([$id]);
-    $avatar_result = $avatar->fetch(PDO::FETCH_ASSOC);
-     if(empty($avatar_result['avatar']))
-     {
-         return false;
-     }
-     else
-     {
-         return true;
-     }
-
-     
+        $avatar = $db->prepare("SELECT avatar FROM agriculteurs  WHERE id=?");
+        $avatar->execute([$id]);
+        $avatar_result = $avatar->fetch(PDO::FETCH_ASSOC);
+        if(empty($avatar_result['avatar']))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }  
     }
 
     function find_avatar($id)
@@ -597,7 +610,10 @@
             $best_office = $db->prepare("SELECT offices.nom as best_office , SUM(récoltes.quantité) as s_quan FROM récoltes
                                      INNER JOIN offices ON récoltes.office_id = offices.id 
                                      INNER JOIN users ON offices.user_id = users.id AND users.wilaya_id = ?
-                                     AND YEAR(date) = ?  order by récoltes.Quantité desc LIMIT 1");
+                                     AND YEAR(date) = ? 
+                                     GROUP BY offices.id
+                                     order by récoltes.Quantité desc
+                                     LIMIT 1");
 
             $best_office->execute([$wilaya_id,$year]);
 
@@ -613,7 +629,10 @@
                                      agriculteurs.prenom as best_agr_prenom, SUM(récoltes.quantité) as s_quan FROM récoltes
                                      INNER JOIN agriculteurs ON récoltes.agriculteur_id = agriculteurs.id 
                                      INNER JOIN users ON agriculteurs.user_id = users.id AND users.wilaya_id = ?
-                                     AND YEAR(date) = ?  order by récoltes.Quantité desc LIMIT 1");
+                                     AND YEAR(date) = ? 
+                                     GROUP BY agriculteurs.id
+                                     order by récoltes.Quantité desc
+                                     LIMIT 1");
 
             $best_agr->execute([$wilaya_id,$year]);
 

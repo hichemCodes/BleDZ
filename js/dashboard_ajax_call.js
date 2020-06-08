@@ -2,40 +2,63 @@
 
 $(document).ready(function(){
 
-    // dashboard count 
-    register_user_count();
-    in_valid_accounts_count();
-    rendez_vous_pris_count();
-    recolte_count();
+    setInterval ( ()=>{
 
-    // chart graph
-    chart_recoltes(2020);  
-    chart_money(2020);
-    
-    //account
-    all_account();
-    show_all_offices();
+        // dashboard count 
+        register_user_count();
+        in_valid_accounts_count();
+        rendez_vous_pris_count();
+        recolte_count();
 
-    // invalid account
-    all_invalid_accounts();
-    show_invalid_offices();
+        
+         // rendez-vous
+         rendez_vous_prise();
+         rendez_vous_non_prise();
 
-    // rendez-vous
-    rendez_vous_prise();
-    rendez_vous_non_prise();
-    
-    // récoltes
-    localStorage.setItem('oreder_by_search','date');
-    show_all_recolte_office('date');  // classer la récolte par date la premiere fois 
-    show_all_recolte_office_année(); 
+
+    },2000);
+
+        // dashboard count 
+        register_user_count();
+        in_valid_accounts_count();
+        rendez_vous_pris_count();
+        recolte_count();
+
+        // chart graph
+        chart_recoltes(2020);  
+        chart_money(2020);
+        
+          //account
+          all_account();
+          show_all_offices();
+  
+          // invalid account
+          all_invalid_accounts();
+          show_invalid_offices();
+  
+
+        // rendez-vous
+        rendez_vous_prise();
+        rendez_vous_non_prise();
+
+        // récoltes
+        show_all_recolte_office();  // classer la récolte par date la premiere fois 
+        show_all_recolte_office_année(); 
+        all_harvest_wilayas(2020); 
+
+        //product
+        show_all_product();
+
+        // factures
+        show_all_factures();
+
+        //account_setting
+        show_update_profile_form();
+
+
+       
    
-    // factures
-    show_all_factures();
-
-    //product
-
-    //account_setting
-    show_update_profile_form();
+    
     
 
     /// rechercher a les utilisateur qui apartient a la méme wilaya que l'office

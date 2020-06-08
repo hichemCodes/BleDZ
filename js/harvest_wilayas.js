@@ -1,7 +1,7 @@
 
 $(document).ready(function()
 {
-    all_harvest_wilayas(2020);
+    
 
     // add on change event to select to change the year
     $('.s_years_wilayas').on('change',function()
@@ -45,7 +45,7 @@ function recolte_wilaya_detail_year(wilaya_id)
     $.ajax({
         url : 'action/harvest_wilaya_detail_year.php',
         method : 'POST',
-      //  dataType : 'JSON',
+        dataType : 'JSON',
         data : { 
                  year : year,
                  wilaya_id : wilaya_id
@@ -57,8 +57,19 @@ function recolte_wilaya_detail_year(wilaya_id)
         },
         success : function(data)
         {
-             $('.profile').html(data);
-             console.log(data);
+            if(data.result != 'empty')
+            {
+                $('.profile').html(data.result);
+            }
+            else
+            {
+                Swal.fire(
+                    'Erreur !',
+                     data.err,
+                    'error'
+                  );
+            }
+            
         }
    })
 }

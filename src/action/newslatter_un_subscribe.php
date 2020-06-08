@@ -1,7 +1,6 @@
-
-
-
 <?php
+
+session_start();
 
 require 'connect_db.php';
 require 'query.php';
@@ -16,28 +15,24 @@ agr_auth();
                  if(filter_var($v_email,FILTER_VALIDATE_EMAIL))
                  {
                            
-                       if(!email_exist_in_news_latter($v_email))
+                       if(email_exist_in_news_latter($v_email))
                        {
-                              $add_news_latter = $db->prepare("INSERT INTO newslatter (email) VALUE (?) ");
-                              $add_news_latter->execute([$v_email]);
+                              $un_subscribe = $db->prepare("DELETE FROM newslatter WHERE email = ? ");
+                              $un_subscribe->execute([$v_email]);
                               
-                              $data['result'] =  "vous êtes désormais abonné à la newsletter";
-                       }
+                              $data['result'] =  "vous êtes désormais désabonné à la newsletter";
+                       }    
                        else
                        {
-                                $data['result'] = 'fail';
-
-                                $data['err'] =  "vous êtes déja abonné à la newsletter "; 
-                       }
-                      
+                                    $data['result'] = 'fail';
+                                    $data['err']=  "vous êtes pas abonné a la newslatter !";          
+                       }      
 
                  }
                  else
                  {
                               $data['result'] = 'fail';
-                              $output =  " email incorrect ";
-
-                    
+                              $data['err'] =  " email incorrect ";          
                  }
            
       }

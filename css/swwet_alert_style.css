@@ -20,5 +20,6 @@
 .swal2-timer-progress-bar {
     
     background-color: #f1cf69 !important;
+    box-shadow: none;
 }
 

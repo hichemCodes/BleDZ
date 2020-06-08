@@ -73,6 +73,11 @@ function valid_account(id,element){
                 all_invalid_accounts();
                 show_invalid_offices();
 
+                //account
+                all_account();
+                show_all_offices();
+        
+
                 Swal.fire(
                     'Validé !',
                      data.result,
