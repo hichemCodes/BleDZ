@@ -44,7 +44,6 @@ $(document).ready(function(){
         // récoltes
         show_all_recolte_office();  // classer la récolte par date la premiere fois 
         show_all_recolte_office_année(); 
-        all_harvest_wilayas(2020); 
 
         //product
         show_all_product();

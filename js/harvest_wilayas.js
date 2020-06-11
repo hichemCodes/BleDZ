@@ -1,7 +1,9 @@
 
 $(document).ready(function()
 {
-    
+
+    // on load function call
+    all_harvest_wilayas(2020); 
 
     // add on change event to select to change the year
     $('.s_years_wilayas').on('change',function()

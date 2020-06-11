@@ -24,7 +24,7 @@
                                 <input type="email" id="email"  class="n_email" placeholder="Email" value="'.$email.'" readonly >
                                 <span class="focus-border"></span>
                             </div>
-                            <input type="submit" value="Abonné" class="cnx_btn m un_subscribe"  title="vous êtes déja abonné a la newsletter">
+                            <input type="submit" value="Abonné" class="cnx_btn m un_subscribe"  title="désabonner">
                             ';
                         }
                         else
@@ -34,7 +34,7 @@
                                 <input type="email" id="email"  class="n_email" placeholder="Email" value="'.$email.'">
                                 <span class="focus-border"></span>
                             </div>
-                            <input type="submit" value="Abonner" class="cnx_btn m subscribe" >
+                            <input type="submit" value="Abonner" title = "abonner" class="cnx_btn m subscribe" >
                             ';
                         }
                 }

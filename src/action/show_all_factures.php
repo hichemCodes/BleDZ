@@ -12,8 +12,8 @@ require 'query.php';
 
 if(isset($_POST['start_page']) && isset($_POST['end_page']))
 {
-          $start_p = (int)$_POST['start_page'];
-          $end_p = (int)$_POST['end_page'];
+          $start_p = (int) $_POST['start_page'];
+          $end_p = (int) $_POST['end_page'];
 }
 else
 {
@@ -21,8 +21,11 @@ else
             $end_p = 5;
 }
 
-$all_factures = $db->prepare("SELECT date,nom,prenom,montant,factures.id as f_id FROM factures INNER JOIN agriculteurs ON factures.agriculteur_id = agriculteurs.id
-                                 AND office_id = :office_id ORDER BY  date DESC LIMIT 10 OFFSET :start_p");
+$all_factures = $db->prepare("SELECT date,nom,prenom,montant,factures.id as f_id FROM factures
+                              INNER JOIN agriculteurs ON factures.agriculteur_id = agriculteurs.id
+                              AND office_id = :office_id 
+                              ORDER BY date DESC 
+                              LIMIT 10 OFFSET :start_p");
 
 $all_factures->bindValue(':office_id',$_SESSION['office_id'],PDO::PARAM_INT);
 $all_factures->bindValue(':start_p',$start_p,PDO::PARAM_INT);
@@ -34,14 +37,15 @@ $all_factures->execute();
         {
                 $output = '
                
-                <table >
-                <tr class="b_bottom">
-                <th class="t_normal">Date</th>
-                <th class="t_normal">Nom et Prénom d\'agriculteur</th>
-                <th class="t_normal">Montant</th> 
-                <th class="t_normal">Opération</th>
+                <table>
+                    <tr class="b_bottom">
 
-            </tr>';
+                        <th class="t_normal">Date</th>
+                        <th class="t_normal">Nom et Prénom d\'agriculteur</th>
+                        <th class="t_normal">Montant</th> 
+                        <th class="t_normal">Opération</th>
+
+                    </tr>';
 
         $all_factures_result = $all_factures->fetchALL(PDO::FETCH_ASSOC);
         

@@ -140,12 +140,12 @@ else
                                                  $pass2_hash = password_hash($pass2,PASSWORD_DEFAULT);
                                                  $v_wilaya = filter_var($wilaya,FILTER_SANITIZE_STRING);
                                                  
-                                                //// tester si le compte d'agriculteur est déja existe 
+                                                //// tester si le compte d'office est déja existe 
                                                 if(!(office_already_exist($v_email,$v_nom)))
                                                 {
                                                 
                                                     $new_user = $db->prepare("INSERT INTO users
-                                                    (email,mot_de_passe,mot_de_passe_confirmation,is_verified,wilaya_id,profile_id) VALUES (?,?,?,1,?,1)");///*
+                                                    (email,mot_de_passe,mot_de_passe_confirmation,is_verified,wilaya_id,profile_id) VALUES (?,?,?,0,?,1)");///*
                                                     $new_user->execute([$v_email,$pass1_hash,$pass2_hash,$v_wilaya]);
                                                             
                                                      // insérer dans la table offices

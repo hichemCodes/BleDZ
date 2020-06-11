@@ -3,10 +3,7 @@
 
 <?php
 
-require 'connect_db.php';
 require 'query.php';
-
-agr_auth();
 
 
       if(!empty($_POST['email']))
@@ -35,7 +32,7 @@ agr_auth();
                  else
                  {
                               $data['result'] = 'fail';
-                              $output =  " email incorrect ";
+                              $data['err'] =  " email incorrect ";
 
                     
                  }

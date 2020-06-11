@@ -9,18 +9,18 @@
         {
             if($_SESSION['type'] != 'office')
             {
-                die(header("Location:../sign_in.php"));
+                die(header("Location:/pfe/src/sign_in.php"));
             }
         }
         
     }
     function agr_auth()
     {
-        if (!isset($_SESSION['id']) || (isset($_SESSION['type']) && $_SESSION['type'] == 'office' ) )
+        if (!isset($_SESSION['id']) || ( (isset($_SESSION['type']) && $_SESSION['type'] == 'office' ) ) )
         {
             if($_SESSION['type'] != 'agriculteur')
             {
-                die(header("Location:../sign_in.php"));
+                die(header("Location:/pfe/src/sign_in.php"));
             }
         }
     }
@@ -612,7 +612,7 @@
                                      INNER JOIN users ON offices.user_id = users.id AND users.wilaya_id = ?
                                      AND YEAR(date) = ? 
                                      GROUP BY offices.id
-                                     order by récoltes.Quantité desc
+                                     order by s_quan desc
                                      LIMIT 1");
 
             $best_office->execute([$wilaya_id,$year]);
@@ -631,7 +631,7 @@
                                      INNER JOIN users ON agriculteurs.user_id = users.id AND users.wilaya_id = ?
                                      AND YEAR(date) = ? 
                                      GROUP BY agriculteurs.id
-                                     order by récoltes.Quantité desc
+                                     order by s_quan desc
                                      LIMIT 1");
 
             $best_agr->execute([$wilaya_id,$year]);

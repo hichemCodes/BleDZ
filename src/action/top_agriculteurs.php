@@ -14,7 +14,7 @@ $top_agr = $db->prepare("SELECT sum(Quantité) as quan,agriculteur_id as agr_id 
                             INNER JOIN users ON agriculteurs.user_id = users.id 
                             AND YEAR(récoltes.date) = ? 
                             GROUP BY récoltes.agriculteur_id 
-                            ORDER BY sum(Quantité) DESC LIMIT 10") ;
+                            ORDER BY sum(Quantité) DESC LIMIT 50") ;
 
  $top_agr->execute([$current_year]);
 
@@ -40,9 +40,7 @@ $top_agr = $db->prepare("SELECT sum(Quantité) as quan,agriculteur_id as agr_id 
 
         $nom_prenom = $agr['nom'].' '.$agr['prenom'];
         $wilaya = getWilaya($agr['wilaya_id']);
-       
-        for($i=0;$i<4;$i++)
-        {
+    
           $output .= '
           
           <div class="profile flex d_column j_center a_center">
@@ -58,7 +56,7 @@ $top_agr = $db->prepare("SELECT sum(Quantité) as quan,agriculteur_id as agr_id 
           </div>
 
           ';
-        }
+        
      }
  
 

@@ -52,7 +52,7 @@
                 <div class="nav_child flex j_start a_center">
                             <a href="" class="logo" ><img src="../img/logo.png" alt=""></a>
                             <ul class="flex j_around">
-                               <li id="acceuil">Acceuil</li>
+                               <li id="acceuil" class="active_nav_link">Acceuil</li>
                              <li id="service">Services</li>
                               <li id="agriculteur"> Agriculteurs</li>
                                 
@@ -174,7 +174,12 @@
             <script src="../js/facts_counter_animation.js?v=<?php echo time();?>"></script>
             
         
+      <script>
+      
+      
+    
 
+      </script>
 </body>
 </html>
 

@@ -19,7 +19,7 @@
                                 if($offices->rowCount() == 0)
                                 {
                                      
-                                       $output = ' <span class="empty_result">il ya pas encore des offices dans votre wilaya</span>';
+                                       $output = ' <span class="empty_result">il n\'y a pas  encore des offices  dans votre wilaya</span>';
                                        
                                 }
                                 else

@@ -218,6 +218,7 @@ function update_calander()
             month='0'+month;
         } 
         var today = year+'-'+month+'-'+day;
+
         calandar.setAttribute('min',today);
         calandar.setAttribute('value',today);
 }
