@@ -17,6 +17,8 @@
 
    
     <link rel="stylesheet" href="../css/fontawesome-free-5.12.1-web/css/all.min.css">
+    <link rel="icon" href="../img/logo_s.png" type="image/icon type">
+
     <style>
                         
                    

@@ -91,7 +91,7 @@ else
 
                 if(exist_in_facture($result['id'],$_POST['agr_id']))
                 {
-                        $output = $output .' <label  class="flex j_start a_center" >   <span class="err_fact"> '.  date('d/m/Y',strtotime($result['date'])) . ' ce récolte est déja facturisé</span> </label>';
+                        $output = $output .' <label  class="flex j_start a_center" >   <span class="err_fact"> '.  date('d/m/Y',strtotime($result['date'])) . ' ce récolte est déja facturé</span> </label>';
                 }
                 else
                 {

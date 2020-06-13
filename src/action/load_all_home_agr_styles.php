@@ -11,5 +11,7 @@
 
     <link rel="stylesheet" href="../css/swwet_alert_style.css?v=<?php echo time(); ?>">
 
+    <link rel="icon" href="../img/logo_s.png" type="image/icon type">
+
 
     <script src="../js/swwet_alert.js"></script>

@@ -12,6 +12,8 @@ let client_window_width = window.innerWidth;
 let profile_width = Math.ceil(client_window_width * 0.1847575058);
 let slider_width = Math.ceil(client_window_width * 0.212);
 let final_slide =(slider_width * all_profile_count_h) ; // the final slide
+let count_click_to_finale = 0;  /// number of click to reach final slide
+
 
 //set the width of the profile items
 
@@ -32,21 +34,25 @@ localStorage.setItem('slider',0);
 if(all_profile_count_h > 4)  // number of the minumuim profile
 {
     btn_slider_right.classList.add('show_slide');
+
     
     // slide right
     btn_slider_right.addEventListener('click',()=>{
 
             let current_scroll =  parseInt(localStorage.getItem('slider'));
 
-            if( ((current_scroll + (slider_width * 4)) > final_slide ))// check if we can slide 4 item in one slide or not)
+            count_click_to_finale++;
+
+            if( count_click_to_finale < Math.floor(all_profile_count_h / 4))
             {
-                 var next_silide = current_scroll + slider_width;
+                 var next_silide = current_scroll + 4 * slider_width;
             }    
             else
             {
-                 var next_silide = current_scroll+ 4 *slider_width;                 
+                 var next_silide = current_scroll + slider_width;                 
             }
 
+            
 
              all_profile.style.transform = 'translateX('+(-next_silide)+'px)';
 
@@ -57,7 +63,9 @@ if(all_profile_count_h > 4)  // number of the minumuim profile
                 btn_slider_left.classList.add('show_slide');
             }
             // if we are in the last profile 
-            if((next_silide+4*slider_width) == (all_profile_count_h*slider_width) )
+            let last_profile = (all_profile_count_h % 4 === 0)  ? next_silide+slider_width  :  next_silide+ 4*slider_width;
+
+            if( last_profile >= (all_profile_count_h*slider_width))
             {
                 btn_slider_right.classList.remove('show_slide');
 
@@ -70,6 +78,8 @@ if(all_profile_count_h > 4)  // number of the minumuim profile
     btn_slider_left.addEventListener('click',()=>{
 
             let current_scroll =  parseInt(localStorage.getItem('slider'));
+            //reset the right counter 
+            count_click_to_finale = 0;
 
             if( ((current_scroll - (slider_width * 4)) < 0 ))// check if we can slide 4 item in one slide or not)
             {

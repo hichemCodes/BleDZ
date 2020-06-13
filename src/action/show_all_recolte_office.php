@@ -3,6 +3,8 @@
 
         require 'connect_db.php';
         require 'query.php';
+
+        office_auth();
         
         $output = '';
 
@@ -10,19 +12,11 @@
         
         if(office_have_recolte($_SESSION['office_id']))
         {
-
-       
-
-                if(!isset($_POST['start_p']) && !isset($_POST['end_p']))
-                {
-                        $start_p = 0;
-                        $end_p = 5;
-                }
-                else
-                {
-                        $start_p = $_POST['start_p'];
-                        $end_p = $_POST['end_p'];
-                }
+          
+                $start_p =  (!isset($_POST['start_p'])) ? 0 : $_POST['start_p'];
+                $end_p = (!isset($_POST['end_p'])) ? 5 : $_POST['end_p'];
+                
+            
                 if($_POST['year'] == 'tous')
                 {
                     if($_POST['order_by'] == "date")
@@ -44,6 +38,7 @@
             
                     }
                     else if($_POST['order_by'] == "montant"){
+
                         $recolte = $db->prepare("SELECT * FROM récoltes WHERE office_id = :office_id order by montant desc limit 5 OFFSET :start_p");
                     }
         
@@ -73,6 +68,7 @@
             
                     }
                     else if($_POST['order_by'] == "montant"){
+                        
                         $recolte = $db->prepare("SELECT * FROM récoltes WHERE office_id = :office_id  AND YEAR(date) = :date_y order by montant desc limit 5 OFFSET :start_p");
                     }
         
@@ -143,41 +139,44 @@
                     $output = $output." </table>";
                     
                     /// pgination
-
                     $result_per_page = 5;
                     $recolte_count = all_recolte_of_office($_SESSION['office_id'],$_POST['year']);
                     $number_of_pages  = ceil((int)$recolte_count/$result_per_page);
 
                     if($number_of_pages > 1)
                     {
-                    // initialisation de la premierre page 
-                            $first_page = 0;
-                            $last_page = 5;
-                            $output = $output . '<div class="flex j_center a_center all_opginate_btn">';
-                    for ($i = 1;$i<=$number_of_pages;$i++)
-                    {
-                        
-                        $next_page = (int)$end_p + $result_per_page;
-
-                        if($i == $end_p/5)
-
+                                // initialisation de la premierre page 
+                                $first_page = 0;
+                                $last_page = 5;
+                                $output = $output . '<div class="flex j_center a_center all_opginate_btn">';
+                                  
+                        for ($i = 1;$i<=$number_of_pages;$i++)
                         {
                             
-                            $output = $output . '<button class="paginate_btn active_page"  onclick="show_interval_page('. $first_page .','. $last_page .','. $i .')">'.$i.'</button>';
+                            $next_page = (int)$last_page + $result_per_page;
+                            $current_page = ($start_p+5)/5;
+                        
+                    
+
+                            if($i == $current_page)
+
+                            {
+                                
+                                $output = $output . '<button class="paginate_btn active_page"  onclick="show_interval_page('. $first_page .','. $last_page .','. $i .')">'.$i.'</button>';
+
+                            }
+                            else
+                            {
+
+                                $output = $output . '<button class="paginate_btn"   onclick="show_interval_page('. $first_page .','. $last_page .','. $i .')">'.$i.'</button>';
+
+                            }
+    
+                            $first_page = $last_page;
+                            $last_page = (int) $last_page + 5; 
 
                         }
-                        else
-                        {
-
-                            $output = $output . '<button class="paginate_btn"   onclick="show_interval_page('. $first_page .','. $last_page .','. $i .')">'.$i.'</button>';
-
-                        }
- 
-                        $first_page = $last_page;
-                        $last_page = (int) $last_page + 5; 
-
-                    }
-                    $output = $output.'</div>';
+                        $output = $output.'</div>';
                     }
                     
                 }

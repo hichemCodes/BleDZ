@@ -37,6 +37,9 @@ require 'action/query.php';
 
 
     <title>BléDZ | Dashboard</title>
+
+    <link rel="icon" href="../img/logo_s.png" type="image/icon type">
+
   
 </head>
 <body>

@@ -19,6 +19,9 @@ $top_agr = $db->prepare("SELECT sum(Quantité) as quan,agriculteur_id as agr_id 
  $top_agr->execute([$current_year]);
 
  $top_agr_result = $top_agr->fetchAll(PDO::FETCH_ASSOC);
+ 
+ 
+
 
  foreach($top_agr_result as $agr)
  {
@@ -41,6 +44,8 @@ $top_agr = $db->prepare("SELECT sum(Quantité) as quan,agriculteur_id as agr_id 
         $nom_prenom = $agr['nom'].' '.$agr['prenom'];
         $wilaya = getWilaya($agr['wilaya_id']);
     
+        /*for($i = 0;$i<5;$i++)
+        {*/
           $output .= '
           
           <div class="profile flex d_column j_center a_center">
@@ -51,11 +56,12 @@ $top_agr = $db->prepare("SELECT sum(Quantité) as quan,agriculteur_id as agr_id 
                <div class="fotter_profile flex j_center a_center d_column">
                <span class="p_name">'. $nom_prenom .'</span>
                <span class="p_city">' . $wilaya . '</span>
-               <span>'. $agr['quan'].' tonne /an</span>
+               <span>'. $agr['quan'].' tonnes /an</span>
                </div>
           </div>
 
           ';
+       // } 
         
      }
  

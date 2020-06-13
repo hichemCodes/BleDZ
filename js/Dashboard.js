@@ -8,22 +8,23 @@ let body = document.querySelector('body');
 // change page when click in the links
 all_items.forEach((Element)=>{
     Element.addEventListener('click',()=>{
-
-        
          
         all_hidden.forEach((e)=>{
-
+                // hide all section
                 if(!(e.className).includes('hidden')) {
+
                     e.classList.add('hidden');
-
-
+                
                 }
 
-       })
+       });
+       //active the clicked section
        the_one = document.querySelector('.'+Element.id);
        the_one.classList.toggle('hidden');
-       
 
+       // scroll to the top of the page
+       window.scrollTo(0,0);
+       
     });
 
    

@@ -1,12 +1,12 @@
 $(document).ready(function()
 {
-
-     
+    
 
     /// classer la récolte
     $('.t_date').on('submit',function(){
 
         localStorage.setItem('oreder_by_search','date');
+         
         if( $( "#year_s" ).val() == "tous" )
         {
             show_all_recolte_office("date");
@@ -17,7 +17,7 @@ $(document).ready(function()
         }
         
             
-        });
+    });
         $('.t_qantity').on('submit',function(){
             
             localStorage.setItem('oreder_by_search','Quantity');
@@ -33,8 +33,9 @@ $(document).ready(function()
         });
         $('.t_quality').on('submit',function(){
             
-            localStorage.setItem('oreder_by_search','Quality');
-            if( $( "#year_s" ).val() == "tous" )
+                localStorage.setItem('oreder_by_search','Quality');
+
+                if( $( "#year_s" ).val() == "tous" )
                 {
                  show_all_recolte_office("Quality");
                 }
@@ -56,7 +57,7 @@ $(document).ready(function()
                         show_all_recolte_office("montant",$( "#year_s" ).val());
                         }
             
-                });
+            });
 
                 $('#year_s').on('change',function(e)
                 {
@@ -191,11 +192,11 @@ function show_add_recolte(rendez_vous_id,agr_id)
 
  function show_all_recolte_office(
                                   order_by = (localStorage.getItem('oreder_by_search') != null ) ? localStorage.getItem('oreder_by_search') : 'date',
-                                  year = $( "#year_s" ).val()
+                                  year = $("#year_s").val()
                                   )
 {
-    var start_p = localStorage.getItem('start_page');
-    var end_p = localStorage.getItem('end_page');
+    var start_p = (localStorage.getItem('start_page') != null ) ? localStorage.getItem('start_page') : 0;
+    var end_p = (localStorage.getItem('end_page') != null ) ? localStorage.getItem('start_page') : 5;
    
     $.ajax({
 

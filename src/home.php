@@ -19,10 +19,7 @@
     <link rel="stylesheet" href="../css/home.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/sign_in_sign_up.css">
     <link rel="stylesheet" href="../css/swwet_alert_style.css?v=<?php echo time(); ?>">
-
-
-
-   
+    <link rel="icon" href="../img/logo_s.png" type="image/icon type">   
     <link rel="stylesheet" href="../css/fontawesome-free-5.12.1-web/css/all.min.css">
        
     <title>BléDZ | Accueil</title>
