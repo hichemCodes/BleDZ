@@ -1,8 +1,6 @@
 $(document).ready(function()
 {
-    //onload     
-    chart_recoltes(2020);  
-    chart_money(2020);    
+   
 
     // call chart generator when changing the current year 
     $('.chart_year').on('change',function(){

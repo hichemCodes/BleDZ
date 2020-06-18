@@ -8,6 +8,8 @@ require 'connect_db.php';
 require 'validate_fields.php';
 
 
+
+
 if(!empty($_POST['nom'])&& !empty($_POST['prenom']) &&
 !empty($_POST['email']) && !empty($_POST['pass1']) && !empty($_POST['pass2']) && $_POST['carte'] )
 {

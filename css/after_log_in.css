@@ -79,9 +79,11 @@
    text-decoration:none;
    color: #616161 !important;
 }
-.option a .s_width i{
-       margin-right : 17px;
+.option a .s_width i {
+    width: 20px;
+    margin-right: 10px;
 }
+
 .hidden{
    display:none;
 }

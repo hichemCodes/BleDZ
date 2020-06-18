@@ -25,8 +25,8 @@ $(document).ready(function(){
         recolte_count();
 
         // chart graph
-        chart_recoltes(2020);  
-        chart_money(2020);
+        chart_recoltes(new Date().getFullYear());  
+        chart_money(new Date().getFullYear());
         
           //account
           all_account();

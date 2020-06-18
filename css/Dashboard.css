@@ -530,8 +530,13 @@ font-size: 1.15rem;
 .i_item .second_part{
 width:75%;
 }
+
 .i_item{
 margin-bottom:20px;
+}
+.i_item .fa-dollar-sign
+{
+    margin: auto;
 }
 .i_item i,.holder{
 color:#a3a3a3;
@@ -567,7 +572,7 @@ border-top: none;
  box-shadow: 4px 4px 15px 0 rgba(36,37,38,.08);
 border-radius: 15px;
 }
-.add_recolte_form .fa-times:hover
+.add_recolte_form .fa-times:hover,.edit_recolte_form .fa-times:hover
 {
      transition: all .2s ease-in;
      color: #f1cd69;
@@ -900,6 +905,7 @@ top: 57%;
 
 .succes_valid,.s_updated,.error_u{
 padding: 14px 20px 14px 20px;
+max-width: 290px;
 }
 
 .hidden{

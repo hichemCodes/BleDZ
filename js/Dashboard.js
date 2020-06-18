@@ -24,6 +24,14 @@ all_items.forEach((Element)=>{
 
        // scroll to the top of the page
        window.scrollTo(0,0);
+
+       //hide error msg if exist
+       if(document.querySelector('.s_updated').classList.contains('error_u'))
+       {
+            $('.s_updated').html('');
+            $('.s_updated').removeClass('error_u');
+            $('.s_updated').addClass('hidden');
+       }
        
     });
 

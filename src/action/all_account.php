@@ -51,6 +51,7 @@
                 <td>
                  '. $exist .'  
                     <i class="fas fa-tv" onclick="show_account('.$account['user_id'].')" title="voir ce compte"></i>
+                    <i class="fas fa-trash-alt d_memeber" onclick="delete_member('.$account['id'].')" title="supprimer ce compte"></i>
                 </td>
                 
             </tr>';

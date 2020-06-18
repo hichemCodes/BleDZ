@@ -110,12 +110,11 @@ function destroy_r_v(id)
         if (result.value) {
         
             $.ajax({
-                'url' : 'action/delete_rendez_vous.php',
+                url : 'action/delete_rendez_vous.php',
                 type : 'POST',
                 data : {id:id},
                 success:function (data)
                 {
-                       rendez_vous_non_prise();
 
                      
                       Swal.fire(

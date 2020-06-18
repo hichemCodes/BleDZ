@@ -9,7 +9,16 @@
 
 .swal2-styled.swal2-confirm{
     background: #f1cf69 !important;
+    outline: thin dotted !important;
+    outline-width: 0;
+}
+
+.swal2-styled.swal2-confirm:focus{
     outline: none !important;
+    outline-width: 0;
+}
+[contenteditable="true"]:focus {
+    outline: none;
 }
 .swal2-icon.swal2-success,.swal2-icon.swal2-error {
     border-color: #f1cf69 !important;

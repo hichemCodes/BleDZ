@@ -15,7 +15,7 @@
  .nav_dash span {
    right: 3.7% !important;
  }
- #add_member form,.add_r_v_f,.add_recolte_form,.profile,.add_news_latter_form,#update_product_form{
+ #add_member form,.add_r_v_f,.add_recolte_form,.profile,.add_news_latter_form,#update_product_form,.edit_recolte_form{
    min-height:200px;
    position:relative;
    
@@ -90,7 +90,7 @@ tr.row_t td {
 /*  hide all popup */
 
 .add_r_f,#add_member,.add_recolte,.profile_container,#add_facture,#add_news_latter
-          ,#add_office_admin{
+          ,#add_office_admin,.edit_recolte{
                  display:none;
 
            }

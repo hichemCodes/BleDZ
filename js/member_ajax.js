@@ -96,6 +96,48 @@ function all_account()
             }
     })
 }    
+/// delete agriculeur
+function delete_member(agr_id)
+{
+    Swal.fire({
+        title: 'Êtes-vous sûr ?',
+        text: "Vous ne pourrez pas revenir sur cela !",
+        icon: 'warning',
+        showCancelButton: true,
+        cancelButtonColor: 'tomato',
+        cancelButtonText : 'Annuler',
+        confirmButtonText: 'Oui, supprimez-le !'
+        }).then((result) => {
+        if (result.value) {
+        
+            $.ajax({
+                url : 'action/delete_member.php',
+                type : 'POST',
+               // dataType : 'JSON',
+                data : {agr_id:agr_id},
+                success:function (data)
+                {
+                 /*   if(data.result != 'fail')
+                    {
+                        Swal.fire(
+                            'Supprimé !',
+                            'agriculteur supprimé avec succès.',
+                            'success'
+                        );
+                    }   
+                    else
+                    {*/
+                        ///show_fail_msg(data);
+                        console.log(data);
+                    //}                  
+                     
+                    
+
+                }
+        })
+    }
+    }); 
+}
 // show all registred offices only allowed if the office have a full acces 
 function show_all_offices()
 {

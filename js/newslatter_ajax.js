@@ -46,17 +46,28 @@ $(document).ready(function()
                                                                             },
                                                                      beforeSend : function()
                                                                      {
-                                                                        show_success_msg('envoi du newsletter en cours...',true)
+                                                                         Swal.fire(
+                                                                            {
+                                                                                 title : 'envoi du newsletter en cours',
+                                                                                 showCancelButton : false,
+                                                                                 showConfirmButton : false,
+                                                                            }                
+                                                                         );
+                                                                         Swal.showLoading();
                                                                      },
                                                                     success:function(data)
                                                                     {
                                                                         if(data.result != 'fail')
                                                                         {
                                                                             $('.add_news_latter_form').unbind('submit') //remove event
-
-                                                                            show_success_msg(data.result);
-   
+                                                                               
                                                                             exit_add_news_latter();
+                                                                            
+                                                                            Swal.fire(
+                                                                                'envoyé !',
+                                                                                 data.result,
+                                                                                'success'
+                                                                            );
                                                                         }
                                                                         else
                                                                         {

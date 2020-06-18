@@ -340,6 +340,12 @@ require 'action/query.php';
                                  
                                </form>
                            </div>
+                             <!--  edit  recolte -->
+                             <div class="edit_recolte flex j_center a_center"> 
+                               <form  class="flex edit_recolte_form">
+                                 
+                               </form>
+                           </div>
                            <!--  add facture -->
                            <div class="flex j_center a_center d_column" id="add_facture">
                                  <div   class="add_facture_next flex d_center a_center d_column" id="add_facture_form"> </div>

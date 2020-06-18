@@ -293,6 +293,28 @@ function show_recolte_detail(id)
       });
 }
 
+/// show edit harvest form
+function show_recolte_edit(recolte_id)
+{
+    $('.cover_all').show();
+    $('.edit_recolte').css("display","flex");
+
+    $.ajax({
+          
+          url : 'action/show_edit_recolte_form.php',
+          type : 'POST',
+          data : { harvest_id : recolte_id},
+          beforeSend : function()
+          {
+              $('.edit_recolte form').html('<div class="lds-ripple"><div></div><div></div></div>');
+          },
+          success : function(data)
+                   {
+                        $('.edit_recolte form').html("");
+                        $('.edit_recolte form').html(data);
+                   }
+            });    
+}
 /// recolte detaile pendant une année
 
 function recolte_detail_year(year)

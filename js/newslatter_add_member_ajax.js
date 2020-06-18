@@ -36,17 +36,21 @@ function subscribe(event){
               if(data.result != 'fail')
               {
 
-                  $('.cnx_btn').html('Abonné');
+                /*  $('.cnx_btn').html('Abonné');
                   $('.cnx_btn').removeClass('subscribe');
-                  $('.cnx_btn').addClass('un_subscribe');
+                  $('.cnx_btn').addClass('un_subscribe');*/
                   
                   Swal.fire(
                       'Abonné !',
                        data.result,
                       'success'
                   );
-
-                  $('.cnx_btn').replaceWith('<input type="submit" class="cnx_btn m un_subscribe" value="Abonné" title="désabonner" onclick="un_subscribe(event)">');
+                  
+                  if(!document.location.href.includes('home'))
+                  {
+                        $('.cnx_btn').replaceWith('<input type="submit" class="cnx_btn m c_n_btn light_black un_subscribe" value="Abonné" title="désabonner" onclick="un_subscribe(event)">');
+                  }
+               
 
                   
               }

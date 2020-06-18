@@ -97,11 +97,11 @@
                     <tr class="b_bottom">
                         <th class="t_normal_c">Date</th>
                         <th class="t_small_c">Produit</th>
-                        <th class="t_normal_c">Agriculteur</th>
+                        <th class="t_small_c">Agriculteur</th>
                         <th class="t_small_c ">Quantité</th>
                         <th class="t_small_c">Qualité</th>
                         <th class="t_small_c">Montant</th>
-                        <th class="t_large">Opération</th>
+                        <th class="t_normal">Opération</th>
         
         
                     </tr>';
@@ -131,6 +131,14 @@
                                     <i class="fas fa-tv"  
                                     onclick="show_recolte_detail('.$recolte['id'].')"
                                     title ="afficher les informations"></i>
+
+                                    <i class="fas fa-pencil-alt custum_pencil"  
+                                    onclick="show_recolte_edit('.$recolte['id'].')"
+                                    title ="modifier ce  récolte"></i>
+
+                                    <i class="fas fa-trash-alt d_recolte"  
+                                    onclick="delete_recolte('.$recolte['id'].')"
+                                    title ="supprimer ce récolte"></i>
                         </td>
                         
                     </tr>';

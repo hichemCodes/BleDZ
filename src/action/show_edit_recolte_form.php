@@ -1,13 +1,14 @@
 <?php
 
-session_start();
-
 require 'query.php';
 
 office_auth();
 
-$output = '
+// find harvest information
 
+$harvest = harvest_information($_POST['harvest_id']);
+
+$output = '
                           <i class="fas fa-times" onclick="hide_add_recolte_form()"> </i>
                           
                           <div class="f_item flex d_center a_center d_column custum_f_item">
@@ -31,7 +32,7 @@ $output = '
                           </div>
                           <div class="f_item flex d_center a_center d_column">
                                 <label for="poids_entré" class="form-label">Poids d\'entré en Tonne</label>
-                                <input type="text" id="poids_entré" required>
+                                <input type="text" id="poids_entré" value="'. $harvest['id']. '"required>
                                 <i class="fas fa-balance-scale-right"></i>
                           </div>
                           <div class="f_item flex d_center a_center d_column">

@@ -5,23 +5,17 @@
 
     function office_auth()
     {
-        if (!isset($_SESSION['id']) || (isset($_SESSION['type']) && $_SESSION['type'] == 'agriculteur' ) )
+        if (!isset($_SESSION['id']) || (isset($_SESSION['type']) && $_SESSION['type'] != 'office' ) )
         {
-            if($_SESSION['type'] != 'office')
-            {
-                die(header("Location:/pfe/src/sign_in.php"));
-            }
+            die(header("Location:/pfe/src/sign_in.php"));   
         }
         
     }
     function agr_auth()
     {
-        if (!isset($_SESSION['id']) || ( (isset($_SESSION['type']) && $_SESSION['type'] == 'office' ) ) )
+        if (!isset($_SESSION['id']) || ( (isset($_SESSION['type']) && $_SESSION['type'] != 'agriculteur' ) ) )
         {
-            if($_SESSION['type'] != 'agriculteur')
-            {
-                die(header("Location:/pfe/src/sign_in.php"));
-            }
+            die(header("Location:/pfe/src/sign_in.php"));
         }
     }
     function redirect_if_already_loged_in()
@@ -930,6 +924,50 @@
                   return true;
               }
         }
+        //delete a memeber 
+        function delete_member($agr_id)
+        {
+              global $db;
+
+              $user_id = find_agr_user_id($agr_id);
+
+              // delete all factures of the member
+              $delete_factures = $db->prepare("DELETE FROM factures WHERE agriculteur_id = ? ");
+              $delete_factures->execute([$agr_id]);
+
+              // delete all harvest of the member
+              $delete_harvest = $db->prepare("DELETE FROM récoltes WHERE agriculteur_id = ?");
+              $delete_harvest->execute([$agr_id]);
+
+              // delete all appointements of the member
+              $delete_appointment = $db->prepare("DELETE FROM rendez_vous WHERE agriculteur_id = ?");
+              $delete_appointment->execute([$agr_id]);
+
+              try
+              {
+
+                    $delete_agr = $db->prepare("DELETE FROM agriculteurs WHERE id = ?");
+                    $delete_agr->execute([$agr]);
+
+                    try
+                    {          
+                        $delete_agr = $db->prepare("DELETE FROM users WHERE id = ?");
+                        $delete_agr->execute([$user_id]);
+
+                        return true;
+                    }
+                    catch (Exception $e)
+                    {
+                        return false;
+                    }
+              }
+              catch (Exception $e)
+              {
+                     return false;
+              }
+
+        }
+
 
         //// in array assoc
 
@@ -996,5 +1034,19 @@
                  return true;
             }
 
+        }
+
+        // find harvest information
+        function harvest_information($harvest_id)
+        {
+            global $db;
+
+            $harvest = $db->prepare("SELECT * from récoltes where id = ? ");
+            
+            $harvest->execute([$harvest_id]);
+             
+            $harvest_result = $harvest->fetchAll(PDO::FETCH_ASSOC);
+
+            return $harvest_result;
         }
 ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 11, 2020 at 08:15 AM
+-- Generation Time: Jun 17, 2020 at 04:54 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -42,12 +42,12 @@ CREATE TABLE `agriculteurs` (
 --
 
 INSERT INTO `agriculteurs` (`id`, `nom`, `prenom`, `num_de_carte`, `avatar`, `user_id`) VALUES
-(1, 'laouar', 'hichem', '123456', '5ed6c8d23d34a4.00611336.jpg', 2),
+(1, 'laouar', 'hichem', '123456', '5eea29b696d4a5.19532802.jpg', 2),
 (2, 'laouar', 'mohamed', '475621', NULL, 4),
 (3, 'zermi', 'kheireddine', '745856', NULL, 5),
-(4, 'algeruser', 'user', '856236', NULL, 6),
+(4, 'sisaoui', 'ilyes', '856236', NULL, 6),
 (5, 'sasane', 'skander', '452362', NULL, 7),
-(6, 'laouarr', 'hichem', '478569', NULL, 8);
+(7, 'rjam', 'weal', '829134', NULL, 8);
 
 -- --------------------------------------------------------
 
@@ -117,8 +117,14 @@ CREATE TABLE `newslatter` (
 --
 
 INSERT INTO `newslatter` (`id`, `email`, `subscribed_at`) VALUES
-(26, 'laouarmedhichem23@gmail.com', '2020-06-10 18:09:20'),
-(27, 'skander@gmail.com', '2020-06-11 06:20:03');
+(27, 'skander@gmail.com', '2020-06-11 06:20:03'),
+(30, 'moha@gmail.com', '2020-06-15 08:38:43'),
+(31, 'moha23@gmail.com', '2020-06-15 08:39:27'),
+(32, 'laouarmedhichem23@gmai.com', '2020-06-15 08:41:23'),
+(34, 'elhajar@gmail.com', '2020-06-15 08:45:53'),
+(35, 'elhajar99@gmail.com', '2020-06-15 08:46:42'),
+(36, 'hichem@gmail.com', '2020-06-15 08:49:08'),
+(39, 'laouarmedhichem23@gmail.com', '2020-06-17 15:33:32');
 
 -- --------------------------------------------------------
 
@@ -142,7 +148,8 @@ INSERT INTO `offices` (`id`, `nom`, `num_telephone`, `user_id`, `full_acces`) VA
 (1, 'elhadjar', '0654153065', 1, 1),
 (2, 'elbouni', NULL, 3, 1),
 (3, 'berrahal', NULL, 9, 0),
-(4, 'BabElOued', NULL, 11, 0);
+(4, 'BabElOued', NULL, 11, 1),
+(5, 'ElKhroub', NULL, 12, 0);
 
 -- --------------------------------------------------------
 
@@ -185,7 +192,7 @@ CREATE TABLE `password_reset` (
 --
 
 INSERT INTO `password_reset` (`id`, `user_email`, `code`, `created_at`) VALUES
-(1, 'laouarmedhichem23@gmail.com', '11ce3b8d', '2020-06-03 02:29:25');
+(1, 'laouarmedhichem23@gmail.com', '8a11f87b', '2020-06-15 09:35:18');
 
 -- --------------------------------------------------------
 
@@ -208,7 +215,7 @@ CREATE TABLE `produit` (
 
 INSERT INTO `produit` (`code`, `description`, `prix_unitaire_A`, `prix_unitaire_B`, `prix_unitaire_C`, `created_at`) VALUES
 ('p1', 'blé', 22800.00, 21000.00, 19000.00, '2020-04-28 20:56:42'),
-('p2', 'pomme de terre', 35000.00, 32000.00, 30000.00, '2020-05-15 17:21:33');
+('p2', 'pomme de terre', 35000.00, 32000.00, 30000.00, '2020-06-14 08:45:52');
 
 -- --------------------------------------------------------
 
@@ -278,7 +285,10 @@ INSERT INTO `récoltes` (`id`, `agriculteur_id`, `produit_code`, `office_id`, `p
 (9, 2, 'p1', 2, 1.30, 0.20, 1.10, 'B', 23100.00, '2020-04-23 14:20:04'),
 (10, 3, 'p1', 2, 1.20, 0.70, 0.50, 'A', 11400.00, '2020-03-20 15:23:31'),
 (11, 1, 'p1', 3, 1.30, 0.35, 0.95, 'B', 19950.00, '2020-03-10 17:01:12'),
-(12, 5, 'p1', 4, 1.20, 0.30, 0.90, 'A', 20520.00, '2020-06-11 06:37:33');
+(12, 5, 'p1', 4, 1.20, 0.30, 0.90, 'A', 20520.00, '2020-06-11 06:37:33'),
+(13, 4, 'p1', 5, 1.80, 0.20, 1.60, 'B', 33600.00, '2020-06-12 20:22:55'),
+(14, 1, 'p1', 1, 1.20, 0.35, 0.85, 'A', 19380.00, '2020-06-13 17:49:07'),
+(15, 7, 'p1', 4, 1.20, 0.30, 0.90, 'B', 18900.00, '2020-06-13 19:13:10');
 
 -- --------------------------------------------------------
 
@@ -303,15 +313,16 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `email`, `mot_de_passe`, `mot_de_passe_confirmation`, `is_verified`, `created_at`, `wilaya_id`, `profile_id`) VALUES
 (1, 'elhadjar.office@gmail.com', '$2y$10$/sdJ5y2wHv970/T.Hk6e1uWYOD7MmbKvjARVUcu5Qa6SWOsDbk11K', '$2y$10$DmjLqeVrevXCZy2GpxNQJ.lD832hBtCX8yFEqLIzKtSugzVuHv/P.', 1, '2020-05-26 16:51:11', 23, 1),
-(2, 'laouarmedhichem23@gmail.com', '$2y$10$7x2PITlc4kvpI19hR62ja.3ekW75i06P8WPGUplMz.SAqY/PFlHgq', '$2y$10$TobwAyFJAp0m0fPgiOY00OwX9PyPQJQ/mkaysicwts59xhP/bqoIG', 1, '2020-05-26 16:57:15', 23, 2),
+(2, 'laouarmedhichem23@gmail.com', '$2y$10$TM33Yignce4YOeLfWqxjNuHlbTM18kiV1PHhZa1piSOcdeCn1Smta', '$2y$10$l.tlTb3fNNwrW380ETp2IOzL7E13EVjotpcSaKITUnNLLPZnlbcFi', 1, '2020-05-26 16:57:15', 23, 2),
 (3, 'elbouni.office@gmail.com', '$2y$10$al4RCgbtSWMmB8XztPEBreM5xl4G/lpBoaMwfdyHGBq/.y0WTA5M2', '$2y$10$TA58Xa6WzcphuQXzmEeDDOpxqFdWFBs1amI2aN/vv3wsfL8FOQLgO', 1, '2020-05-26 17:58:50', 23, 1),
 (4, 'mohamed@gmail.com', '$2y$10$qZWtJwE1oOLeIGCjuI3d4eLlxmctxXk8gi4V.n3385aMPFMXfRSdy', '$2y$10$QCQPzmS4FE3VbbB5lkpBWOfQ9L1eJmXihQTND15sbHBHNiUIo/Zwu', 1, '2020-05-29 23:57:06', 23, 2),
 (5, 'zermi@gmail.com', '$2y$10$f3S38YlKJ1oy.NRWKXseu.vEQMquaa4dcqMZhY1Acu5yjbD529XL.', '$2y$10$cyhBhQjosrgm7icYzjz8jOPwsgbwEVLqt/iqtq8aa8S3FWRZ9UUau', 1, '2020-05-30 03:50:11', 23, 2),
-(6, 'alger_user@gmail.com', '$2y$10$WOiOolLv0NTDuZoAZ3.FMuJYpNZxD9ifYrIOeyelWmjdjNNfnqjge', '$2y$10$RVwxCLihFK5rfFhcVWx./ePS9OMiBM3reIVwb25r.RW0L4HGSPmmC', 0, '2020-06-02 21:45:00', 17, 2),
+(6, 'ilyes@gmail.com', '$2y$10$WOiOolLv0NTDuZoAZ3.FMuJYpNZxD9ifYrIOeyelWmjdjNNfnqjge', '$2y$10$RVwxCLihFK5rfFhcVWx./ePS9OMiBM3reIVwb25r.RW0L4HGSPmmC', 1, '2020-06-02 21:45:00', 25, 2),
 (7, 'skander@gmail.com', '$2y$10$o1cmFuXMxMbUPLiN5YVBzOo/Alvb0LqWQF7mW0eybj8PmhG7pAkmC', '$2y$10$x8.6yBm5eUUM3Y6VDuHuaeZPCMyU4mDnwE0Sg4vr8JH5Z9JrSDlwe', 1, '2020-06-03 01:40:41', 16, 2),
-(8, 'laouarmedhichem23@gmai.com', '$2y$10$EIXjzn1E2rihQZdSCas2TeM..3ojd1XJ2luRPt6KWmTYmCus7qwue', '$2y$10$LuqQlr2kG/L8uNKCnn6kNuqumOZyCqEK7Oe1cSw3uueBxajzIzCRW', 1, '2020-06-03 03:05:12', 23, 2),
+(8, 'rjam@gmail.com', '$2y$10$EIXjzn1E2rihQZdSCas2TeM..3ojd1XJ2luRPt6KWmTYmCus7qwue', '$2y$10$LuqQlr2kG/L8uNKCnn6kNuqumOZyCqEK7Oe1cSw3uueBxajzIzCRW', 1, '2020-06-03 03:05:12', 16, 2),
 (9, 'berrahal.office@gmail.com', '$2y$10$l33sSN2Ku.iuI7Td0zbFP.9mebUjdxYLLGEj13oo.KVVFYkJctd2y', '$2y$10$DZuMWdHd5cPWcLa.u0TW9.63KQ3B9ADynxsuUUOkOlNsx.HkE.5FW', 1, '2020-06-10 14:34:04', 23, 1),
-(11, 'BabElOued.office@gmail.com', '$2y$10$1.CFiAomS.FwwITOQ6i6AubURirMD5ov3FefrXgB9tsKPC4PxcOFW', '$2y$10$oza18IaScDbsWPp8BKKbf.SLo.e94Cu9WY6zIUpfXm8VpJwtAfTM.', 1, '2020-06-11 05:33:21', 16, 1);
+(11, 'BabElOued.office@gmail.com', '$2y$10$1.CFiAomS.FwwITOQ6i6AubURirMD5ov3FefrXgB9tsKPC4PxcOFW', '$2y$10$oza18IaScDbsWPp8BKKbf.SLo.e94Cu9WY6zIUpfXm8VpJwtAfTM.', 1, '2020-06-11 05:33:21', 16, 1),
+(12, 'ElKhroub.office@gmail.com', '$2y$10$8lhi5KRnkwyeFe3D9Ssmren5YmKUoT7NLvmg.YS24MOXu1B//vV8.', '$2y$10$aH62zvrxOYIse4/Pe3jnJum0LDabFrfAjbbXddBE5ZXSfRaVDIqeC', 1, '2020-06-12 19:13:23', 25, 1);
 
 -- --------------------------------------------------------
 
@@ -343,7 +354,10 @@ INSERT INTO `véhicule` (`matricule`, `marque`, `nom_de_chauffeur`, `num_de_perm
 (2311416072, 'toyota', 'chauffeur', 236574, 9),
 (2311416072, 'toyota', 'chauffeur', 236574, 10),
 (2311416072, 'toyota', 'chauffeur', 120352, 11),
-(2311416072, 'toyota', 'chauffeur', 853207, 12);
+(2311416072, 'toyota', 'chauffeur', 853207, 12),
+(2311416072, 'toyota', 'chauffeur', 748268, 13),
+(2311416072, 'toyota', 'chauffeur', 478523, 14),
+(2311416072, 'toyota', 'chauffeur', 410389, 15);
 
 -- --------------------------------------------------------
 
@@ -519,7 +533,7 @@ ALTER TABLE `wilayas`
 -- AUTO_INCREMENT for table `agriculteurs`
 --
 ALTER TABLE `agriculteurs`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `factures`
@@ -531,13 +545,13 @@ ALTER TABLE `factures`
 -- AUTO_INCREMENT for table `newslatter`
 --
 ALTER TABLE `newslatter`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `offices`
 --
 ALTER TABLE `offices`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `password_reset`
@@ -555,19 +569,19 @@ ALTER TABLE `profile`
 -- AUTO_INCREMENT for table `rendez_vous`
 --
 ALTER TABLE `rendez_vous`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `récoltes`
 --
 ALTER TABLE `récoltes`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `wilayas`
