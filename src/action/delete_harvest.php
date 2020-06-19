@@ -6,11 +6,9 @@ require 'query.php';
 
 office_auth();
 
-$user_id = find_agr_user_id($_POST['agr_id']);
-
-if(is_member($user_id,$_SESSION['wilaya_id']))
+if(is_harvest($_POST['harvest_id']))
 {
-       if(delete_member($_POST['agr_id']))
+       if(delete_harvest($_POST['harvest_id']))
        {
              $data['result'] = 'success';
        }
@@ -24,7 +22,7 @@ if(is_member($user_id,$_SESSION['wilaya_id']))
 else
 {
     $data['result'] = 'fail';
-    $data['err'] = 'vous ne pouvez pas supprimer ce compte';
+    $data['err'] = 'vous ne pouvez pas supprimer cette récolte';
 }
 
-echo(json_encode($data));
+echo json_encode($data);

@@ -97,7 +97,7 @@
                     <tr class="b_bottom">
                         <th class="t_normal_c">Date</th>
                         <th class="t_small_c">Produit</th>
-                        <th class="t_small_c">Agriculteur</th>
+                        <th class="t_normal_c">Agriculteur</th>
                         <th class="t_small_c ">Quantité</th>
                         <th class="t_small_c">Qualité</th>
                         <th class="t_small_c">Montant</th>
@@ -188,6 +188,10 @@
                     }
                     
                 }
+            }
+            else
+            {
+                $output = '<span class="empty_result no_o_recelte">vous n\'avez pas des récoltes encore</span>';
             }
         
         

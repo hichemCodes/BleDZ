@@ -51,7 +51,7 @@ $output = '
                           </div>
                           <div class="f_item flex d_center a_center d_column custum_f_item">
 
-                                <label for="qualité" class="form-label">Qualité </label>
+                                <label for="qualité" class="form-label" id="s_quality" quality = "'. $harvest['Qualité']. '" >Qualité </label>
                                 <select  id="qualité" required>
 
                                     <option value="0" disabled selected >Selectionner la qualité</option>

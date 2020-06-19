@@ -91,18 +91,10 @@ function show_add_recolte(rendez_vous_id,agr_id)
                                 // show all qualitys of a product when the product field changed
                                 $('#produit').on('change',function(e)
                                 {
-                                        var current_product = e.target.value;
-                                        
-                                        $.ajax({
-                                                    url : 'action/show_qualitys.php',
-                                                    method : 'POST',
-                                                    data : { product_id : current_product},
-                                                    success : function(data)
-                                                    {
-                                                        $('#qualité').html(data);
-                                                    }
-                                               });
+                                    var current_product = e.target.value;
 
+                                    show_qualitys_f(current_product);
+                                
                                 });
 
                                $('.add_recolte_form').unbind('submit').bind('submit',function(e){
@@ -221,15 +213,14 @@ function show_add_recolte(rendez_vous_id,agr_id)
                                       },
                                 success:function(data)
                                 {
-                                  $('.o_récolte').html(data);
-                                  
-                                  
+                                    $('.o_récolte').html(data);
                                 }
                            });
                             
                     }
                     else
                     {
+                         $('.o_récolte').html('');
                          $('.sort_l').hide();
                          $('.no_o_recelte').show();
 
@@ -296,6 +287,10 @@ function show_recolte_detail(id)
 /// show edit harvest form
 function show_recolte_edit(recolte_id)
 {
+
+    // save harvest id in localestorage
+    localStorage.setItem('recolte_id',recolte_id);
+
     $('.cover_all').show();
     $('.edit_recolte').css("display","flex");
 
@@ -320,12 +315,95 @@ function show_recolte_edit(recolte_id)
                                 $.ajax({
                                         url : 'action/show_qualitys.php',
                                         method : 'POST',
-                                        data : { product_id : current_product},
+                                        data : { 
+                                                    product_id : current_product,
+                                                    s_quality : $("#s_quality").attr("quality")
+                                               },
                                         success : function(data)
                                             {
                                                  $('#qualité').html(data);
                                             }
-                                        });
+                                      });
+                         // show all qualitys of a product when the product field changed
+                         $('#produit').on('change',function(e)
+                         {
+                             var current_product = e.target.value;
+
+                             show_qualitys_f(current_product);
+                         
+                         });    
+                        
+                         // edit harvest event
+                         $('.edit_recolte_form').unbind('submit').bind('submit',function(e){
+
+                                e.preventDefault();
+
+                                /// variable 
+                                var  produit_code = $('#produit').val();
+                                var poids_entré = $('#poids_entré').val();
+                                var poids_sortie = $('#poids_sortie').val();
+                                var quality = $('#qualité').val();
+                                var matricule_v = $('#matricule_v').val();
+                                var marque_v = $('#marque_v').val();
+                                var n_p_chauf = $('#n_p_chauf').val();
+                                var n_permis = $('#n_permis').val();
+                                var recolte_id = localStorage.getItem('recolte_id');
+
+                                $.ajax({
+
+                                    url : 'action/edit_récolte.php',
+                                    type : 'POST',
+                                    dataType : 'JSON',
+                                    data:
+                                    {
+                                        produit_code : produit_code,
+                                        poids_entré : poids_entré,
+                                        poids_sortie : poids_sortie,
+                                        quality : quality,
+                                        matricule_v : matricule_v,
+                                        marque_v : marque_v,
+                                        n_p_chauf : n_p_chauf,
+                                        n_permis : n_permis,
+                                        recolte_id : recolte_id
+                                        
+                                    },
+                                    success:function(data)
+                                    {
+                                        if(data.result == "success")
+                                        {
+                                            
+                                            //hide form
+                                            hide_edit_recolte_form();
+                                            
+                                            // refresh 
+                                            show_all_recolte_office('date');
+
+
+                                            Swal.fire(
+                                                'Modifiée !',
+                                                'récolte Modifiée avec succès',
+                                                'success'
+                                            )
+                                        
+                                            
+                                        }
+                                        else
+                                        {
+                                        
+                                            show_fail_msg(data.result);
+                                        
+                                        }
+
+                                        
+                                
+                                        
+                                }                   
+                                });
+                          });
+                         
+                         
+
+
                    }
             });    
 }
@@ -361,6 +439,55 @@ function recolte_detail_year(year)
            }
         });
      }
+
+
+
+   function delete_recolte(harvest_id)
+   {
+
+    Swal.fire({
+        title: 'Êtes-vous sûr ?',
+        text: "Vous ne pourrez pas revenir sur cela !",
+        icon: 'warning',
+        showCancelButton: true,
+        cancelButtonColor: 'tomato',
+        cancelButtonText : 'Annuler',
+        confirmButtonText: 'Oui, supprimez-la !'
+        }).then((result) => {
+        if (result.value) {
+        
+            $.ajax({
+                url : 'action/delete_harvest.php',
+                type : 'POST',
+                dataType : 'JSON',
+                data : {harvest_id:harvest_id},
+                success:function (data)
+                {
+                   if(data.result != 'fail')
+                    {
+
+                        show_all_recolte_office('date');
+                        show_all_recolte_office_année(); 
+
+
+                        Swal.fire(
+                            'Supprimée !',
+                            'récolte supprimée avec succès.',
+                            'success'
+                        );
+                    }   
+                    else
+                    {
+                         show_fail_msg(data.err);
+                    }                  
+                     
+                    
+
+                }
+        })
+    }
+    }); 
+   }
 
   // hide add_recolte form
       
@@ -401,4 +528,17 @@ function recolte_detail_year(year)
     $('.profile').html('');
     $('.profile_container').hide();
     $('.cover_all').hide();
+}
+
+function show_qualitys_f(current_product)
+{
+    $.ajax({
+        url : 'action/show_qualitys.php',
+        method : 'POST',
+        data : { product_id : current_product},
+        success : function(data)
+        {
+            $('#qualité').html(data);
+        }
+   });
 }

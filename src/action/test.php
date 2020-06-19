@@ -1,7 +1,6 @@
 <?php 
 
+session_start();
 require 'query.php';
 
-$harvest = harvest_information(14);
-
-print_r($harvest);
+echo (is_member(13,23)) ? 'yes' : 'no';

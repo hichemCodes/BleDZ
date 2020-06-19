@@ -113,12 +113,14 @@ function delete_member(agr_id)
             $.ajax({
                 url : 'action/delete_member.php',
                 type : 'POST',
-               // dataType : 'JSON',
+                dataType : 'JSON',
                 data : {agr_id:agr_id},
                 success:function (data)
                 {
-                 /*   if(data.result != 'fail')
+                    if(data.result != 'fail')
                     {
+                        all_account();
+                        
                         Swal.fire(
                             'Supprimé !',
                             'agriculteur supprimé avec succès.',
@@ -126,10 +128,9 @@ function delete_member(agr_id)
                         );
                     }   
                     else
-                    {*/
-                        ///show_fail_msg(data);
-                        console.log(data);
-                    //}                  
+                    {
+                        show_fail_msg(data);
+                    }                  
                      
                     
 

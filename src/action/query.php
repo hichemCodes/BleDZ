@@ -906,7 +906,7 @@
 
         }
 
-        // user celong to the same wilaya
+        // user belong to the same wilaya
 
         function is_member($user_id,$wilaya_id)
         {
@@ -924,6 +924,23 @@
                   return true;
               }
         }
+        // is harvest exist
+        function is_harvest($harvest_id)
+        {
+              global $db;
+
+              $is_harvest = $db->prepare("SELECT * FROM récoltes WHERE id = ? ");
+              $is_harvest->execute([$harvest_id]);
+
+              if($is_harvest->rowCount() == 0)
+              {
+                  return false;
+              }
+              else
+              {
+                  return true;
+              }
+        }
         //delete a memeber 
         function delete_member($agr_id)
         {
@@ -931,6 +948,22 @@
 
               $user_id = find_agr_user_id($agr_id);
 
+              // find all harvest of the agriculteur and delete call cars that used to harvest
+
+              $all_harvests = $db->prepare("DELETE FROM récoltes WHERE agriculteur_id = ? ");
+              $all_harvests->execute([$agr_id]);
+
+              if($all_harvests->rowCount() > 0)
+              {
+                    $all_harvests_result = $all_harvests->fetchAll(PDO::FETCH_ASSOC);
+                    foreach($all_harvests_result as $harvest)
+                    {
+                        //delete the car used in this harvest
+                        $delete_car = $db->prepare("DELETE FROM véhicule WHERE récolte_id = ? ");
+                        $delete_car->execute([$harvest['id']]);
+                    }
+              }
+              
               // delete all factures of the member
               $delete_factures = $db->prepare("DELETE FROM factures WHERE agriculteur_id = ? ");
               $delete_factures->execute([$agr_id]);
@@ -945,14 +978,42 @@
 
               try
               {
-
+                    //delete the member
                     $delete_agr = $db->prepare("DELETE FROM agriculteurs WHERE id = ?");
-                    $delete_agr->execute([$agr]);
+                    $delete_agr->execute([$agr_id]);
 
                     try
                     {          
                         $delete_agr = $db->prepare("DELETE FROM users WHERE id = ?");
                         $delete_agr->execute([$user_id]);
+
+                        return true;
+                    }
+                    catch (Exception $e)
+                    {
+                        return false;
+                    }
+              }
+              catch (Exception $e)
+              {
+                     return false;
+              }
+
+        }
+        //delete harvest
+        function delete_harvest($harvest_id)
+        {
+              global $db;
+
+              try
+              {
+                    $delete_car = $db->prepare("DELETE FROM véhicule WHERE récolte_id = ?");
+                    $delete_car->execute([$harvest_id]);
+
+                    try
+                    {          
+                        $delete_harvest = $db->prepare("DELETE FROM récoltes WHERE id = ?");
+                        $delete_harvest->execute([$harvest_id]);
 
                         return true;
                     }
