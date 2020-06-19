@@ -50,7 +50,7 @@
     border-radius:0px;
     }
     
-    #add_member form  label,.add_recolte form label,#update_product form label,.edit_recolte form{
+    #add_member form  label,.add_recolte form label,#update_product form label,.edit_recolte form label{
     align-self: baseline;
     margin-bottom:2px;
     color: #5d5d5d;
@@ -440,11 +440,14 @@ body{
 .add_recolte form,.edit_recolte form,.edit_recolte form{
      border-radius:15px;
 }
-.add_recolte form::-webkit-scrollbar,.edit_recolte form ::-webkit-scrollbar
+.add_recolte form::-webkit-scrollbar,.edit_recolte form::-webkit-scrollbar
 {
     display: none !important;
     
 
+}
+.edit_recolte form{
+    align-self: center;
 }
 .e_avatar{
     position:absolute;

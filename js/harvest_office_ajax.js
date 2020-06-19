@@ -88,7 +88,7 @@ function show_add_recolte(rendez_vous_id,agr_id)
                                $('.add_recolte_form').html("");
                                $('.add_recolte_form').html(data);
 
-                               // show all qualitys of a product when the product field changed
+                                // show all qualitys of a product when the product field changed
                                 $('#produit').on('change',function(e)
                                 {
                                         var current_product = e.target.value;
@@ -312,6 +312,20 @@ function show_recolte_edit(recolte_id)
                    {
                         $('.edit_recolte form').html("");
                         $('.edit_recolte form').html(data);
+
+                         // show all qualitys of a product 
+                      
+                            var current_product = $("#produit").val();
+                                 
+                                $.ajax({
+                                        url : 'action/show_qualitys.php',
+                                        method : 'POST',
+                                        data : { product_id : current_product},
+                                        success : function(data)
+                                            {
+                                                 $('#qualité').html(data);
+                                            }
+                                        });
                    }
             });    
 }
@@ -355,6 +369,22 @@ function recolte_detail_year(year)
        $('.add_recolte_form').unbind('submit');
        $('.add_recolte_form').html('');
        $('.add_recolte').hide();
+       $('.cover_all').hide();
+
+            // remove error div if is exist
+        if(document.querySelector('.s_updated').classList.contains('error_u'))
+        { 
+            $('.s_updated').removeClass('error_u');
+            $('.s_updated').addClass('hidden');
+        }
+  }    
+  // hide edit_recolte form
+
+  function hide_edit_recolte_form()
+  {
+       $('.edit_recolte_form').unbind('submit');
+       $('.edit_recolte_form').html('');
+       $('.edit_recolte').hide();
        $('.cover_all').hide();
 
             // remove error div if is exist

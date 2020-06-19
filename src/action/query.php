@@ -1041,11 +1041,13 @@
         {
             global $db;
 
-            $harvest = $db->prepare("SELECT * from récoltes where id = ? ");
+            $harvest = $db->prepare("SELECT * from récoltes 
+                                     INNER JOIN véhicule ON récoltes.id = véhicule.récolte_id 
+                                     AND id = ? ");
             
             $harvest->execute([$harvest_id]);
              
-            $harvest_result = $harvest->fetchAll(PDO::FETCH_ASSOC);
+            $harvest_result = $harvest->fetch(PDO::FETCH_ASSOC);
 
             return $harvest_result;
         }
