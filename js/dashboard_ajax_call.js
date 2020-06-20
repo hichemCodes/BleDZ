@@ -23,10 +23,6 @@ $(document).ready(function(){
         in_valid_accounts_count();
         rendez_vous_pris_count();
         recolte_count();
-
-        // chart graph
-        chart_recoltes(new Date().getFullYear());  
-        chart_money(new Date().getFullYear());
         
           //account
           all_account();

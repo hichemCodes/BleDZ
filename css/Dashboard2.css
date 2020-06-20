@@ -256,7 +256,7 @@ body{
 
 }
 #add_facture_form,#add_news_latter form,#add_office_admin_form{
-    padding: 60px 40px 25px 40px;
+    padding: 67px 40px 25px 40px;
     width:100%;
     border-radius: 15px;
     transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1.1) 0s;

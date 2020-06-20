@@ -32,7 +32,7 @@
     text-align:center;
     z-index:1200 !important;
     padding:20px 0px 5px 0px;
-    right: 7.7% !important;
+    right: 7.9% !important;
     box-shadow: 0 4px 20px rgba(0,0,0,.2) !important;
     color: #616161 !important;
 
@@ -94,6 +94,7 @@
 }
 .offices{
     flex-wrap: wrap;
+    width: 84% !important;
 }
 .office
 {
@@ -430,7 +431,7 @@ position:relative;
 background: #fff;
 border-collapse: collapse;
 padding: 10px 20px 10px 20px;
-width: 84.21%;
+width: 84%;
 border-top: none;
 border: none;
 box-shadow: 4px 4px 20px 0 #2425261c;
@@ -554,7 +555,8 @@ border-radius:50%;
             box-shadow: 0 7px 18px rgba(0,0,0,0.2);
             border-radius: 1px;
             font-family: "Trebuchet MS", Helvetica, sans-serif;
-
+            border-radius: 6px;
+            max-width: 290px;
    }
    .err_s,.error_u{
        background:tomato;
@@ -741,9 +743,10 @@ border-radius:50%;
   .filter_container,#year_s{
       color:#5d5d5d;
   }
-  .all_recolte table {
+  .all_recolte table,.accounts table {
    
-   width: 80% !important;
+   width: 84% !important;
+   box-sizing: border-box;
    
 }
 

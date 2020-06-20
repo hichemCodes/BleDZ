@@ -466,6 +466,8 @@ function recolte_detail_year(year)
                    if(data.result != 'fail')
                     {
 
+                        localStorage.setItem('start_page',0);
+                        localStorage.setItem('end_page',5);
                         show_all_recolte_office('date');
                         show_all_recolte_office_année(); 
 

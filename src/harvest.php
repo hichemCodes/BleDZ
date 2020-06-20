@@ -96,7 +96,7 @@ require 'action/load_all_session.php';
                 <script src="../js/harvest_ajax.js?v=<?php echo time(); ?>"></script>
                 <script src="../js/newslatter_add_member_ajax.js"></script>
                 <script src="../js/Chart.bundle.js"></script>
-                <script src="../js/chart_generator_ajax.js"></script>
+                <script src="../js/chart_generator_ajax.js?v=<?php echo time(); ?>"></script>
                 
 
 </body>

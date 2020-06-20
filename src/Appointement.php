@@ -33,7 +33,7 @@ require 'action/load_all_session.php';
  </div>  
  <div class="title">Les offices </div>
 <div class="offices_container flex j_center a_center">
-      <div class="offices s_width flex j_between a_center">
+      <div class="offices flex j_between a_center">
          <!--  load offces   !-->
       </div>
 </div> 

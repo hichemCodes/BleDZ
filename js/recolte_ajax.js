@@ -1,12 +1,14 @@
 $(document).ready(function(){
-    all_recolte("date");
-    recolte_list_année();
+  
+   
 
    //// call to tree function 
    localStorage.setItem('oreder_by_search','date');
    localStorage.setItem('start_page',0);
    localStorage.setItem('end_page',5);
+   
    all_recolte("date");
+   recolte_list_année();
 
    //
        $('.t_date').on('submit',function(){

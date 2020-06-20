@@ -1,6 +1,9 @@
 $(document).ready(function()
 {
-   
+    
+    // chart graph
+    chart_recoltes(new Date().getFullYear());  
+    chart_money(new Date().getFullYear());
 
     // call chart generator when changing the current year 
     $('.chart_year').on('change',function(){
