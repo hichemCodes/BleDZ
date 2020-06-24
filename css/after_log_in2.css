@@ -18,6 +18,9 @@ letter-spacing: 1.2px;
 .i_item .fa-dollar-sign{
    margin: auto;
 }
+.cpt_harvest{
+  font-size: 1.25rem !important;
+}
 .recoltes_chart_container span select{
  background:transparent;
  border:none;

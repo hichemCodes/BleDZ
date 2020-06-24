@@ -37,7 +37,7 @@ if(in_assoc_array('code',$produit_code,$products))
      
     if(filter_var($poids_entré,FILTER_VALIDATE_FLOAT) && preg_match('/^[0-9]*\.?[0-9]*$/',$_POST['poids_entré']))
     {
-        if(filter_var($poids_sortie,FILTER_VALIDATE_FLOAT) && preg_match('/^[0-9]*\.?[0-9]*$/',$_POST['poids_sortie'] ))   
+        if((filter_var($poids_sortie,FILTER_VALIDATE_FLOAT) && preg_match('/^[0-9]*\.?[0-9]*$/',$_POST['poids_sortie'] )) || (float)$poids_sortie == 0)   
         {
                 if(in_array($quality,$qualitys) )
                 {

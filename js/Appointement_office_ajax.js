@@ -116,7 +116,8 @@ function destroy_r_v(id)
                 success:function (data)
                 {
 
-                     
+                      // refrech list
+                      rendez_vous_non_prise();
                       Swal.fire(
                         'Supprimé !',
                         'Rendez-vous supprimé avec succès.',

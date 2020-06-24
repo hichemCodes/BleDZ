@@ -219,13 +219,16 @@ margin-top:2vh;
     background: #fff;
     border-collapse:collapse;
 }
+.cpt_harvest{
+    font-size: 1.25rem;
+}
 .custum_v,td .fa-user-check{
         
     transform: scale(1.2);
     transition: all .2s ease-in;
 }
 .custum_v{
-    margin-right: 8px;
+    margin-right: 15px;
 }
 .custum_v:hover,td .fa-user-check:hover{
   

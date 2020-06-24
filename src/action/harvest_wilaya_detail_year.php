@@ -52,7 +52,7 @@ if(have_full_acces($_SESSION['office_id']))
 
              <div class="information flex d_column ">
                          <div class="i_item flex  j_between a_center">
-                         <i class="fas fa-balance-scale-right"></i>
+                         <i class="fas fa-sort-amount-up-alt cpt_harvest"></i>
                              <div class="second_part flex d_column">
                                      <span class="holder"> Nombre de récoltes</span>
                                      <span class="i_result">'. $harvest_result['cpt'] .'</span>

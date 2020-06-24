@@ -134,11 +134,11 @@
 
                                     <i class="fas fa-pencil-alt custum_pencil"  
                                     onclick="show_recolte_edit('.$recolte['id'].')"
-                                    title ="modifier ce  récolte"></i>
+                                    title ="modifier cette  récolte"></i>
 
                                     <i class="fas fa-trash-alt d_recolte"  
                                     onclick="delete_recolte('.$recolte['id'].')"
-                                    title ="supprimer ce récolte"></i>
+                                    title ="supprimer cette récolte"></i>
                         </td>
                         
                     </tr>';
