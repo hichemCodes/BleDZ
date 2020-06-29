@@ -34,7 +34,7 @@
                                 <i class="fas fa-map-marker-alt fa-2x"></i>
                                 <span class="office_name">Office '.$office['nom'].' '.$wilaya .'</span>
                                     <div class="update flex j_center a_center">
-                                    <i class="fas fa-business-time fa-4x" onclick="rendez_vous('.$office['id'].')"></i>
+                                    <i class="fas fa-business-time fa-4x" title = "afficher les rendez-vous disponibles " onclick="rendez_vous('.$office['id'].')"></i>
                                     </div>
                                 </div>
                                                           

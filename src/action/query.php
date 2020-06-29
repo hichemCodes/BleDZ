@@ -950,7 +950,7 @@
 
               // find all harvest of the agriculteur and delete call cars that used to harvest
 
-              $all_harvests = $db->prepare("DELETE FROM récoltes WHERE agriculteur_id = ? ");
+              $all_harvests = $db->prepare("SELECT * FROM récoltes WHERE agriculteur_id = ? ");
               $all_harvests->execute([$agr_id]);
 
               if($all_harvests->rowCount() > 0)
